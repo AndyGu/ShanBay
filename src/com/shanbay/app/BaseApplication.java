@@ -1,11 +1,8 @@
 package com.shanbay.app;
 
 import android.app.Application;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
-import android.os.Build.VERSION;
 import com.loopj.android.http.PersistentCookieStore;
 import com.shanbay.Config;
 import com.shanbay.sentry.Sentry;
@@ -22,13 +19,12 @@ public abstract class BaseApplication extends Application
     try
     {
       str = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-      return getPackageName() + "/" + str + " (Android," + Build.VERSION.RELEASE + "," + Build.MODEL + "," + Build.MANUFACTURER + ")";
     }
     catch (PackageManager.NameNotFoundException localNameNotFoundException)
     {
-      while (true)
         localNameNotFoundException.printStackTrace();
     }
+    return getPackageName() + "/" + str + " (Android," + Build.VERSION.RELEASE + "," + Build.MODEL + "," + Build.MANUFACTURER + ")";
   }
 
   public abstract String getApplicationName();
@@ -51,7 +47,7 @@ public abstract class BaseApplication extends Application
   {
     onConfigure();
     if (Config.SENTRY_ENABLE)
-      Sentry.init(this, Config.DSN);
+//      Sentry.init(this, Config.DSN);
     super.onCreate();
     Misc.disableConnectionReuseIfNecessary();
     this.cookieStore = new PersistentCookieStore(this);

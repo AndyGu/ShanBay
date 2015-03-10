@@ -1,0 +1,17 @@
+com.alipay.android.app        支付宝支付
+com.github.rjeschke.txtmark   Java 实现的 Markdown 解析器，用来生成 HTML 文档
+org.markdown4j				  解析HTML
+com.google.analytics          谷歌分析
+com.google.android.gms        google play service
+com.google.renamedgson        json对象解析
+com.google.tagmanager
+com.joshdholtz.protocol.lib   https://github.com/AndyGu/Protocol-Android
+com.loopj.android             https://github.com/AndyGu/android-async-http
+com.tencent.mm                微信
+com.umeng.analytics           友盟统计
+com.umeng.common              友盟集成
+com.umeng.update              友盟自动升级
+net.lingala.zip4j			  解压缩包
+org.apache					  commons-lang-2.6.jar
+org.jsoup					  html解析
+org.yaml.snakeyaml			  YAML 1.1解析器
