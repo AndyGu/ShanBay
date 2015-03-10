@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/sw_short_message_reply_bg_others" />
+    <corners android:radius="@dimen/width5" />
+</shape>

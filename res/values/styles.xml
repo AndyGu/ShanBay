@@ -1,0 +1,47 @@
+<resources>
+    
+	<style name="ShanbayTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="android:textAppearance">@style/SBTextAppearance</item>
+        <item name="android:buttonStyle">@style/SBButton</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleSize">@dimen/height6</item>
+        <item name="android:textViewStyle">@style/SBTextView</item>
+    </style>
+    
+    <style name="ShanbayTheme.Words" parent="@style/ShanbayTheme">
+        <item name="android:windowBackground">@color/sw_common_bg</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:itemTextAppearance">@style/TextAppearance</item>
+        <item name="actionBarStyle">@style/myActionBarStyle</item>
+        <item name="actionDropDownStyle">@style/MyDropDownNav</item>
+        <item name="popupMenuStyle">@style/MyPopupMenu</item>
+    </style>
+    
+    <style name="ShanbayTheme.NoActionBar" parent="@style/ShanbayTheme">
+        <item name="android:windowBackground">@color/sw_common_bg</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionBar">false</item>
+    </style>
+    
+    <style name="ShanbayTheme.NoDisplay" parent="@style/ShanbayTheme">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowNoDisplay">true</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+    
+    <style name="ShanbayTheme.Community" parent="@style/ShanbayTheme">
+        <item name="android:windowBackground">@color/common_bg</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView</item>
+        <item name="android:itemTextAppearance">@style/TextAppearance</item>
+        <item name="actionBarStyle">@style/CommunityActionBarStyle</item>
+        <item name="selectableItemBackground">@drawable/actionbar_item_bg</item>
+        <item name="actionDropDownStyle">@style/CommunityDropDownNav</item>
+        <item name="popupMenuStyle">@style/CommunityPopupMenu</item>
+    </style>
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="50" android:drawable="@drawable/indicator_00" />
+    <item android:duration="50" android:drawable="@drawable/indicator_01" />
+    <item android:duration="50" android:drawable="@drawable/indicator_02" />
+    <item android:duration="50" android:drawable="@drawable/indicator_03" />
+    <item android:duration="50" android:drawable="@drawable/indicator_04" />
+    <item android:duration="50" android:drawable="@drawable/indicator_05" />
+    <item android:duration="50" android:drawable="@drawable/indicator_06" />
+    <item android:duration="50" android:drawable="@drawable/indicator_07" />
+    <item android:duration="50" android:drawable="@drawable/indicator_08" />
+    <item android:duration="50" android:drawable="@drawable/indicator_09" />
+    <item android:duration="50" android:drawable="@drawable/indicator_10" />
+    <item android:duration="50" android:drawable="@drawable/indicator_11" />
+</animation-list>
