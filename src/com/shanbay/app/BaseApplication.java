@@ -5,7 +5,6 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import com.loopj.android.http.PersistentCookieStore;
 import com.shanbay.Config;
-import com.shanbay.sentry.Sentry;
 import com.shanbay.util.Misc;
 
 public abstract class BaseApplication extends Application
@@ -46,7 +45,7 @@ public abstract class BaseApplication extends Application
   public void onCreate()
   {
     onConfigure();
-    if (Config.SENTRY_ENABLE)
+//    if (Config.SENTRY_ENABLE)
 //      Sentry.init(this, Config.DSN);
     super.onCreate();
     Misc.disableConnectionReuseIfNecessary();

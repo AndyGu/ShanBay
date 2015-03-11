@@ -8,7 +8,6 @@ import com.loopj.android.http.RequestParams;
 import com.shanbay.Config;
 import com.shanbay.util.LogUtils;
 import org.apache.http.client.CookieStore;
-import org.apache.http.params.HttpParams;
 
 public abstract class HttpClient
 {
@@ -20,6 +19,7 @@ public abstract class HttpClient
   protected HttpClient()
   {
     this.client.setTimeout(Config.TIME_OUT);
+//    定义环形重定向(重定向到相同路径)是否被允许
     this.client.getHttpClient().getParams().setParameter("http.protocol.allow-circular-redirects", Boolean.valueOf(true));
     getAsyncHttpClient().setUserAgent(Config.USER_AGENT);
   }
@@ -57,7 +57,7 @@ public abstract class HttpClient
   {
     String str = getAbsoluteUrl(paramString);
     d("delete:" + str);
-    getAsyncHttpClient().addHeader("SBAY-API-VER", "1.0");
+    getAsyncHttpClient().addHeader(SHANBAY_API_VERSION_HEADER_KEY, SHANBAY_API_VERSION_HEADER_VAL);
     return getAsyncHttpClient().delete(paramContext, str, paramAsyncHttpResponseHandler);
   }
 
@@ -66,7 +66,7 @@ public abstract class HttpClient
     String str = getAbsoluteUrl(paramString);
     d("get:" + str);
     d("params:" + paramRequestParams);
-    getAsyncHttpClient().addHeader("SBAY-API-VER", "1.0");
+    getAsyncHttpClient().addHeader(SHANBAY_API_VERSION_HEADER_KEY, SHANBAY_API_VERSION_HEADER_VAL);
     return getAsyncHttpClient().get(paramContext, str, paramRequestParams, paramAsyncHttpResponseHandler);
   }
 
@@ -82,7 +82,7 @@ public abstract class HttpClient
     String str = getAbsoluteUrl(paramString);
     d("post:" + str);
     d("params:" + paramRequestParams);
-    getAsyncHttpClient().addHeader("SBAY-API-VER", "1.0");
+    getAsyncHttpClient().addHeader(SHANBAY_API_VERSION_HEADER_KEY, SHANBAY_API_VERSION_HEADER_VAL);
     return getAsyncHttpClient().post(str, paramRequestParams, paramAsyncHttpResponseHandler);
   }
 
@@ -91,7 +91,7 @@ public abstract class HttpClient
     String str = getAbsoluteUrl(paramString);
     d("put:" + str);
     d("params:" + paramRequestParams);
-    getAsyncHttpClient().addHeader("SBAY-API-VER", "1.0");
+    getAsyncHttpClient().addHeader(SHANBAY_API_VERSION_HEADER_KEY, SHANBAY_API_VERSION_HEADER_VAL);
     return getAsyncHttpClient().put(str, paramRequestParams, paramAsyncHttpResponseHandler);
   }
 

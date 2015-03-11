@@ -115,15 +115,14 @@ public class APIClient extends HttpClient
 
   public void cacheSound(String paramString, File paramFile, AsyncHttpResponseHandler paramAsyncHttpResponseHandler)
   {
-//	  需补充
-//    if (!paramFile.exists())
-//    {
-//      getAsyncHttpClient().get(paramString, new SoundCacheResponseHandler(paramFile, paramAsyncHttpResponseHandler));
-//      d("cache file fail: " + paramString);
-//      return;
-//    }
-//    paramAsyncHttpResponseHandler.onSuccess(0, paramFile.getAbsolutePath());
-//    d("cache file success: " + paramString);
+    if (!paramFile.exists())
+    {
+      getAsyncHttpClient().get(paramString, new SoundCacheResponseHandler(paramFile, paramAsyncHttpResponseHandler));
+      d("cache file fail: " + paramString);
+      return;
+    }
+    ((SoundCacheResponseHandler)paramAsyncHttpResponseHandler)..onSuccess(0, paramFile.getAbsolutePath());
+    d("cache file success: " + paramString);
   }
 
   public void chargeAlipay(Context paramContext, float paramFloat, AsyncHttpResponseHandler paramAsyncHttpResponseHandler)

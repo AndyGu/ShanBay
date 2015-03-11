@@ -30,7 +30,7 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
 
   protected void checkUpdate()
   {
-    UmengUpdateAgent.update(this);
+//    UmengUpdateAgent.update(this);
   }
 
   protected boolean commit(FragmentTransaction paramFragmentTransaction)
