@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/other_apps_container" android:background="@color/sw_home_white_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center" android:paddingTop="@dimen/padding3" android:paddingBottom="@dimen/padding3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:id="@id/other_apps_listen" android:layout_width="@dimen/width20" android:layout_height="@dimen/width20" android:src="@drawable/icon_listen" android:scaleType="fitCenter" />
+        <TextView android:textSize="@dimen/textsize10" android:textColor="@color/sw_text_color_green" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="听力" android:layout_below="@id/other_apps_listen" android:layout_alignLeft="@id/other_apps_listen" android:layout_alignRight="@id/other_apps_listen" />
+    </RelativeLayout>
+    <View android:background="@color/sw_common_gray" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+    <RelativeLayout android:gravity="center" android:paddingTop="@dimen/padding3" android:paddingBottom="@dimen/padding3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:id="@id/other_apps_news" android:layout_width="@dimen/width20" android:layout_height="@dimen/height20" android:src="@drawable/icon_news" android:scaleType="fitCenter" />
+        <TextView android:textSize="@dimen/textsize10" android:textColor="@color/sw_text_color_green" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="新闻" android:layout_below="@id/other_apps_news" android:layout_alignLeft="@id/other_apps_news" android:layout_alignRight="@id/other_apps_news" />
+    </RelativeLayout>
+    <View android:background="@color/sw_common_gray" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+    <RelativeLayout android:gravity="center" android:paddingTop="@dimen/padding3" android:paddingBottom="@dimen/padding3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:id="@id/other_apps_reader" android:layout_width="@dimen/width20" android:layout_height="@dimen/height20" android:src="@drawable/icon_read" android:scaleType="fitCenter" />
+        <TextView android:textSize="@dimen/textsize10" android:textColor="@color/sw_text_color_green" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="读书" android:layout_below="@id/other_apps_reader" android:layout_alignLeft="@id/other_apps_reader" android:layout_alignRight="@id/other_apps_reader" />
+    </RelativeLayout>
+    <View android:background="@color/sw_common_gray" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+    <RelativeLayout android:gravity="center" android:paddingTop="@dimen/padding3" android:paddingBottom="@dimen/padding3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ImageView android:id="@id/other_apps_sentence" android:layout_width="@dimen/width20" android:layout_height="@dimen/height20" android:src="@drawable/icon_sentence" android:scaleType="fitCenter" />
+        <TextView android:textSize="@dimen/textsize10" android:textColor="@color/sw_text_color_green" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="炼句" android:layout_below="@id/other_apps_sentence" android:layout_alignLeft="@id/other_apps_sentence" android:layout_alignRight="@id/other_apps_sentence" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/word_content_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/word_layout" android:background="@drawable/btn_item_normal" android:paddingLeft="@dimen/padding9" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@id/btn_sound_in_word_container">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                <TextView android:textSize="@dimen/word_text_size" android:textColor="@color/qin_highlight_green" android:id="@id/content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="attendance" />
+                <TextView android:textSize="@dimen/textsize14" android:textColor="@color/qin_pron" android:id="@id/pron" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:text="[attendance]" android:singleLine="true" android:layout_toRightOf="@id/content" android:layout_centerVertical="true" />
+                <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/sw_common_text" android:id="@id/hint" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="请点击喇叭听声音" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <LinearLayout android:gravity="center" android:id="@id/btn_sound_in_word_container" android:background="@drawable/btn_item_normal" android:layout_width="@dimen/width28" android:layout_height="wrap_content" android:layout_alignTop="@id/word_layout" android:layout_alignBottom="@id/word_layout" android:layout_alignParentRight="true">
+            <ImageButton android:id="@id/btn_sound_in_word" android:background="@color/common_transparent" android:clickable="false" android:layout_width="@dimen/width15" android:layout_height="@dimen/width15" android:src="@drawable/btn_pronounce_new" android:scaleType="fitXY" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/definition_container" android:background="@drawable/btn_item_normal" android:paddingLeft="@dimen/padding9" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding3" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/sw_common_text" android:id="@id/definition" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView" android:layout_toLeftOf="@id/toggle_en" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:lineSpacingExtra="@dimen/height1" android:lineSpacingMultiplier="1.2" />
+        <ToggleButton android:textSize="@dimen/textsize13" android:textColor="@color/btn_text_color" android:gravity="center" android:id="@id/toggle_en" android:background="@drawable/common_btn_base" android:layout_width="@dimen/width22" android:layout_height="@dimen/height12" android:layout_marginLeft="@dimen/margin2" android:checked="true" android:textOn="@string/endef" android:textOff="@string/endef" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/en_definitions_container" android:background="@drawable/btn_known" android:paddingLeft="@dimen/padding9" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding3" android:paddingBottom="@dimen/padding5" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="0.0dip">
+        <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/sw_common_text" android:id="@id/en_definitions" android:paddingRight="@dimen/padding9" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/test_padding" android:text="TextView" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_arrows" android:adjustViewBounds="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:scrollbarStyle="outsideOverlay" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="#00000000" android:cacheColorHint="@android:color/transparent" android:footerDividersEnabled="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/padding10" android:paddingTop="@dimen/margin15" android:paddingRight="@dimen/margin10" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_done" />
+        <TextView android:textSize="@dimen/textsize25" android:textColor="@color/common_green" android:layout_gravity="center" android:id="@id/header_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10" android:text="你已经完成了今天的全部任务" />
+        <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin15" android:text="1. 联网同步学习数据，保存你的学习进度" android:lineSpacingMultiplier="1.1" />
+        <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin3" android:text="2. 数据同步后，你可以打卡，获取打卡徽章和贝壳奖励" android:lineSpacingMultiplier="1.1" />
+        <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_red" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin8" android:text="注：若今晚12点前不能完成同步，今天的学习数据将不会保存" android:lineSpacingMultiplier="1.1" />
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:paddingTop="@dimen/margin10" android:paddingBottom="@dimen/margin10" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_text" android:gravity="center" android:id="@id/data_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawableLeft="@drawable/icon_offline_warning" android:drawablePadding="@dimen/padding5" />
+            <Button android:textSize="@dimen/textsize18" android:id="@id/state_btn" android:layout_width="@dimen/width110" android:layout_height="@dimen/height20" android:layout_marginTop="@dimen/margin10" android:text="@string/common_label_checkin" style="@style/SBBaseButton.Big" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/tips_container" android:background="@color/sw_home_white_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingLeft="@dimen/padding5" android:paddingRight="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="@dimen/height15">
+        <TextView android:textSize="@dimen/textsize12" android:textColor="@color/sw_text_color_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="扇贝秘籍" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/tips_faq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_faq" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:background="@color/common_bg" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TextView android:textSize="@dimen/textsize16" android:textColor="#ff606060" android:id="@id/tips_title" android:paddingLeft="@dimen/padding5" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding5" android:paddingBottom="@dimen/padding2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lineSpacingExtra="3.0dip" />
+    <TextView android:textSize="@dimen/textsize15" android:textColor="@color/sw_text_color_green" android:id="@id/tips_content" android:paddingLeft="@dimen/padding5" android:paddingRight="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lineSpacingExtra="5.0dip" />
+    <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_green" android:gravity="center" android:layout_gravity="right" android:id="@id/tips_details" android:paddingLeft="@dimen/padding5" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="查看详情" android:drawableRight="@drawable/icon_faq_arrow" />
+</LinearLayout>

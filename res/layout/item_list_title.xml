@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:background="@drawable/list_stroke_top" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/container_newest" android:background="@drawable/btn_tab" android:paddingTop="@dimen/padding3" android:paddingBottom="@dimen/padding3" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.5">
+            <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/height10" android:layout_marginRight="@dimen/margin3" android:src="@drawable/icon_topics" android:scaleType="centerInside" />
+            <TextView android:textSize="@dimen/textsize14" android:gravity="left|center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="最近话题" />
+        </LinearLayout>
+        <ImageView android:paddingTop="@dimen/padding3" android:paddingBottom="@dimen/padding3" android:layout_width="1.0dip" android:layout_height="fill_parent" android:src="@color/common_item_stroke" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/container_essence" android:background="@drawable/btn_tab" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.5">
+            <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/height10" android:layout_marginRight="@dimen/margin3" android:src="@drawable/icon_essence" android:scaleType="centerInside" />
+            <TextView android:textSize="@dimen/textsize14" android:gravity="left|center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="精华帖" />
+        </LinearLayout>
+        <ImageView android:id="@id/notice_tab_divide" android:paddingTop="@dimen/padding3" android:paddingBottom="@dimen/padding3" android:layout_width="1.0dip" android:layout_height="fill_parent" android:src="@color/common_item_stroke" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/container_notice" android:background="@drawable/btn_tab" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.5">
+            <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/height10" android:layout_marginRight="@dimen/margin3" android:src="@drawable/icon_notification" android:scaleType="centerInside" />
+            <TextView android:textSize="@dimen/textsize14" android:gravity="left|center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="通知" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

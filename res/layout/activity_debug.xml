@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/closed_container" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <Button android:textSize="@dimen/textsize30" android:textColor="@drawable/btn_debug_text" android:layout_gravity="center_horizontal" android:id="@id/open" android:background="@drawable/btn_debug_open" android:padding="@dimen/padding3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin40" android:text="OPEN DEBUG" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/opening_container" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin30">
+            <TextView android:textSize="@dimen/textsize20" android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin5" android:text="add:" />
+            <AutoCompleteTextView android:textColor="@android:color/black" android:id="@id/input" android:background="@android:color/white" android:layout_width="@dimen/width100" android:layout_height="wrap_content" android:hint="请输入新地址" android:singleLine="true" android:imeOptions="actionDone" />
+            <Button android:textSize="@dimen/textsize20" android:textColor="@drawable/btn_debug_text2" android:id="@id/go" android:background="@drawable/btn_debug_go" android:padding="@dimen/padding3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:text="GO" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/show_ip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin25">
+            <TextView android:textSize="@dimen/textsize30" android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="当前的地址为" />
+            <TextView android:textSize="@dimen/textsize20" android:textColor="@android:color/white" android:id="@id/ip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <Button android:textSize="@dimen/textsize30" android:textColor="@drawable/btn_debug_text2" android:layout_gravity="center" android:id="@id/close" android:background="@drawable/btn_debug_go" android:padding="@dimen/padding3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin25" android:text="CLOSE DEBUG" />
+    </LinearLayout>
+</RelativeLayout>

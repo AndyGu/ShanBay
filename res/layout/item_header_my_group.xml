@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@drawable/list_stroke_top" android:paddingTop="1.0dip" android:paddingBottom="1.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="1.0" android:minHeight="@dimen/height42"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.shanbay.widget.RoundImageView android:layout_gravity="top|center" android:id="@id/img_my_group_avatar" android:layout_width="0.0dip" android:layout_height="@dimen/height25" android:layout_marginTop="@dimen/margin4" android:layout_weight="0.2" />
+    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.7">
+        <TextView android:textSize="@dimen/normal_text_size" android:textColor="@color/common_green" android:gravity="left|center" android:id="@id/textview_my_group_name" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="@dimen/margin4" android:layout_marginTop="@dimen/margin3" android:singleLine="true" android:layout_weight="0.35" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:weightSum="1.0" android:layout_weight="0.65">
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin4" android:weightSum="1.0">
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="@color/common_green" android:gravity="center" android:id="@id/textview_my_group_point" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.55" />
+                <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/common_text" android:gravity="top" android:layout_width="fill_parent" android:layout_height="0.0dip" android:text="贡献成长值" android:layout_weight="0.45" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin10" android:weightSum="1.0">
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="@color/common_green" android:gravity="center" android:id="@id/textview_my_group_rank" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.55" />
+                <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/common_text" android:gravity="top|center" android:layout_width="fill_parent" android:layout_height="0.0dip" android:text="组内排名" android:layout_weight="0.45" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/icon_arrows" android:scaleType="center" android:layout_weight="0.1" />
+</LinearLayout>

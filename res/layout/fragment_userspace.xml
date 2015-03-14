@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:scrollbars="none" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:footerDividersEnabled="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:id="@id/container_award" android:paddingLeft="@dimen/padding4" android:paddingRight="@dimen/padding4" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="1.0" android:minHeight="@dimen/height25">
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="@color/community_user_space_text" android:gravity="center_vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:minHeight="@dimen/height25" android:text="我的徽章" android:layout_weight="0.3" />
+                <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/award_container" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.7" />
+            </LinearLayout>
+            <ImageView android:id="@id/line_award" android:background="@drawable/dashed_line" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="1.0dip" android:layout_marginRight="1.0dip" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/container_checkin" android:paddingLeft="@dimen/padding4" android:paddingRight="@dimen/padding4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="1.0" android:minHeight="@dimen/height25">
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="@color/community_user_space_text" android:gravity="center_vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="我的打卡" android:layout_weight="0.3" />
+                <RelativeLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.7">
+                    <TextView android:textSize="@dimen/header_text_size" android:textColor="@color/common_green" android:id="@id/textview_checkin_days" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+                    <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="天" android:layout_toRightOf="@id/textview_checkin_days" android:layout_alignBaseline="@id/textview_checkin_days" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/icon_arrows" android:layout_alignParentRight="true" />
+                </RelativeLayout>
+            </LinearLayout>
+            <ImageView android:id="@id/line_checkin" android:background="@drawable/dashed_line" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="1.0dip" android:layout_marginRight="1.0dip" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/container_team" android:paddingLeft="@dimen/padding4" android:paddingRight="@dimen/padding4" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/height25" android:weightSum="1.0">
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="@color/community_user_space_text" android:gravity="center_vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="我的小组" android:layout_weight="0.3" />
+                <RelativeLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="@dimen/margin2" android:layout_marginBottom="@dimen/margin2" android:layout_weight="0.7">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="1.0">
+                        <com.shanbay.widget.RoundImageView android:gravity="left" android:layout_gravity="left" android:id="@id/team_avatar" android:layout_width="@dimen/width20" android:layout_height="fill_parent" />
+                        <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/common_green" android:gravity="center_vertical" android:id="@id/textview_team_name" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin3" android:layout_marginRight="@dimen/margin4" android:singleLine="true" android:layout_toRightOf="@id/team_avatar" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/icon_arrows" android:layout_alignParentRight="true" />
+                </RelativeLayout>
+            </LinearLayout>
+            <ImageView android:id="@id/line_team" android:background="@drawable/dashed_line" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="1.0dip" android:layout_marginRight="1.0dip" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="1.0" android:minHeight="@dimen/height40">
+            <LinearLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.3" />
+            <Button android:textSize="@dimen/normal_text_size" android:layout_gravity="center_vertical" android:id="@id/btn_send_to_me" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="给我发短信" android:layout_weight="0.4" style="@style/SBBaseButton.Normal" />
+            <LinearLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.3" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/review_title_layout" android:background="@color/sw_wrong_press_bg" android:paddingLeft="@dimen/padding9" android:paddingTop="@dimen/padding4" android:paddingRight="@dimen/padding9" android:paddingBottom="@dimen/padding4" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/small_text_size" android:gravity="center" android:id="@id/review_collins" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

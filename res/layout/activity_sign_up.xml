@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:scrollbarStyle="outsideOverlay" android:id="@id/scroll" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="#00000000" android:cacheColorHint="@android:color/transparent" android:footerDividersEnabled="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/padding15" android:paddingTop="@dimen/padding18" android:paddingRight="@dimen/padding15" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:background="@drawable/bg_login" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin10" android:layout_marginTop="@dimen/margin4" android:layout_marginRight="@dimen/margin10" android:layout_marginBottom="@dimen/margin4" android:src="@drawable/icon_name" />
+            <LinearLayout android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0px" android:layout_height="0.0px" />
+            <EditText android:textColor="@color/common_green" android:textColorHint="@color/sw_login_text_light" android:ellipsize="start" android:gravity="center" android:id="@id/tv_username" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="@dimen/margin20" android:hint="用户名" android:lines="1" android:textCursorDrawable="@null" style="@style/SBInput" />
+        </LinearLayout>
+        <LinearLayout android:background="@drawable/bg_login" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin10" android:layout_marginTop="@dimen/margin4" android:layout_marginRight="@dimen/margin10" android:layout_marginBottom="@dimen/margin4" android:src="@drawable/icon_email" />
+            <EditText android:textColor="@color/common_green" android:textColorHint="@color/sw_login_text_light" android:ellipsize="start" android:gravity="center" android:id="@id/tv_email" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="@dimen/margin20" android:hint="Email" android:lines="1" android:textCursorDrawable="@null" style="@style/SBInput" />
+        </LinearLayout>
+        <LinearLayout android:background="@drawable/bg_login" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin10" android:layout_marginTop="@dimen/margin4" android:layout_marginRight="@dimen/margin10" android:layout_marginBottom="@dimen/margin4" android:src="@drawable/icon_password" />
+            <EditText android:textColor="@color/common_green" android:textColorHint="@color/sw_login_text_light" android:ellipsize="start" android:gravity="center" android:id="@id/tv_password" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="@dimen/margin20" android:hint="密 码" android:lines="1" android:inputType="textPassword" android:textCursorDrawable="@null" style="@style/SBInput" />
+        </LinearLayout>
+        <LinearLayout android:background="@drawable/bg_login" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin10" android:layout_marginTop="@dimen/margin4" android:layout_marginRight="@dimen/margin10" android:layout_marginBottom="@dimen/margin4" android:src="@drawable/icon_password" />
+            <EditText android:textColor="@color/common_green" android:textColorHint="@color/sw_login_text_light" android:ellipsize="start" android:gravity="center" android:id="@id/tv_password_repeat" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="@dimen/margin20" android:hint="确认密码" android:lines="1" android:inputType="textPassword" android:textCursorDrawable="@null" style="@style/SBInput" />
+        </LinearLayout>
+        <Button android:textSize="@dimen/textsize20" android:layout_gravity="center_horizontal" android:id="@id/signup" android:layout_width="fill_parent" android:layout_height="@dimen/height22" android:layout_marginTop="@dimen/margin10" android:text="注 册" android:onClick="signup" style="@style/SBBaseButton.Normal" />
+    </LinearLayout>
+</ScrollView>

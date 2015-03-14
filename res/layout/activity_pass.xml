@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/imageView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin40" android:layout_marginBottom="@dimen/margin6" android:src="@drawable/ic_logo_easy" />
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin5">
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin6" android:text="@string/pass_hint" android:singleLine="true" />
+            <CheckBox android:textSize="@dimen/small_text_size" android:textColor="@color/common_text" android:id="@id/cb_remember_me" android:paddingLeft="@dimen/padding12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/cb_gray" android:text="@string/pass_no_warning" />
+        </LinearLayout>
+        <RelativeLayout android:background="@drawable/bg_easy_word" android:paddingLeft="@dimen/padding7" android:paddingTop="@dimen/padding14" android:paddingRight="@dimen/padding7" android:paddingBottom="@dimen/padding9" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin4" android:layout_marginRight="@dimen/margin4">
+            <TextView android:id="@id/label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="当前单词：" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/qin_highlight_green" android:id="@id/content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin2" android:text="sdfasdf" android:layout_toRightOf="@id/label" android:layout_alignBaseline="@id/label" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/qin_pron" android:layout_gravity="center_vertical" android:id="@id/pron" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="sdfasdf" android:layout_toRightOf="@id/content" android:layout_alignBaseline="@id/label" />
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/qin_pron" android:id="@id/definition" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/pron" android:layout_alignLeft="@id/content" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <Button android:layout_gravity="center_horizontal" android:id="@id/confirm" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin15" android:layout_marginBottom="@dimen/margin15" android:text="@string/label_ok" style="@style/SBBaseButton.Normal" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/common_share_green" android:paddingTop="@dimen/padding10" android:paddingBottom="@dimen/padding10" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/img_award" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_award" />
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/textsize25" android:textColor="@android:color/white" android:gravity="bottom|center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin2" android:text="分享=贝壳" />
+        <LinearLayout android:gravity="bottom" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/small_text_size" android:textColor="@android:color/white" android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="分享到微博和微信可获得" />
+            <TextView android:textSize="@dimen/textsize20" android:textColor="@color/common_yellow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin2" android:layout_marginRight="@dimen/margin2" android:text="20" />
+            <TextView android:textSize="@dimen/small_text_size" android:textColor="@android:color/white" android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="贝壳" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/normal_text_size" android:textColor="@color/common_red" android:gravity="top|center" android:id="@id/textview_share" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin2" android:text="详细" />
+    </LinearLayout>
+</LinearLayout>

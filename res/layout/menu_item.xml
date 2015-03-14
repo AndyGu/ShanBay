@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/item_top_line" android:background="@drawable/dashed_line_light" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_weight="1.0" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/item_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin6" android:layout_marginTop="@dimen/margin3" android:layout_marginRight="@dimen/margin6" android:layout_marginBottom="@dimen/margin3">
+        <ImageView android:id="@id/icon" android:layout_width="@dimen/menu_item_image_width" android:layout_height="@dimen/menu_item_image_height" android:src="@drawable/icon_forum" android:scaleType="fitCenter" />
+        <TextView android:textSize="@dimen/menu_item_textsize" android:textColor="@android:color/black" android:gravity="left" android:layout_gravity="left|center" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/menu_text_margin6" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:id="@id/indicator" android:visibility="gone" android:layout_width="@dimen/width3" android:layout_height="@dimen/height3" android:layout_marginRight="@dimen/margin40" android:src="@drawable/img_red" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <ImageView android:id="@id/item_line" android:background="@drawable/dashed_line_light" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_weight="1.0" />
+</LinearLayout>

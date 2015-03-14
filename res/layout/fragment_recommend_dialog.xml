@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:orientation="vertical" android:id="@id/container" android:background="@color/common_transparent" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@color/common_dialog_divide" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/code_container" android:background="@color/common_dialog_bg" android:layout_width="fill_parent" android:layout_height="@dimen/height80" android:layout_marginTop="1.0dip">
+            <ImageView android:background="@color/common_transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10" android:src="@drawable/image_code_big" />
+            <TextView android:textSize="@dimen/textsize12" android:textColor="@color/common_dialog_text" android:background="@color/common_transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="推荐朋友使用扇贝？让TA扫一扫" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:background="@color/common_transparent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip">
+            <Button android:textSize="@dimen/textsize20" android:textColor="@drawable/btn_dialog" android:gravity="center" android:id="@id/close" android:background="@drawable/btn_dialog_bg" android:layout_width="0.0dip" android:layout_height="@dimen/height30" android:text="@string/cancel" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

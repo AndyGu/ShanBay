@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/actionbar_item_bg" android:layout_width="fill_parent" android:layout_height="@dimen/height20"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerInParent="true">
+        <TextView android:textSize="@dimen/textsize18" android:textColor="@color/common_text" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin7" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/selected" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin3" android:src="@drawable/icon_ok_post" />
+    </LinearLayout>
+</RelativeLayout>

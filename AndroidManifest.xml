@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.shanbay.words"
-    android:versionCode="41000"
-    android:versionName="4.1.000" >
+    android:versionCode="50000"
+    android:versionName="5.0.000" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -15,10 +15,9 @@
         android:largeScreens="true"
         android:normalScreens="true"
         android:xlargeScreens="true" />
+
+    <uses-sdk android:minSdkVersion="8" />
     
-	<uses-sdk
-    	android:minSdkVersion="5" />
-	
     <application
         android:name="com.shanbay.words.WordsApplication"
         android:hardwareAccelerated="true"
@@ -44,7 +43,6 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/ShanbayTheme.NoActionBar" />
-            
         <activity
             android:name="com.shanbay.words.activity.ServerFailureActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
@@ -54,9 +52,9 @@
         <activity
             android:name="com.shanbay.words.activity.HomeActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
-            android:label="@string/app_name"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Words.Home"
             android:windowSoftInputMode="stateAlwaysHidden|adjustNothing" >
             <intent-filter>
                 <action android:name="com.shanbay.backhome" />
@@ -111,19 +109,9 @@
             android:label="@string/label_setting"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shanbay.words.activity.QuotasActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation"
-            android:label="@string/name_quota"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.shanbay.words.activity.SignupActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/name_signup"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.shanbay.words.activity.FinishReviewActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation"
-            android:label="@string/name_finish"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.shanbay.words.review.RootsActivity"
@@ -150,11 +138,6 @@
             android:label="@string/name_search"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shanbay.common.activity.BroadcastActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation"
-            android:label="@string/name_broadcast"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.shanbay.words.activity.WordCheckinListActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/name_checkin"
@@ -177,11 +160,6 @@
             android:name="com.shanbay.words.activity.WordbookSubCategoryActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/wordbook_categories"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.shanbay.words.activity.WrongReviewActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation"
-            android:label="@string/name_wrong"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.shanbay.words.activity.PurchaseActivity"
@@ -222,6 +200,11 @@
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/name_roots"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.shanbay.words.activity.VocabularyTestActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:label="@string/label_vocabulary_test"
+            android:screenOrientation="portrait" />
 
         <service
             android:name="com.umeng.common.net.DownloadingService"
@@ -254,21 +237,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/ShanbayTheme.NoActionBar" />
         <activity
-            android:name="com.shanbay.words.sns.WordsSocialLoginActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation"
-            android:label="@string/sociallogin"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.shanbay.words.activity.ChargeActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation"
-            android:label="@string/charge_activity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.shanbay.payment.PaymentActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation"
-            android:label="@string/title_activity_welcome"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.alipay.android.app.sdk.WapPayActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -283,10 +251,6 @@
             android:label="@string/label_word_level"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shanbay.words.activity.RecommendActivity"
-            android:label="@string/label_recommend"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.shanbay.words.activity.HelpActivity"
             android:label="@string/label_help"
             android:screenOrientation="portrait" />
@@ -298,18 +262,12 @@
             android:name="com.shanbay.words.activity.DebugActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shanbay.words.activity.WeiboShareActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.shanbay.words.wxapi.WXEntryActivity"
             android:configChanges="keyboard|keyboardHidden"
             android:exported="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/ShanbayTheme.NoDisplay" />
-        <activity
-            android:name="com.shanbay.words.activity.MyProfileActivity"
-            android:screenOrientation="portrait" />
         <activity
             android:name="com.shanbay.words.activity.StatsActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
@@ -348,8 +306,10 @@
             android:theme="@style/ShanbayTheme.Community" />
         <activity
             android:name="com.shanbay.community.activity.UserProfileActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:label="@string/label_account"
             android:screenOrientation="portrait"
-            android:theme="@style/ShanbayTheme.Community" />
+            android:theme="@style/ShanbayTheme.Community.ActionBarOverlay" />
         <activity
             android:name="com.shanbay.community.activity.NewSMSActivity"
             android:screenOrientation="portrait"
@@ -400,101 +360,170 @@
             android:theme="@style/ShanbayTheme.Community"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name="com.shanbay.community.activity.FootprintReplyedCommentActivity"
+            android:label="@string/label_footprint"
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Community" />
+        <activity
             android:name="com.shanbay.community.activity.PictureListActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/label_picture"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Community" />
         <activity
             android:name="com.shanbay.community.activity.PreviewPictureActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/label_preview_picture"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Community" />
         <activity
             android:name="com.shanbay.community.activity.MyProfileActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/label_account"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Community.ActionBarOverlay" />
         <activity
             android:name="com.shanbay.community.checkin.CheckinDiaryActivity"
             android:label="@string/label_checkin_diary"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Community" />
         <activity
             android:name="com.shanbay.community.checkin.CheckinActivity"
             android:label="@string/name_checkin"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Community" />
         <activity
             android:name="com.shanbay.community.checkin.CheckinMakeUpActivity"
             android:label="@string/name_checkin"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Community" />
         <activity
             android:name="com.shanbay.community.checkin.CheckinListActivity"
             android:label="@string/name_checkin"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Community" />
         <activity
             android:name="com.shanbay.community.checkin.CheckinBellListActivity"
             android:label="@string/name_checkin"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Community" />
         <activity
             android:name="com.shanbay.community.checkin.CheckinDetailActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/name_checkin"
             android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Community"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name="com.shanbay.community.checkin.CheckinCalendarActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/checkin_calendar"
             android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Community"
             android:windowSoftInputMode="stateAlwaysHidden|adjustNothing" />
         <activity
             android:name="com.shanbay.community.checkin.CheckinFavorAvatarListActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/checkin_favor_avatra"
             android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Community"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.shanbay.community.activity.ChargeActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:label="@string/label_coins"
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Community"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.shanbay.community.activity.InviteFriendActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:label="@string/label_invite"
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Community"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name="com.shanbay.common.activity.BadgeActivity"
             android:label="@string/receive_badge"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Commons" />
         <activity
             android:name="com.shanbay.common.activity.FeedbackNewActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/name_new_feedback"
             android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Commons"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
             android:name="com.shanbay.common.activity.FeedbackReplyActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/feedback"
             android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Commons"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name="com.shanbay.common.activity.ShortMessageNewActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/short_message_new"
             android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Commons"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
             android:name="com.shanbay.common.activity.ShortMessageReplyActivity"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/short_message_reply"
             android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Commons"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name="com.shanbay.onlineStore.OnlineStoreActivity"
             android:label="@string/online_store"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Commons" />
         <activity
-            android:name="com.shanbay.common.activity.WeiboShareActivity"
-            android:screenOrientation="portrait" />
+            android:name="com.shanbay.common.activity.RecommendWeiboShareActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Commons" />
         <activity
             android:name="com.shanbay.recommend.RecommendActivity"
             android:label="@string/label_recommend"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Commons" />
         <activity
             android:name="com.shanbay.common.activity.ShanbayWebPageActivity"
             android:label=""
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Commons" />
+        <activity
+            android:name="com.shanbay.account.ModifyPwdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:label="@string/label_pwd"
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Commons" />
+        <activity
+            android:name="com.shanbay.account.ModifyMailActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:label="@string/label_mail"
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Commons" />
+        <activity
+            android:name="com.shanbay.account.ModifyNickNameAcitivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:label="@string/label_nickname"
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Commons" />
+        <activity
+            android:name="com.shanbay.account.ModifyUserNameActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:label="@string/label_username"
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Commons" />
+        <activity
+            android:name="com.shanbay.payment.PaymentActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:label="@string/label_payment"
+            android:screenOrientation="portrait"
+            android:theme="@style/ShanbayTheme.Commons" />
     </application>
 
 </manifest>

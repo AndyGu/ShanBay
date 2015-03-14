@@ -45,6 +45,7 @@
     <string name="login">登录</string>
     <string name="label_username">用户名：</string>
     <string name="label_password">密码：</string>
+    <string name="label_payment">充值</string>
     <string name="label_password_repeat">确认密码：</string>
     <string name="label_email">Email：</string>
     <string name="label_forget">忘记密码？</string>
@@ -62,12 +63,16 @@
     <string name="header_account">帐户</string>
     <string name="label_setting">设置</string>
     <string name="label_feedback">反馈</string>
+    <string name="label_coins">贝壳</string>
     <string name="label_exit">退出帐号</string>
     <string name="label_test_media">测试音频</string>
     <string name="label_mode">模式</string>
     <string name="label_top_up">充值</string>
     <string name="label_broadcast">广播</string>
     <string name="header_recommend">推荐</string>
+    <string name="label_pwd">密码重置</string>
+    <string name="label_mail">修改邮箱</string>
+    <string name="label_nickname">修改昵称</string>
     <string name="feedback_content_label">反馈内容</string>
     <string name="feedback_time_label">反馈时间</string>
     <string name="feedback_reply_hint">回复管理员…</string>
@@ -118,7 +123,7 @@
     <string name="choice_favorite">点击选择喜欢的书</string>
     <string name="sum_coins">贝壳总数</string>
     <string name="user_balance">您的账户余额为&lt;font color=#209e85> %s贝壳 &lt;/font></string>
-    <string name="user_balance_count">您的账户余额为</string>
+    <string name="user_balance_count">您的账户余额</string>
     <string name="charge_success">恭喜您成功充值 %s 贝壳</string>
     <string name="name_being_recharge">正在充值</string>
     <string name="checkin_diary_notice">请输入您想说的话....</string>
@@ -230,7 +235,7 @@
     <string name="footprint_new_comment_hint">说点什么......</string>
     <string name="label_footprint">精选</string>
     <string name="label_footprint_new_comment">发评论</string>
-    <string name="share_weibo_footprint">\#扇贝精选#</string>
+    <string name="share_weibo_footprint">\#扇贝精选# </string>
     <string name="share_weixin_footprint">扇贝精选：</string>
     <string name="refresh_down_text">下拉加载上一页</string>
     <string name="refresh_release_text">松开可加载</string>
@@ -239,6 +244,14 @@
     <string name="label_preview_picture">截图预览</string>
     <string name="label_no_team">您还未加入小组</string>
     <string name="label_no_reply">暂时没有回复</string>
+    <string name="label_reply">回复</string>
+    <string name="label_invite">邀请好友</string>
+    <string name="share_weibo_content">我真觉得#扇贝网#是一个学英语的好地方，不仅可以背单词，还能在读文章的时候告诉我哪些词是我以前学过的，哪些词是我要学的，一个人学不下来的话还可以加入小组互相监督，效果真的很好。推荐你也来试试～</string>
+    <string name="share_weixin_content">我真觉得用扇贝的软件学英语很棒，听说读写都能帮到我，你也来试试～</string>
+    <string name="checkin_tip1">每天打卡可获得 &lt;font color=#209e85>%1$d&lt;/font> 贝壳</string>
+    <string name="checkin_tip2">分享打卡到微信或微博可获得 &lt;font color=#209e85>%1$d&lt;/font> 贝壳</string>
+    <string name="checkin_tip3">坚持打卡可获得海量贝壳</string>
+    <string name="invite_tip">邀请好友加入扇贝即奖励 &lt;font color=#209e85>%1$d&lt;/font> 贝壳</string>
     <string name="hint_username">请输入用户名</string>
     <string name="hint_password">请输入密码</string>
     <string name="label_num_left">总共：</string>
@@ -246,6 +259,7 @@
     <string name="label_num_reviewed">已学习：</string>
     <string name="label_num_passed">已通过：</string>
     <string name="label_start">开始学习</string>
+    <string name="label_vocabulary_test">单词量测试</string>
     <string name="label_prepare">准备学习数据</string>
     <string name="btn_login">登录</string>
     <string name="btn_feedback">反 馈</string>
@@ -456,7 +470,7 @@
     <string name="root_due_notice">"您的词根使用已到期
 请登录扇贝网到扇贝市场取消或续费"</string>
     <string name="know_words">你认识这个单词，今天不用再安排学习</string>
-    <string name="collins_charge">您的柯林斯过期了，去续费</string>
+    <string name="collins_charge">&lt;font color=#7B7977>您的柯林斯过期了，&lt;/font>&lt;u>&lt;font color=#209E85>去续费&lt;/font>&lt;/u></string>
     <string name="revocation">撤销</string>
     <string name="revocation_content">稍后将继续安排这个单词的学习</string>
     <string name="root_view_title">扇贝词根</string>
@@ -633,6 +647,8 @@
     <string name="query_forget_word">我忘了</string>
     <string name="splash_text">扇贝单词</string>
     <string name="splash_text_bottom">扇贝网  shanbay.com</string>
+    <string name="daily_sentence_focus">关注扇贝微信号 &lt;font color=#209E85>shanbay17&lt;/font> ,可以查看历史的每日一句</string>
+    <string name="checkin_reminder">每天在扇贝上完成学习并打卡就会收到 &lt;big>&lt;font color=#209E85>10&lt;/font>&lt;/big> 贝壳奖励,连续打卡可获得更多贝壳和相应的徽章</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="label_learn_words">背单词</string>
@@ -651,6 +667,8 @@
     <string name="label_forum">论坛</string>
     <string name="label_team">小组</string>
     <string name="label_choiceness">精选</string>
+    <string name="label_setting_notify">通 知</string>
+    <string name="label_setting_account">账号设置</string>
     <string name="label_experience_intro">为你提供词根、柯林斯、拼写等英语学习体验</string>
     <string name="label_experience">体验一下</string>
     <string name="label_word_experience">扇贝单词体验</string>

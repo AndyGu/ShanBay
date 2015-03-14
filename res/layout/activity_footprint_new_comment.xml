@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/padding_right_left" android:paddingTop="@dimen/padding_top_bottom" android:paddingRight="@dimen/padding_right_left" android:paddingBottom="@dimen/padding_top_bottom" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:scrollbarStyle="outsideOverlay" android:textSize="@dimen/textsize14" android:textColorHint="@android:color/darker_gray" android:gravity="start" android:id="@id/content" android:background="@android:color/white" android:paddingLeft="@dimen/padding10" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding10" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/footprint_new_comment_hint" android:layout_weight="1.0" />
+    <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_text" android:gravity="right" android:id="@id/limit" android:background="@android:color/white" android:padding="@dimen/padding3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="500" />
+</LinearLayout>

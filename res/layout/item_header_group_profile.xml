@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/list_header_storke" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="@dimen/height40" android:minHeight="@dimen/height50">
+        <com.shanbay.widget.RoundImageView android:layout_gravity="center_vertical" android:id="@id/img_group_avatar" android:layout_width="@dimen/width25" android:layout_height="@dimen/height25" android:layout_marginLeft="@dimen/margin3" android:layout_marginRight="@dimen/margin3" android:layout_marginBottom="@dimen/margin3" />
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.7">
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="@color/common_green" android:gravity="center_vertical" android:id="@id/textview_user_team_name" android:paddingRight="@dimen/padding3" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" android:layout_toLeftOf="@id/btn_join" android:layout_centerVertical="true" />
+                <Button android:textSize="@dimen/small_text_size" android:gravity="center" android:id="@id/btn_join" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin6" android:layout_marginRight="@dimen/margin6" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/SBBaseButton.Small" />
+            </RelativeLayout>
+            <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.3">
+                <TextView android:textSize="@dimen/tiny_text_size" android:textColor="@color/common_text" android:id="@id/textview_chairman" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/width60" android:singleLine="true" android:layout_toLeftOf="@id/textview_found_time" />
+                <TextView android:textSize="@dimen/tiny_text_size" android:textColor="@color/common_text" android:id="@id/textview_found_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin6" android:layout_marginRight="@dimen/margin6" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView android:id="@id/dashed_line_1" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="1.0dip" android:src="@drawable/dashed_line" />
+    <LinearLayout android:orientation="horizontal" android:background="@color/community_user_space" android:paddingTop="@dimen/margin3" android:layout_width="fill_parent" android:layout_height="@dimen/height30" android:minHeight="@dimen/height25">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/container_rank" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.15">
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_green" android:gravity="center" android:id="@id/textview_rank" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/tiny_text_size" android:textColor="@color/community_common_text" android:gravity="center" android:layout_width="fill_parent" android:layout_height="0.0dip" android:text="排名" android:layout_weight="0.7" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/container_checkin_percent" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.2">
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_green" android:gravity="center" android:id="@id/textview_checkin_percent" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/tiny_text_size" android:textColor="@color/community_common_text" android:gravity="center" android:layout_width="fill_parent" android:layout_height="0.0dip" android:text="打卡率" android:layout_weight="0.7" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/container_grow_up_point" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin2" android:layout_weight="0.2">
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_green" android:gravity="center" android:id="@id/textview_grow_up_point" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/tiny_text_size" android:textColor="@color/community_common_text" android:gravity="center" android:layout_width="fill_parent" android:layout_height="0.0dip" android:text="总成长值" android:layout_weight="0.7" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/container_rank_in_group" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.25">
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:src="@drawable/icon_ranking" android:scaleType="centerInside" android:layout_weight="1.0" />
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.7">
+                <TextView android:textSize="@dimen/tiny_text_size" android:textColor="@color/community_common_text" android:gravity="center" android:id="@id/text_rank" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="组内排名" android:layout_centerHorizontal="true" />
+                <ImageView android:id="@id/img_rank_rd_arrow" android:layout_width="@dimen/width6" android:layout_height="fill_parent" android:src="@drawable/icon_arrows" android:scaleType="centerInside" android:layout_toRightOf="@id/text_rank" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/container_award" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.2">
+            <ImageView android:layout_width="fill_parent" android:layout_height="0.0dip" android:src="@drawable/icon_badge" android:scaleType="centerInside" android:layout_weight="1.0" />
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.7">
+                <TextView android:textSize="@dimen/tiny_text_size" android:textColor="@color/community_common_text" android:gravity="center" android:id="@id/text_badge" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="徽章" android:layout_centerHorizontal="true" />
+                <ImageView android:layout_width="@dimen/width6" android:layout_height="fill_parent" android:src="@drawable/icon_arrows" android:scaleType="centerInside" android:layout_toRightOf="@id/text_badge" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView android:id="@id/dashed_line_2" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="1.0dip" android:src="@drawable/dashed_line" />
+    <LinearLayout android:orientation="vertical" android:id="@id/container_group_description" android:background="@android:color/white" android:paddingLeft="@dimen/padding8" android:paddingTop="@dimen/padding8" android:paddingRight="@dimen/padding8" android:paddingBottom="@dimen/padding3" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/textsize16" android:textColor="@color/community_common_text" android:id="@id/textview_motto" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lineSpacingMultiplier="1.2" />
+        <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_text" android:ellipsize="end" android:id="@id/textview_description" android:paddingTop="@dimen/padding3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:lineSpacingMultiplier="1.2" />
+        <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/common_green" android:layout_gravity="right|center" android:id="@id/textview_exspansion" android:padding="@dimen/padding3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="展开" />
+    </LinearLayout>
+</LinearLayout>

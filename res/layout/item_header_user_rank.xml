@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@color/community_group_rank_title" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:gravity="center" android:paddingTop="@dimen/padding2" android:paddingBottom="@dimen/padding2" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/rank_index" android:layout_weight="0.15" />
+    <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:paddingLeft="@dimen/padding3" android:paddingTop="@dimen/padding2" android:paddingBottom="@dimen/padding2" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/rank_user" android:layout_weight="0.55" />
+    <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:gravity="right" android:paddingTop="@dimen/padding2" android:paddingRight="@dimen/padding4" android:paddingBottom="@dimen/padding2" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/rank_user_points" android:layout_weight="0.3" />
+</LinearLayout>

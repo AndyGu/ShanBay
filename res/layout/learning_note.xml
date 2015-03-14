@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:scrollbarStyle="outsideOverlay" android:padding="@dimen/main_margin" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="#00000000" android:cacheColorHint="@android:color/transparent" android:footerDividersEnabled="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="top" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include android:id="@id/word" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/word" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/one_note_hint" style="@style/SWReviewLabel" />
+        <TextView android:textSize="@dimen/textsize15" android:textColor="@color/sw_common_text" android:gravity="center_vertical" android:id="@id/note_content" android:background="@drawable/btn_item" android:paddingLeft="@dimen/padding9" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding9" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/height25" android:text="Medium Text" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin15" android:layout_marginBottom="@dimen/margin5">
+            <Button android:layout_gravity="center" android:id="@id/btn_delete_note" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/delete_note" android:onClick="deleteNote" style="@style/SBBaseButton.Warn" />
+            <Button android:gravity="center" android:layout_gravity="center" android:id="@id/btn_collect_note" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/collect_note" android:onClick="collectNote" style="@style/SBBaseButton.Normal" />
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>

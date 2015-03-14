@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ffe0e0e0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/umeng_fb_bar_bg" android:layout_width="fill_parent" android:layout_height="@dimen/height25">
+        <TextView android:textSize="22.0dip" android:textColor="#ff565656" android:gravity="center" android:layout_gravity="center" android:id="@id/umeng_fb_conversation_title" android:layout_width="fill_parent" android:layout_height="@dimen/height25" android:text="我的反馈" />
+        <ImageButton android:id="@id/umeng_fb_imgBtn_submitFb" android:background="@drawable/umeng_fb_write_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin4" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ListView android:id="@android:id/list" android:background="#ffe9e9e9" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/umeng_fb_blank_selector" android:cacheColorHint="#ffe9e9e9" android:divider="#ffe9e9e9" android:dividerHeight="0.0dip" />
+</LinearLayout>

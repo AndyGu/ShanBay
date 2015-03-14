@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:background="#ffffffff" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" android:weightSum="3.0">
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:background="#ffffffff" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:id="@id/icons_view" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_text" android:gravity="center" android:id="@id/task_name" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View android:background="@color/common_gray" android:layout_width="0.8000001dip" android:layout_height="fill_parent" />
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="@dimen/textsize20" android:gravity="center" android:id="@id/num_today" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_text" android:gravity="center" android:id="@id/num_today_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="@dimen/textsize20" android:textColor="@color/common_green" android:gravity="center" android:id="@id/num_finish" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_text" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="已完成" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

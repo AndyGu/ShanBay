@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewAnimator android:id="@id/root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/has_note" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/padding7" android:paddingRight="@dimen/padding7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin9">
+            <include android:id="@id/word" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/word" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/note_hint" style="@style/SWReviewLabel" />
+            <LinearLayout android:orientation="vertical" android:id="@id/note_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin9" />
+        </LinearLayout>
+    </ScrollView>
+    <TextView android:textSize="@dimen/normal_text_size" android:textColor="@color/sw_common_text" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/no_note" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="85.19998dip" android:text="@string/no_note_hint" android:drawableTop="@drawable/ic_logo_note" />
+</ViewAnimator>

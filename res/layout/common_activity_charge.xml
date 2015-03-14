@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:scrollbarStyle="outsideOverlay" android:paddingLeft="@dimen/padding8" android:paddingTop="@dimen/padding8" android:paddingRight="@dimen/padding8" android:paddingBottom="@dimen/padding20" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="#00000000" android:cacheColorHint="@android:color/transparent" android:footerDividersEnabled="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@color/common_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/textsize23" android:textColor="@color/community_invite_friend_text" android:layout_gravity="center" android:id="@id/account_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin3" android:layout_marginBottom="@dimen/margin3" />
+        <TextView android:textSize="@dimen/textsize14" android:textColor="@color/common_charge_lable" android:background="@drawable/layer_text_boarder" android:paddingLeft="@dimen/padding5" android:paddingTop="@dimen/padding4" android:paddingBottom="@dimen/padding4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin8" android:text="点击下列选项选择贝壳购买方案" />
+        <LinearLayout android:orientation="vertical" android:id="@id/container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin6" />
+        <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_charge_lable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin7" android:layout_marginBottom="@dimen/margin3" android:text="更多获得贝壳的途径" />
+        <View android:background="@color/community_aluminum" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_marginTop="@dimen/margin1" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center" android:paddingRight="@dimen/padding3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_card" />
+            <TextView android:textSize="@dimen/textsize17" android:textColor="@color/common_charge_title_text" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="打卡" />
+        </LinearLayout>
+        <View android:id="@id/dashed_line_2" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_charge_text" android:id="@id/checkin_tip1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin3" android:layout_marginBottom="@dimen/margin3" />
+            <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_charge_text" android:id="@id/checkin_tip2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin3" android:layout_marginBottom="@dimen/margin3" />
+            <RelativeLayout android:orientation="horizontal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin3" android:layout_marginBottom="@dimen/margin3" android:onClick="checkDetail">
+                <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_charge_text" android:id="@id/checkin_tip3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+                    <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="详细" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_detail_arrow" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <View android:id="@id/dashed_line_3" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center" android:paddingRight="@dimen/padding3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_invite" />
+            <TextView android:textSize="@dimen/textsize17" android:textColor="@color/common_charge_title_text" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="邀请好友" />
+        </LinearLayout>
+        <View android:id="@id/dashed_line_4" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <RelativeLayout android:orientation="horizontal" android:background="@drawable/selector_bg_click" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="inviteFriend">
+            <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_charge_text" android:id="@id/invite_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_detail_arrow" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

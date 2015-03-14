@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/textsize16" android:textColor="@android:color/black" android:id="@id/topic_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginTop="@dimen/margin2" android:layout_marginRight="@dimen/margin5" android:layout_marginBottom="@dimen/margin4" android:minHeight="@dimen/height20" />
+    <TextView android:textSize="@dimen/textsize12" android:textColor="@color/common_text" android:gravity="right" android:layout_gravity="bottom|right|center" android:id="@id/forum_desp" android:layout_width="@dimen/width65" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin5" android:singleLine="true" />
+    <ImageView android:id="@id/dashed_line" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin3" />
+</LinearLayout>

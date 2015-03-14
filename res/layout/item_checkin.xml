@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="@dimen/padding5" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/textsize14" android:textColor="@color/common_checkin_text" android:id="@id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" />
+    <TextView android:textSize="@dimen/textsize14" android:textColor="@color/common_checkin_info_text" android:id="@id/info" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/date" android:layout_alignParentLeft="true" android:layout_alignParentRight="true" />
+    <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_checkin_text" android:ellipsize="end" android:id="@id/note" android:paddingTop="@dimen/padding2" android:paddingBottom="@dimen/padding2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin4" android:maxLines="2" android:layout_below="@id/info" android:layout_alignParentLeft="true" android:layout_alignParentRight="true" android:lineSpacingExtra="@dimen/height2" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+        <TextView android:textSize="@dimen/textsize14" android:textColor="@color/common_green" android:id="@id/like" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawableLeft="@drawable/icon_punch_card_midddle_press" />
+        <TextView android:textSize="@dimen/textsize14" android:textColor="@color/common_green" android:id="@id/comment" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:drawableLeft="@drawable/icon_reply_midddle_press" />
+    </LinearLayout>
+    <ImageView android:id="@id/dashed_line" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginTop="@dimen/margin5" android:src="@drawable/dashed_line" android:layout_below="@id/note" android:layout_alignParentBottom="true" />
+</RelativeLayout>

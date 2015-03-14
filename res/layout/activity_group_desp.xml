@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/root" android:paddingTop="@dimen/padding6" android:paddingBottom="@dimen/padding12" android:scrollbars="none" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/padding5" android:paddingRight="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:background="@drawable/reply_me_bg" android:padding="0.5dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:background="@android:color/white" android:paddingLeft="@dimen/padding5" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.shanbay.widget.RoundImageView android:id="@id/group_avatar" android:layout_width="@dimen/width20" android:layout_height="@dimen/height20" android:layout_marginRight="@dimen/margin12" android:scaleType="centerInside" />
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/group_avatar">
+                    <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_green" android:ellipsize="end" android:id="@id/group_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="2" />
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin2">
+                        <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:id="@id/group_leader" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                        <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:id="@id/group_create_time" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <ImageView android:id="@id/dashed_line_1" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="1.0dip" android:src="@drawable/dashed_line" />
+            <LinearLayout android:orientation="vertical" android:background="@color/common_gray" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <LinearLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.5" />
+                        <ImageView android:id="@id/dashed_line_vertical_1" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/dashed_line_vertical" android:layout_weight="1.0" />
+                        <ImageView android:id="@id/dashed_line_vertical_2" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/dashed_line_vertical" android:layout_weight="1.0" />
+                        <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/padding2" android:paddingBottom="@dimen/padding2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.5">
+                            <TextView android:textSize="@dimen/textsize17" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <TextView android:textSize="@dimen/textsize13" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:background="@color/common_transparent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="3.0">
+                        <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/padding2" android:paddingBottom="@dimen/padding2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <TextView android:textSize="@dimen/textsize17" android:textColor="@color/common_green" android:layout_gravity="center" android:id="@id/group_rank" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="排名" />
+                        </LinearLayout>
+                        <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/padding2" android:paddingBottom="@dimen/padding2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <TextView android:textSize="@dimen/textsize17" android:textColor="@color/common_green" android:layout_gravity="center" android:id="@id/group_member_count" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="成员数" />
+                        </LinearLayout>
+                        <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/padding2" android:paddingBottom="@dimen/padding2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <TextView android:textSize="@dimen/textsize17" android:textColor="@color/common_green" android:layout_gravity="center" android:id="@id/group_checkin_rate" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="打卡率" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <View android:id="@id/dashed_line_2" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <LinearLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.5" />
+                        <ImageView android:id="@id/dashed_line_vertical_3" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/dashed_line_vertical" android:layout_weight="1.0" />
+                        <ImageView android:id="@id/dashed_line_vertical_4" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/dashed_line_vertical" android:layout_weight="1.0" />
+                        <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/padding2" android:paddingBottom="@dimen/padding2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.5">
+                            <TextView android:textSize="@dimen/textsize17" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <TextView android:textSize="@dimen/textsize13" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="3.0">
+                        <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/padding2" android:paddingBottom="@dimen/padding2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <TextView android:textSize="@dimen/textsize17" android:textColor="@color/common_green" android:layout_gravity="center" android:id="@id/group_points" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="总成长值" />
+                        </LinearLayout>
+                        <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/padding2" android:paddingBottom="@dimen/padding2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <TextView android:textSize="@dimen/textsize17" android:textColor="@color/common_green" android:layout_gravity="center" android:id="@id/group_user_rank" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="组内排名" />
+                        </LinearLayout>
+                        <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/padding2" android:paddingBottom="@dimen/padding2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <TextView android:textSize="@dimen/textsize17" android:textColor="@color/common_green" android:layout_gravity="center" android:id="@id/group_user_points" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                            <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="贡献值" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+                <View android:id="@id/dashed_line_3" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            </LinearLayout>
+            <TextView android:textSize="@dimen/textsize12" android:textColor="@color/common_text" android:background="@android:color/white" android:paddingLeft="@dimen/padding5" android:paddingTop="@dimen/padding1" android:paddingBottom="@dimen/padding1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="小组简介" />
+            <ImageView android:id="@id/dashed_line_4" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="1.0dip" android:src="@drawable/dashed_line" />
+            <LinearLayout android:orientation="vertical" android:background="@color/common_gray" android:paddingLeft="@dimen/padding8" android:paddingTop="@dimen/padding8" android:paddingRight="@dimen/padding8" android:paddingBottom="@dimen/padding3" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/textsize16" android:textColor="@color/community_common_text" android:id="@id/group_motto" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lineSpacingMultiplier="1.2" />
+                <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_text" android:ellipsize="end" android:id="@id/group_descp" android:paddingTop="@dimen/padding3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:lineSpacingMultiplier="1.2" />
+                <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_green" android:layout_gravity="right" android:id="@id/group_descp_expan" android:padding="@dimen/padding3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="展开" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:background="@drawable/reply_me_bg" android:paddingTop="@dimen/padding2" android:paddingBottom="@dimen/padding2" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin15" android:minHeight="@dimen/height25" android:onClick="userRank">
+            <ImageView android:layout_gravity="center" android:background="@drawable/icon_ranking" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin3" />
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/community_common_text" android:layout_gravity="center" android:paddingLeft="@dimen/padding3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="组内排名" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:background="@drawable/reply_me_bg" android:paddingTop="@dimen/padding2" android:paddingBottom="@dimen/padding2" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin8" android:minHeight="@dimen/height25" android:onClick="badge">
+            <ImageView android:layout_gravity="center" android:background="@drawable/icon_badge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin3" />
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/community_common_text" android:layout_gravity="center" android:paddingLeft="@dimen/padding3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="徽章" />
+        </LinearLayout>
+        <Button android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin15" android:text="退出" android:onClick="quitGroup" style="@style/SBBaseButton.Warn" />
+    </LinearLayout>
+</ScrollView>

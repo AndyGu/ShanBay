@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:padding="@dimen/main_margin" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/progress_bar_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/main_margin" android:layout_marginBottom="@dimen/main_margin" layout="@layout/progress_bar" />
+    <include android:id="@id/word" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/progress_bar_container" layout="@layout/word" />
+    <ScrollView android:scrollbarStyle="outsideOverlay" android:id="@id/scroll" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="#00000000" android:cacheColorHint="@android:color/transparent" android:divider="@null" android:layout_below="@id/word" android:layout_centerHorizontal="true" android:layout_alignWithParentIfMissing="true" android:footerDividersEnabled="false" android:overScrollMode="never">
+        <LinearLayout android:orientation="vertical" android:id="@id/choice_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10">
+            <Button android:id="@id/choice_0" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="1" style="@style/SWTestButton" />
+            <Button android:id="@id/choice_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="2" style="@style/SWTestButton" />
+            <Button android:id="@id/choice_2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="3" style="@style/SWTestButton" />
+            <Button android:id="@id/choice_3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="4" style="@style/SWTestButton" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

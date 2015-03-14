@@ -4,69 +4,69 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StatFs;
+import android.util.Log;
 
-import com.shanbay.R;
 import com.shanbay.account.UserCache;
-import com.shanbay.community.service.WebResourceService;
 import com.shanbay.http.APIClient;
 import com.shanbay.util.DebugUtil;
 import com.shanbay.util.Misc;
+import com.shanbay.words.R;
 import com.shanbay.words.handler.WordsUserHandler;
 import com.shanbay.words.util.SessionDateUtils;
-import java.io.File;
 
-public class SplashActivity extends WordsActivity
-{
-  private WordsUserHandler mUserHandler;
+public class SplashActivity extends WordsActivity {
+	private WordsUserHandler mUserHandler;
 
-  private void checkDebugStatus()
-  {
-    if (DebugUtil.isOn(this))
-    {
-      String str = DebugUtil.getDomain(this);
-      APIClient.setDomain(str);
-      d("open debug, domain: " + str);
-    }
-  }
+	private void checkDebugStatus() {
+		Log.e("checkDebugStatus",
+				"DebugUtil.isOn(this)=" + DebugUtil.isOn(this));
+		if (DebugUtil.isOn(this)) {
+			String str = DebugUtil.getDomain(this);
+			Log.e("getDomain", "Domain=" + DebugUtil.getDomain(this));
+			APIClient.setDomain(str);
+			d("open debug, domain: " + str);
+		}
+	}
 
-  private void checkExternalStorageSize()
-  {
-    StatFs localStatFs = new StatFs(Environment.getExternalStorageDirectory().getPath());
-    if (localStatFs.getBlockSize() * localStatFs.getAvailableBlocks() / 1048576L < 10L)
-      showToast("ÊÖ»ú´æ´¢¿Õ¼ä²»×ã£¬¿ÉÄÜÓ°ÏìÈí¼þÊ¹ÓÃ£¬Çë¼°Ê±ÇåÀí");
-  }
+	private void checkExternalStorageSize() {
+		StatFs localStatFs = new StatFs(Environment
+				.getExternalStorageDirectory().getPath());
+		Log.e("checkExternalStorageSize", "size=" + localStatFs.getBlockSize()
+				* localStatFs.getAvailableBlocks() / 1048576L);
+		if (localStatFs.getBlockSize() * localStatFs.getAvailableBlocks()
+				/ 1048576L < 10L)
+			showToast("æ‰‹æœºå­˜å‚¨ç©ºé—´ä¸è¶³ï¼Œå¯èƒ½å½±å“è½¯ä»¶ä½¿ç”¨ï¼Œè¯·åŠæ—¶æ¸…ç†");
+	}
 
-  protected boolean isFirstActivity()
-  {
-    return true;
-  }
+	protected boolean isFirstActivity() {
+		return true;
+	}
 
-  protected void onCreate(Bundle bundle)
-  {
-    super.onCreate(bundle);
-    setContentView(R.layout.activity_splash);
-    this.mUserHandler = new WordsUserHandler(this);
-    checkDebugStatus();
-    checkExternalStorageSize();
-    WebResourceService.startService(this);
-    if (SessionDateUtils.isValid(this))
-    {
-      goHome();
-      finish();
-      return;
-    }
-    if (Misc.isInternetAvailable(this))
-    {
-      this.mUserHandler.user();
-      return;
-    }
-    if (UserCache.isUserLogin(this))
-    {
-      goHome();
-      finish();
-      return;
-    }
-    startActivity(new Intent(this, WelcomeActivity.class));
-    finish();
-  }
+	protected void onCreate(Bundle bundle) {
+		super.onCreate(bundle);
+		setContentView(R.layout.activity_splash);
+		this.mUserHandler = new WordsUserHandler(this);
+		checkDebugStatus();
+		checkExternalStorageSize();
+		// WebResourceService.startService(this);
+		if (SessionDateUtils.isValid(this)) {
+			goHome();
+			finish();
+			return;
+		}
+
+		if (Misc.isInternetAvailable(this)) {
+			Log.e("Misc.isInternetAvailable(this)",
+					Misc.isInternetAvailable(this) + "");
+			this.mUserHandler.user();
+			return;
+		}
+		if (UserCache.isUserLogin(this)) {
+			goHome();
+			finish();
+			return;
+		}
+		startActivity(new Intent(this, WelcomeActivity.class));
+		finish();
+	}
 }

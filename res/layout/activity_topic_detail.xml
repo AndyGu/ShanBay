@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.shanbay.community.widget.Pull2RefreshView android:orientation="vertical" android:id="@id/refresh_root" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.shanbay.community.widget.CustomScrollView android:id="@id/scroll" android:paddingLeft="@dimen/padding5" android:paddingRight="@dimen/padding5" android:scrollbars="none" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <WebView android:id="@id/html" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <include android:id="@id/item_load_more" layout="@layout/item_load_more" />
+            </LinearLayout>
+        </com.shanbay.community.widget.CustomScrollView>
+    </com.shanbay.community.widget.Pull2RefreshView>
+    <include android:id="@id/reply_frame" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" layout="@layout/item_reply_topic" />
+</RelativeLayout>

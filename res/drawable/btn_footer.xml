@@ -23,5 +23,5 @@
             </item>
         </layer-list>
     </item>
-    <item android:drawable="@*android:color/transparent" />
+    <item android:drawable="@android:color/transparent" />
 </selector>

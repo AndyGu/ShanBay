@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textSize="@dimen/normal_text_size" android:textColor="@color/common_text" android:id="@id/loadmore_btn" android:background="@drawable/btn_item" android:layout_width="fill_parent" android:layout_height="@dimen/height24" android:text="@string/loadmore" />
+    <RelativeLayout android:id="@id/loading" android:padding="@dimen/padding3" android:layout_width="fill_parent" android:layout_height="@dimen/height24">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+            <ProgressBar android:layout_gravity="center_vertical" android:id="@id/progressBar1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin7" android:indeterminate="true" android:indeterminateBehavior="repeat" style="?android:attr/progressBarStyleSmall" />
+            <TextView android:textSize="@dimen/normal_text_size" android:textColor="@color/common_text" android:layout_gravity="center_vertical" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/loading" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

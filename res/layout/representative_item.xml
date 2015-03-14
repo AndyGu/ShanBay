@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:background="@drawable/btn_item" android:paddingLeft="@dimen/padding9" android:paddingTop="@dimen/padding4" android:paddingRight="@dimen/padding9" android:paddingBottom="@dimen/padding4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="50.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/btn_add" android:background="@drawable/btn_add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="@dimen/normal_text_size" android:textColor="@color/common_green" android:gravity="center_vertical" android:id="@id/word" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="flect,flex" android:layout_toLeftOf="@id/btn_add" android:layout_alignParentLeft="true" />
+    <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/sw_roots_related_text" android:gravity="center_vertical" android:id="@id/note" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin5" android:text="n. 命令, 指令, 要求，托管地nvt. 把(某一地区)置于委任管理下" android:layout_toLeftOf="@id/btn_add" android:layout_below="@id/word" android:layout_alignParentLeft="true" />
+</RelativeLayout>

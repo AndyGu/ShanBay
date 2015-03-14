@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ListView android:scrollbarStyle="outsideOverlay" android:id="@id/checkin_list" android:paddingBottom="@dimen/padding5" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:divider="@null" android:footerDividersEnabled="false" />
+        <TextView android:textSize="@dimen/textsize13" android:gravity="center" android:id="@id/no_checkin_makeup" android:paddingTop="@dimen/padding10" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="没有补打卡信息" />
+    </FrameLayout>
+</LinearLayout>

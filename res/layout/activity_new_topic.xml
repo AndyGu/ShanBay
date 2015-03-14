@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:paddingLeft="@dimen/padding5" android:paddingTop="@dimen/padding8" android:paddingRight="@dimen/padding5" android:scrollbars="none" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true" android:layout_above="@id/upload_pictures">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <EditText android:textSize="@dimen/textsize16" android:id="@id/topic_title" android:background="@drawable/btn_item_normal" android:paddingLeft="@dimen/padding6" android:paddingRight="@dimen/padding6" android:layout_width="fill_parent" android:layout_height="@dimen/height20" android:layout_marginBottom="@dimen/margin5" android:hint="@string/topic_title" android:lines="1" android:singleLine="true" android:selectAllOnFocus="true" />
+            <LinearLayout android:orientation="vertical" android:background="@drawable/btn_item_normal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <EditText android:textSize="@dimen/textsize16" android:gravity="top|left|center" android:id="@id/topic_content" android:background="@color/common_transparent" android:paddingLeft="@dimen/padding6" android:paddingTop="@dimen/padding8" android:paddingRight="@dimen/padding6" android:paddingBottom="@dimen/padding8" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/height60" android:hint="@string/topic_content" android:selectAllOnFocus="true" android:inputType="textMultiLine" />
+                <LinearLayout android:orientation="horizontal" android:id="@id/addition_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin2" android:layout_marginRight="@dimen/margin2">
+                    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@id/images_container" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <ImageView android:layout_gravity="bottom" android:id="@id/add_images" android:background="@color/community_user_space" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin2" android:src="@drawable/icon_add" android:scaleType="centerInside" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/upload_pictures" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="@dimen/height20" android:layout_alignParentBottom="true">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_image" android:scaleType="centerInside" />
+    </LinearLayout>
+</RelativeLayout>

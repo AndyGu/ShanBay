@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:paddingLeft="@dimen/main_margin" android:paddingTop="@dimen/main_margin" android:paddingRight="@dimen/main_margin" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/progress_bar_container" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/progress_bar" />
+    <include android:id="@id/word" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/progress_bar_container" layout="@layout/word" />
+    <ScrollView android:scrollbarStyle="outsideOverlay" android:id="@id/scroll" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="#00000000" android:cacheColorHint="@android:color/transparent" android:divider="@null" android:layout_above="@id/btns_container" android:layout_below="@id/word" android:layout_centerHorizontal="true" android:layout_alignWithParentIfMissing="true" android:footerDividersEnabled="false" android:overScrollMode="never">
+        <include android:id="@id/recognition" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/layout_test_recognition" />
+    </ScrollView>
+    <LinearLayout android:orientation="vertical" android:id="@id/btns_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" android:layout_marginBottom="@dimen/margin5" android:layout_alignParentBottom="true">
+        <Button android:id="@id/known" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/label_known" style="@style/SWTestButton.Known" />
+        <Button android:id="@id/unknown" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/label_unknown" style="@style/SWTestButton.Unknown" />
+        <Button android:layout_gravity="center" android:id="@id/detail_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/self_detail" style="@style/SBBaseButton.Normal" />
+    </LinearLayout>
+</RelativeLayout>

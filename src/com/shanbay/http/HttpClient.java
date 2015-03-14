@@ -1,6 +1,8 @@
 package com.shanbay.http;
 
 import android.content.Context;
+import android.util.Log;
+
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestHandle;
@@ -61,13 +63,12 @@ public abstract class HttpClient
     return getAsyncHttpClient().delete(paramContext, str, paramAsyncHttpResponseHandler);
   }
 
-  public RequestHandle get(Context paramContext, String paramString, RequestParams paramRequestParams, AsyncHttpResponseHandler paramAsyncHttpResponseHandler)
+  public RequestHandle get(Context mContext, String paramStr, RequestParams params, AsyncHttpResponseHandler ahrh)
   {
-    String str = getAbsoluteUrl(paramString);
-    d("get:" + str);
-    d("params:" + paramRequestParams);
+    String url = getAbsoluteUrl(paramStr);
+    Log.e("HttpClient.get()", "url=" + url+" params=" + params);
     getAsyncHttpClient().addHeader(SHANBAY_API_VERSION_HEADER_KEY, SHANBAY_API_VERSION_HEADER_VAL);
-    return getAsyncHttpClient().get(paramContext, str, paramRequestParams, paramAsyncHttpResponseHandler);
+    return getAsyncHttpClient().get(mContext, url, params, ahrh);
   }
 
   public AsyncHttpClient getAsyncHttpClient()

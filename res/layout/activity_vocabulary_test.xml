@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/height50" android:src="@drawable/bg_vocabulary_test_logo" android:scaleType="fitCenter" />
+        <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="3.0" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/vocabulary_test_start_container" android:background="@color/common_green" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="@dimen/textsize25" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10" android:text="两分钟，测试你的单词量" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="@dimen/textsize30" android:textColor="@color/common_green" android:gravity="center" android:id="@id/vocabulary_test_start_btn" android:background="@drawable/btn_vocabulary_test_start" android:layout_width="@dimen/width100" android:layout_height="@dimen/height100" android:text="开始" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/vocabulary_test_main_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin5" android:layout_marginTop="@dimen/margin5" android:layout_marginRight="@dimen/margin5">
+        <ScrollView android:scrollbarStyle="outsideOverlay" android:paddingBottom="@dimen/padding10" android:scrollbars="none" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/margin5" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:divider="@android:color/transparent" android:layout_below="@id/vocabulary_test_progress_bar" android:footerDividersEnabled="false">
+            <LinearLayout android:orientation="vertical" android:id="@id/vocabulary_test_options_container" android:background="@drawable/bg_vocabulary_test_border" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/textsize30" android:textColor="@color/common_green" android:gravity="center" android:id="@id/vocabulary_test_word" android:padding="@dimen/padding7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="begin" />
+                <View android:id="@id/vocabulary_test_dash_line1" android:background="@drawable/dashed_line_green" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                <TextView android:textSize="@dimen/textsize18" android:textColor="@color/sw_text_color_green" android:id="@id/vocabulary_test_option1" android:padding="@dimen/padding7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="4. adj.整个的,完全的,未受损的,(人)全面发展的" android:lineSpacingExtra="@dimen/height3" />
+                <View android:id="@id/vocabulary_test_dash_line2" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                <TextView android:textSize="@dimen/textsize18" android:textColor="@color/sw_text_color_green" android:id="@id/vocabulary_test_option2" android:padding="@dimen/padding7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="4. adj.整个的,完全的,未受损的,(人)全面发展的" android:lineSpacingExtra="@dimen/height3" />
+                <View android:id="@id/vocabulary_test_dash_line3" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                <TextView android:textSize="@dimen/textsize18" android:textColor="@color/sw_text_color_green" android:id="@id/vocabulary_test_option3" android:padding="@dimen/padding7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="4. adj.整个的,完全的,未受损的,(人)全面发展的" android:lineSpacingExtra="@dimen/height3" />
+                <View android:id="@id/vocabulary_test_dash_line4" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                <TextView android:textSize="@dimen/textsize18" android:textColor="@color/sw_text_color_green" android:id="@id/vocabulary_test_option4" android:padding="@dimen/padding7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="4. adj.整个的,完全的,未受损的,(人)全面发展的" android:lineSpacingExtra="@dimen/height3" />
+                <View android:id="@id/vocabulary_test_dash_line5" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                <TextView android:textSize="@dimen/textsize18" android:textColor="@color/sw_text_color_green" android:id="@id/vocabulary_test_option5" android:padding="@dimen/padding7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="5. 不认识" android:lineSpacingExtra="@dimen/height3" />
+            </LinearLayout>
+        </ScrollView>
+        <com.shanbay.words.view.ProgressBar android:id="@id/vocabulary_test_progress_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+        <RelativeLayout android:id="@id/vocabulary_test_finish_container" android:background="@drawable/bg_vocabulary_test_border" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/vocabulary_test_finish_number_contanier" android:background="@drawable/bg_vocabulary_test_border_top_green" android:paddingTop="@dimen/padding15" android:paddingBottom="@dimen/padding15" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/textsize15" android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="你的单词量" />
+                <TextView android:textSize="@dimen/textsize60" android:textColor="@android:color/white" android:id="@id/vocabulary_test_finish_number" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <RelativeLayout android:id="@id/vocabulary_test_finish_praise_contanier" android:padding="@dimen/padding10" android:layout_width="fill_parent" android:layout_height="@dimen/height60" android:layout_below="@id/vocabulary_test_finish_number_contanier">
+                <TextView android:textSize="@dimen/textsize20" android:textColor="@color/sw_common_black" android:id="@id/vocabulary_test_finish_praise" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+                <TextView android:textSize="@dimen/textsize15" android:textColor="@color/sw_common_text" android:id="@id/vocabulary_test_finish_praise_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/vocabulary_test_finish_hint_contanier" android:background="@drawable/bg_vocabulary_test_border_bottom" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/vocabulary_test_finish_praise_contanier">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_share_green" />
+                <TextView android:textSize="@dimen/textsize18" android:textColor="@color/common_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="点击右上角分享" />
+            </LinearLayout>
+        </RelativeLayout>
+        <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="3.0" />
+    </LinearLayout>
+</RelativeLayout>

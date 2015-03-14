@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/selector_charge_item" android:paddingLeft="@dimen/padding5" android:paddingTop="@dimen/padding2" android:paddingRight="@dimen/padding5" android:paddingBottom="@dimen/padding2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/textsize16" android:textColor="@color/selector_charge_item_text" android:layout_gravity="center" android:id="@id/rmb" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.25" />
+    <TextView android:textSize="@dimen/textsize19" android:textColor="@color/selector_charge_item_text" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="购买" android:layout_weight="0.25" />
+    <TextView android:textSize="@dimen/textsize27" android:textColor="@color/selector_charge_item_text" android:layout_gravity="center" android:id="@id/coins" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.35" />
+    <TextView android:textSize="@dimen/textsize14" android:textColor="@color/selector_charge_item_text" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="贝壳" android:layout_weight="0.15" />
+</LinearLayout>

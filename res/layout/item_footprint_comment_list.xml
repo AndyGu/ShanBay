@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/footprint_container" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:padding="@dimen/padding4" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.shanbay.widget.RoundImageView android:id="@id/avatar" android:layout_width="@dimen/width18" android:layout_height="@dimen/height18" android:scaleType="fitXY" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin4">
+            <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_green" android:id="@id/nickname" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+            <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_text_dark" android:id="@id/content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin4" />
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/textsize12" android:textColor="@color/common_text" android:layout_gravity="bottom|left|center" android:id="@id/time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin2" android:layout_alignParentLeft="true" />
+                <TextView android:textSize="@dimen/textsize12" android:textColor="@color/common_text" android:ellipsize="end" android:layout_gravity="bottom|right|center" android:id="@id/img_reply" android:paddingLeft="@dimen/padding2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_reply" android:maxLines="5" android:drawableLeft="@drawable/icon_choiceness_reply" android:drawablePadding="@dimen/padding2" android:layout_alignBaseline="@id/time" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <View android:id="@id/dashed_line" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@id/download" android:title="下载进度" app:showAsAction="always" />
+    <item android:icon="@drawable/icon_search_gray" android:id="@id/search" android:title="搜索" app:showAsAction="always|collapseActionView" app:actionViewClass="android.support.v7.widget.SearchView" />
+    <item android:icon="@drawable/icon_delete_too_simple" android:id="@id/easy" android:title="太简单" app:showAsAction="always" />
+</menu>

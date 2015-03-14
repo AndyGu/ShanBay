@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin39" android:src="@drawable/icon_done" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10">
+        <TextView android:textSize="@dimen/textsize22" android:textColor="@color/common_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/common_finish_choice_test_big" />
+        <TextView android:textSize="@dimen/textsize18" android:textColor="@color/common_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/common_finish_choice_test" />
+    </LinearLayout>
+    <Button android:textSize="@dimen/textsize18" android:layout_gravity="center_horizontal" android:id="@id/go_home_btn" android:layout_width="@dimen/width110" android:layout_height="@dimen/height20" android:layout_marginTop="@dimen/margin10" android:layout_marginBottom="@dimen/margin42" android:text="返回首页" style="@style/SBBaseButton.Big" />
+</LinearLayout>

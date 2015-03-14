@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/init_logo_gray" android:layout_width="@dimen/width70" android:layout_height="@dimen/height70" android:src="@drawable/ic_logo_initialize" />
+    <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5">
+        <TextView android:textSize="@dimen/textsize12" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/init_hint" style="@style/SBShadowText" />
+        <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin3" style="?android:attr/progressBarStyleSmall" />
+    </LinearLayout>
+    <Button android:textSize="@dimen/textsize17" android:textColor="@android:color/white" android:id="@id/init_manual_load" android:background="@drawable/btn_manual_load" android:layout_width="@dimen/width60" android:layout_height="@dimen/height15" android:layout_marginTop="@dimen/margin5" android:text="手动加载" />
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/join_group_container" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:background="#ff4dc3a9" android:layout_width="0.0dip" android:layout_height="@dimen/height30" android:src="@drawable/icon_join_team" android:scaleType="centerInside" android:layout_weight="3.0" />
+    <RelativeLayout android:orientation="vertical" android:background="@color/sw_home_white_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="5.0">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerInParent="true">
+            <TextView android:textSize="@dimen/textsize20" android:textColor="#ff4fc1a7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="加入小组" />
+            <TextView android:textSize="@dimen/textsize10" android:textColor="@color/sw_text_color_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin1" android:text="和小伙伴们一起打卡，分享快乐" />
+        </LinearLayout>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bg_triangle_join_group" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

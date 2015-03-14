@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/padding5" android:paddingRight="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.shanbay.ProgressBar.PullToRefreshLayout android:id="@id/ptr_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ListView android:id="@id/list" android:paddingTop="@dimen/padding8" android:scrollbars="none" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/topic_item_select_bg" android:cacheColorHint="@android:color/transparent" android:divider="@null" android:footerDividersEnabled="false" />
+    </com.shanbay.ProgressBar.PullToRefreshLayout>
+</LinearLayout>

@@ -840,7 +840,7 @@
     <dimen name="menu_item_image_height">34.0dip</dimen>
     <dimen name="menu_item_image_width">34.0dip</dimen>
     <dimen name="menu_text_margin6">16.0dip</dimen>
-    <dimen name="textsize_actionbar_download">12.0sp</dimen>
+    <dimen name="textsize_actionbar_download">10.0sp</dimen>
     <dimen name="textsize_stat_progress">12.0sp</dimen>
     <dimen name="experience_img_top_margin">92.0dip</dimen>
     <dimen name="exp_radio_text">16.0sp</dimen>

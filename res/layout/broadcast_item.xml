@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/btn_item_normal" android:paddingLeft="@dimen/padding10" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding10" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/textsize17" android:textColor="@color/common_feedback_text" android:textColorLink="@color/common_green" android:linksClickable="true" android:id="@id/content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin3" android:layout_marginBottom="@dimen/margin4" android:minHeight="@dimen/height25" android:lineSpacingExtra="@dimen/height3" />
+</LinearLayout>

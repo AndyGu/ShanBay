@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="center_vertical" android:background="@drawable/bg_item_group_notice" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/list_item_press" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="@dimen/item_notice_textsize" android:textColor="@color/bright_gray" android:gravity="center_vertical" android:id="@id/textview_content" android:paddingLeft="@dimen/padding7" android:paddingTop="@dimen/padding7" android:paddingRight="@dimen/padding7" android:paddingBottom="@dimen/padding3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="关于新版扇贝单词" />
+        <TextView android:textSize="@dimen/item_notice_date_textsize" android:textColor="@color/aluminum" android:id="@id/textview_date" android:paddingLeft="@dimen/padding7" android:paddingTop="@dimen/padding3" android:paddingRight="@dimen/padding7" android:paddingBottom="@dimen/padding7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="关于新版扇贝单词" />
+        <ImageView android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    </LinearLayout>
+</RelativeLayout>

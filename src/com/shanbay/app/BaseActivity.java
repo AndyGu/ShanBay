@@ -1,23 +1,19 @@
 package com.shanbay.app;
 
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
-import com.shanbay.Config;
-import com.shanbay.R.string;
 import com.shanbay.http.APIClient;
 import com.shanbay.http.ModelResponseException;
 import com.shanbay.util.LogUtils;
 import com.shanbay.widget.ShanbayProgressDialog;
-import com.umeng.analytics.MobclickAgent;
-import com.umeng.update.UmengUpdateAgent;
+import com.shanbay.words.R;
+
 import java.util.LinkedList;
 
 public abstract class BaseActivity<T extends APIClient> extends ActionBarActivity
@@ -152,13 +148,13 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
 
   protected void onFirstActivity()
   {
-    if (Config.UMENG_ENABLE)
-      MobclickAgent.onError(this);
+//    if (Config.UMENG_ENABLE)
+//      MobclickAgent.onError(this);
   }
 
   protected void onMainActivity()
   {
-    if (Config.UMENG_AUTO_UPDATE)
+//    if (Config.UMENG_AUTO_UPDATE)
       checkUpdate();
   }
 
@@ -183,8 +179,8 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
   protected void onPause()
   {
     super.onPause();
-    if (Config.UMENG_ENABLE)
-      MobclickAgent.onPause(this);
+//    if (Config.UMENG_ENABLE)
+//      MobclickAgent.onPause(this);
     d("onPause");
   }
 
@@ -197,8 +193,8 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
   protected void onResume()
   {
     super.onResume();
-    if (Config.UMENG_ENABLE)
-      MobclickAgent.onResume(this);
+//    if (Config.UMENG_ENABLE)
+//      MobclickAgent.onResume(this);
     this.mStateSaved = false;
     d("onResume");
   }
@@ -221,8 +217,8 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
   {
     super.onStart();
     this.mStateSaved = false;
-    if (Config.GA_ENABLE)
-      EasyTracker.getInstance(this).activityStart(this);
+//    if (Config.GA_ENABLE)
+//      EasyTracker.getInstance(this).activityStart(this);
     d("onStart");
   }
 
@@ -230,8 +226,8 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
   {
     super.onStop();
     this.mStateSaved = true;
-    if (Config.GA_ENABLE)
-      EasyTracker.getInstance(this).activityStop(this);
+//    if (Config.GA_ENABLE)
+//      EasyTracker.getInstance(this).activityStop(this);
     d("onStop");
   }
 
@@ -240,30 +236,31 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
     showToast(getString(R.string.msg_server_failure));
   }
 
-  public AlertDialog showExceptionDialog(ModelResponseException paramModelResponseException)
-  {
-    AlertDialog localAlertDialog = new AlertDialog.Builder(this).setMessage(paramModelResponseException.getMessage()).setPositiveButton(getString(R.string.ok), null).create();
-    if (!isFinishing())
-      localAlertDialog.show();
-    return localAlertDialog;
-  }
+	public AlertDialog showExceptionDialog(ModelResponseException mre) {
+		AlertDialog localAlertDialog = new AlertDialog.Builder(this)
+				.setMessage(mre.getMessage())
+				.setPositiveButton(getString(R.string.ok), null).create();
+		if (!isFinishing())
+			localAlertDialog.show();
+		return localAlertDialog;
+	}
 
-  public AlertDialog showExceptionDialog(ModelResponseException paramModelResponseException, boolean paramBoolean)
-  {
-    if (!paramBoolean);
-    for (AlertDialog localAlertDialog = new AlertDialog.Builder(this).setMessage(paramModelResponseException.getMessage()).setPositiveButton(getString(R.string.ok), null).create(); ; localAlertDialog = new AlertDialog.Builder(this).setMessage(paramModelResponseException.getMessage()).setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener()
-    {
-      public void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt)
-      {
-        BaseActivity.this.finish();
-      }
-    }).create())
-    {
-      if (!isFinishing())
-        localAlertDialog.show();
-      return localAlertDialog;
-    }
-  }
+	public AlertDialog showExceptionDialog(ModelResponseException mre,
+			boolean paramBoolean) {
+		AlertDialog localAlertDialog = new AlertDialog.Builder(this)
+				.setMessage(mre.getMessage())
+				.setPositiveButton(getString(R.string.ok),
+						new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface arg0, int arg1) {
+								BaseActivity.this.finish();
+							}
+						}).create();
+
+		if (!isFinishing())
+			localAlertDialog.show();
+		return localAlertDialog;
+	}
 
   public void showProgressDialog()
   {
@@ -272,21 +269,20 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
 
   public void showProgressDialog(String paramString)
   {
-    if (isFinishing());
-    do
-    {
-      return;
-      if (this.mProgressDialog == null)
-      {
-        this.mProgressDialog = new ShanbayProgressDialog(this);
-        if (paramString != null)
-          this.mProgressDialog.setContentMessage(paramString);
-      }
-    }
-    while (this.mProgressDialog.isShowing());
-    this.mProgressDialog.setCanceledOnTouchOutside(false);
-    this.mProgressDialog.setCancelable(true);
-    this.mProgressDialog.show();
+	  if(this.mProgressDialog == null){
+		  this.mProgressDialog = new ShanbayProgressDialog(this);
+		  this.mProgressDialog.setCanceledOnTouchOutside(false);
+		  this.mProgressDialog.setCancelable(true);
+		  this.mProgressDialog.show();
+	  }else{
+		  if (paramString != null)
+	          this.mProgressDialog.setContentMessage(paramString);
+		  if(!this.mProgressDialog.isShowing()){
+			  this.mProgressDialog.setCanceledOnTouchOutside(false);
+			  this.mProgressDialog.setCancelable(true);
+			  this.mProgressDialog.show();
+		  }
+	  }
   }
 
   public void showToast(int paramInt)

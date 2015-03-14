@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView android:padding="@dimen/padding10" android:scrollbars="none" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="#00000000" android:cacheColorHint="@android:color/transparent" android:divider="@null" android:footerDividersEnabled="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/printscreen_image1" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_margin="@dimen/margin3" android:adjustViewBounds="true" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/printscreen_image2" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_margin="@dimen/margin3" android:adjustViewBounds="true" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/printscreen_image3" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_margin="@dimen/margin3" android:adjustViewBounds="true" />
+    </LinearLayout>
+</HorizontalScrollView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/learning_test_container" android:background="#ee209e80" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingBottom="@dimen/margin10" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin10" android:src="@drawable/icon_test_big" />
+        <TextView android:textSize="@dimen/textsize28" android:textColor="@android:color/white" android:id="@id/learning_test_new_words" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10" android:text="测试新词" android:drawableRight="@drawable/icon_arrow_test_words" android:drawablePadding="@dimen/padding5" />
+        <TextView android:textSize="@dimen/textsize28" android:textColor="@android:color/white" android:id="@id/learning_test_all_words" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10" android:text="测试全部" android:drawableRight="@drawable/icon_arrow_test_words" android:drawablePadding="@dimen/padding5" />
+        <View android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="@dimen/margin5" android:layout_marginTop="@dimen/margin15" android:layout_marginRight="@dimen/margin5" />
+        <Button android:textSize="@dimen/textsize28" android:textColor="@android:color/white" android:id="@id/learning_test_vocabulary" android:background="@drawable/btn_learning_test_vocabulary" android:layout_width="@dimen/width94" android:layout_height="@dimen/height26" android:layout_marginTop="@dimen/margin25" android:text="单词量测试" />
+    </LinearLayout>
+    <ImageView android:id="@id/learning_test_back" android:layout_width="@dimen/width15" android:layout_height="@dimen/height15" android:layout_margin="@dimen/margin5" android:src="@drawable/icon_test_back" android:scaleType="centerInside" />
+</RelativeLayout>

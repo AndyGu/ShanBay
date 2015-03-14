@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/container" android:paddingLeft="@dimen/padding5" android:paddingTop="@dimen/padding4" android:paddingRight="@dimen/padding5" android:paddingBottom="@dimen/padding4" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <com.shanbay.widget.RoundImageView android:id="@id/avatar" android:layout_width="@dimen/width20" android:layout_height="@dimen/height20" android:scaleType="fitXY" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_feedback_text" android:ellipsize="end" android:gravity="left|center" android:layout_gravity="center" android:id="@id/subject" android:layout_width="0.0dip" android:layout_height="wrap_content" android:lines="1" android:scrollHorizontally="true" android:layout_weight="3.5" />
+        <TextView android:textSize="@dimen/textsize12" android:textColor="@color/common_feedback_text" android:gravity="left|center" android:layout_gravity="right|center" android:id="@id/last_modify_time" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="12小时前" android:layout_weight="1.0" />
+    </LinearLayout>
+    <ImageView android:id="@id/dashed_line" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/container" />
+</RelativeLayout>

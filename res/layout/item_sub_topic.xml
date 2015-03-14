@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/height30"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/list_item_press" android:paddingTop="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="1.0">
+        <RelativeLayout android:paddingLeft="@dimen/padding5" android:paddingRight="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.78">
+            <com.shanbay.widget.RoundImageView android:id="@id/avatar" android:layout_width="@dimen/width20" android:layout_height="@dimen/height20" android:scaleType="fitXY" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin6" android:layout_toRightOf="@id/avatar" android:layout_centerVertical="true">
+                <RelativeLayout android:id="@id/notice_container" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <LinearLayout android:orientation="horizontal" android:id="@id/top_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true">
+                        <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin2" android:src="@drawable/point_green" />
+                        <TextView android:textSize="@dimen/textsize16" android:textColor="@color/topic_top" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/textview_top" android:background="@drawable/bg_topic_top" android:paddingLeft="@dimen/padding2" android:paddingTop="@dimen/padding1" android:paddingRight="@dimen/padding2" android:paddingBottom="@dimen/padding1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin4" android:text="@string/topic_lay_top" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:id="@id/new_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true">
+                        <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin2" android:src="@drawable/point_orange" />
+                        <TextView android:textSize="@dimen/textsize16" android:textColor="@color/topic_new" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/textview_new" android:background="@drawable/bg_topic_new" android:paddingLeft="@dimen/padding2" android:paddingTop="@dimen/padding1" android:paddingRight="@dimen/padding2" android:paddingBottom="@dimen/padding1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin4" android:text="新帖" />
+                    </LinearLayout>
+                </RelativeLayout>
+                <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_feedback_text" android:gravity="left|center" android:layout_gravity="right|center" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" android:layout_toRightOf="@id/notice_container" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout android:paddingLeft="@dimen/padding25" android:paddingRight="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="@dimen/margin6" android:layout_marginBottom="@dimen/margin3" android:layout_weight="0.22">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+                <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_green" android:gravity="center_vertical" android:id="@id/author" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/width50" android:singleLine="true" />
+                <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:gravity="center_vertical" android:id="@id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin3" android:singleLine="true" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:layout_gravity="center_vertical" android:id="@id/replys" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                <ImageView android:layout_gravity="center_vertical" android:id="@id/img_reply" android:paddingLeft="@dimen/padding2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_reply_midddle" />
+            </LinearLayout>
+        </RelativeLayout>
+        <ImageView android:id="@id/img_dashed_line" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    </LinearLayout>
+</LinearLayout>

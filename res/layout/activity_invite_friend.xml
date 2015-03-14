@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:scrollbarStyle="outsideOverlay" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="#00000000" android:cacheColorHint="@android:color/transparent" android:footerDividersEnabled="false"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:background="@color/community_invite_bg" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/invite_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10" android:layout_marginBottom="@dimen/margin10" android:src="@drawable/icon_invite_big" android:layout_centerInParent="true" />
+            <TextView android:textSize="@dimen/normal_text_size" android:textColor="@android:color/white" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="通过下列两种方式进行邀请" android:layout_below="@id/invite_img" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/share_icons" android:paddingLeft="@dimen/padding5" android:paddingRight="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:id="@id/image_share_wechat_container" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.5">
+                    <ImageView android:id="@id/image_share_wechat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_share_weixin" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:id="@id/image_share_sina_container" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.5">
+                    <ImageView android:id="@id/image_share_sina" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_share_xinlang" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:id="@id/dashed_line" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/padding7" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding7" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/textsize20" android:textColor="@color/community_invite_friend_text" android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="邀请链接" />
+            <TextView android:textSize="@dimen/textsize20" android:textColor="@color/common_green" android:id="@id/textview_invite_link" android:background="@drawable/selector_bg_click" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" />
+            <TextView android:textSize="@dimen/textsize16" android:textColor="@color/community_invite_friend_text" android:gravity="center_vertical" android:id="@id/textview_invite" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin15" android:text="每位受邀请用户一旦打卡超过7天，你将获得500贝壳的奖励\nTa也将获得200贝壳的奖励" android:lineSpacingExtra="@dimen/height7" />
+            <TextView android:textSize="@dimen/textsize14" android:textColor="@color/community_invite_friend_text" android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="（贝壳可用于购买扇贝网的各类产品，如：智慧词根，柯林斯词典，阅读书籍，炼句课程,听力等等）" android:lineSpacingExtra="@dimen/height4" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

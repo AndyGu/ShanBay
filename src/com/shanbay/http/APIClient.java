@@ -1,6 +1,8 @@
 package com.shanbay.http;
 
 import android.content.Context;
+import android.util.Log;
+
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -115,14 +117,14 @@ public class APIClient extends HttpClient
 
   public void cacheSound(String paramString, File paramFile, AsyncHttpResponseHandler paramAsyncHttpResponseHandler)
   {
-    if (!paramFile.exists())
-    {
-      getAsyncHttpClient().get(paramString, new SoundCacheResponseHandler(paramFile, paramAsyncHttpResponseHandler));
-      d("cache file fail: " + paramString);
-      return;
-    }
-    ((SoundCacheResponseHandler)paramAsyncHttpResponseHandler)..onSuccess(0, paramFile.getAbsolutePath());
-    d("cache file success: " + paramString);
+//    if (!paramFile.exists())
+//    {
+//      getAsyncHttpClient().get(paramString, new SoundCacheResponseHandler(paramFile, paramAsyncHttpResponseHandler));
+//      d("cache file fail: " + paramString);
+//      return;
+//    }
+//    ((SoundCacheResponseHandler)paramAsyncHttpResponseHandler)..onSuccess(0, paramFile.getAbsolutePath());
+//    d("cache file success: " + paramString);
   }
 
   public void chargeAlipay(Context paramContext, float paramFloat, AsyncHttpResponseHandler paramAsyncHttpResponseHandler)
@@ -563,9 +565,10 @@ public class APIClient extends HttpClient
     get(paramContext, "/api/v1/team/{team_id}/".replace("{team_id}", Long.toString(paramLong)), null, paramAsyncHttpResponseHandler);
   }
 
-  public void user(Context paramContext, ModelResponseHandler<User> paramModelResponseHandler)
+  public void user(Context mContext, ModelResponseHandler<User> mrh)
   {
-    get(paramContext, "api/v1/common/user/", null, paramModelResponseHandler);
+	  Log.e("APIClient.user()", "APIClient.user()");
+    get(mContext, "api/v1/common/user/", null, mrh);
   }
 
   public void userAccount(Context paramContext, AsyncHttpResponseHandler paramAsyncHttpResponseHandler)

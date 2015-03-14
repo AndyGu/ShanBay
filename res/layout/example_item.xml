@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/btn_item" android:paddingLeft="@dimen/padding9" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding3" android:paddingBottom="@dimen/padding5" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="0.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_gravity="center_vertical" android:id="@id/example_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/test_padding" android:layout_alignParentLeft="true" android:layout_centerVertical="true" layout="@layout/example" />
+    <ImageView android:id="@id/arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_arrows" android:adjustViewBounds="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

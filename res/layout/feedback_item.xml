@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/btn_item_normal" android:paddingLeft="@dimen/padding10" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding10" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/feedback_item_content" android:textColor="@color/common_feedback_text" android:ellipsize="end" android:id="@id/content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin3" android:layout_marginBottom="@dimen/margin4" android:minHeight="@dimen/height18" android:text="@string/feedback_content_label" android:maxLines="3" />
+    <TextView android:textSize="@dimen/feedback_item_time" android:textColor="@color/common_text" android:layout_gravity="bottom|right|center" android:id="@id/last_modify_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/feedback_time_label" android:singleLine="true" />
+</LinearLayout>

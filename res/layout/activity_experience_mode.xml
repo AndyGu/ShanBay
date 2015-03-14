@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/sw_experience_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/text_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin30" android:layout_above="@id/mode_container">
+        <TextView android:textSize="@dimen/textsize26" android:textColor="@android:color/white" android:id="@id/category" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin8" />
+        <TextView android:textSize="@dimen/textsize16" android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_mode_intro" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/mode_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ImageView android:id="@id/top_line" android:background="@drawable/dash_line_green" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10" android:layout_marginBottom="@dimen/margin10" android:weightSum="9.4">
+            <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="3.4" />
+            <RelativeLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/container" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="3.0">
+                <LinearLayout android:orientation="horizontal" android:id="@id/roots_container" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <CheckBox android:gravity="center_vertical" android:id="@id/word_root" android:background="@drawable/bg_experience_checkin_box" android:layout_width="@dimen/width12" android:layout_height="@dimen/height12" android:button="@null" />
+                    <TextView android:textSize="@dimen/textsize18" android:textColor="@android:color/white" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin10" android:text="词 根" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/collins_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin8" android:layout_below="@id/roots_container">
+                    <CheckBox android:gravity="center_vertical" android:id="@id/word_collins" android:background="@drawable/bg_experience_checkin_box" android:layout_width="@dimen/width12" android:layout_height="@dimen/height12" android:button="@null" />
+                    <TextView android:textSize="@dimen/textsize18" android:textColor="@android:color/white" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin10" android:text="柯林斯" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/spell_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin8" android:layout_below="@id/collins_container">
+                    <CheckBox android:gravity="center_vertical" android:id="@id/word_spell" android:background="@drawable/bg_experience_checkin_box" android:layout_width="@dimen/width12" android:layout_height="@dimen/height12" android:button="@null" />
+                    <TextView android:textSize="@dimen/textsize18" android:textColor="@android:color/white" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin10" android:text="拼 写" />
+                </LinearLayout>
+            </RelativeLayout>
+            <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="3.0" />
+        </LinearLayout>
+        <ImageView android:id="@id/bottom_line" android:background="@drawable/dash_line_green" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    </LinearLayout>
+    <Button android:textSize="@dimen/textsize18" android:textColor="@android:color/white" android:id="@id/experience" android:background="@drawable/btn_experience" android:layout_width="@dimen/exp_start_btn_width" android:layout_height="@dimen/height20" android:layout_marginTop="@dimen/margin30" android:text="@string/label_start_experience" android:layout_below="@id/mode_container" android:layout_centerHorizontal="true" />
+</RelativeLayout>

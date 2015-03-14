@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/textsize19" android:textColor="@color/common_text" android:paddingLeft="@dimen/padding8" android:paddingTop="@dimen/padding8" android:paddingBottom="@dimen/padding8" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="账号设置" />
+    <View android:background="@color/common_bg" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+    <RelativeLayout android:id="@id/container_modify_pwd" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/textsize17" android:paddingLeft="@dimen/padding8" android:paddingTop="@dimen/padding8" android:paddingBottom="@dimen/padding8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="修改密码" android:layout_centerVertical="true" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin8" android:src="@drawable/icon_arrow_right" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:id="@id/line_one" android:background="@color/common_bg" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="@dimen/margin4" android:layout_marginRight="@dimen/margin4" />
+    <RelativeLayout android:id="@id/container_modify_mail" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/textsize17" android:paddingLeft="@dimen/padding8" android:paddingTop="@dimen/padding8" android:paddingBottom="@dimen/padding8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="修改邮箱" android:layout_centerVertical="true" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin8" android:src="@drawable/icon_arrow_right" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:id="@id/line_two" android:background="@color/common_bg" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="@dimen/margin4" android:layout_marginRight="@dimen/margin4" />
+    <RelativeLayout android:id="@id/container_modify_username" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/textsize17" android:paddingLeft="@dimen/padding8" android:paddingTop="@dimen/padding8" android:paddingBottom="@dimen/padding8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="修改用户名" android:layout_centerVertical="true" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin8" android:src="@drawable/icon_arrow_right" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:id="@id/line_three" android:background="@color/common_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="@dimen/margin4" android:layout_marginRight="@dimen/margin4" />
+    <RelativeLayout android:id="@id/container_modify_nickname" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/textsize17" android:paddingLeft="@dimen/padding8" android:paddingTop="@dimen/padding8" android:paddingBottom="@dimen/padding8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="修改昵称" android:layout_centerVertical="true" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin8" android:src="@drawable/icon_arrow_right" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <LinearLayout android:padding="@dimen/padding3" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

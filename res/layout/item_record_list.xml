@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@color/sw_common_bg" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/textsize16" android:textColor="@color/sw_common_black" android:gravity="center" android:id="@id/record_list_item1" android:layout_width="0.0dip" android:layout_height="@dimen/height25" android:layout_weight="1.0" />
+        <TextView android:textSize="@dimen/textsize16" android:textColor="@color/sw_common_black" android:gravity="center" android:id="@id/record_list_item2" android:layout_width="0.0dip" android:layout_height="@dimen/height25" android:layout_weight="1.0" />
+        <TextView android:textSize="@dimen/textsize16" android:textColor="@color/sw_common_black" android:gravity="center" android:id="@id/record_list_item3" android:layout_width="0.0dip" android:layout_height="@dimen/height25" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

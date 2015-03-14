@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:background="@color/community_recommend_label_bg" android:padding="@dimen/padding2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="0.5dip" android:layout_marginTop="0.5dip" android:layout_marginRight="0.5dip" android:baselineAligned="false">
+        <TextView android:textSize="@dimen/new_group_textsize" android:textColor="@color/common_text" android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/new_group_label" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:background="@drawable/reply_me_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include layout="@layout/item_common_group" />
+    </LinearLayout>
+</LinearLayout>

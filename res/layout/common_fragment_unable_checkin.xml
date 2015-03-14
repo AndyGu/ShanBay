@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/height50">
+            <include android:id="@id/share_view" layout="@layout/share_view" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:padding="@dimen/padding3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin6">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_sorry" />
+            <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/common_text" android:padding="@dimen/padding6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/common_unable_checkin_hint" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/tasks_view" android:paddingLeft="@dimen/padding5" android:paddingRight="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin3" />
+    </LinearLayout>
+</ScrollView>

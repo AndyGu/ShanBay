@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="abc_search_url_text_normal">#ff7fa87f</color>
-    <item type="color" name="abc_search_url_text_selected">@*android:color/black</item>
-    <item type="color" name="abc_search_url_text_pressed">@*android:color/black</item>
+    <color name="abc_search_url_text_selected">@android:color/black</color>
+    <color name="abc_search_url_text_pressed">@android:color/black</color>
     <color name="sr_common_text">#ff171717</color>
     <color name="sr_green_text">#ff209e85</color>
     <color name="sr_gray_text">#ffc0bfbf</color>
@@ -10,6 +10,7 @@
     <color name="sr_icon_bg">#ffe2e2e2</color>
     <color name="common_bg">#ffe4e4e4</color>
     <color name="common_green">#ff209e85</color>
+    <color name="common_green_dark">#ff108e75</color>
     <color name="common_text">#ff9a9795</color>
     <color name="common_checkin_text">#ff5f5f5f</color>
     <color name="common_checkin_info_text">#ff919191</color>
@@ -59,6 +60,12 @@
     <color name="common_btn_background">#ffdff0d8</color>
     <color name="common_checkinin_calendar_note">#ff7f8596</color>
     <color name="common_progress_text">#fffffaf0</color>
+    <color name="common_charge_lable">#ff4c566b</color>
+    <color name="common_charge_title_text">#ff3d3d3d</color>
+    <color name="common_charge_text">#ff5f5f5f</color>
+    <color name="commom_charge_btn">#ff3cc196</color>
+    <color name="common_charge_account_info_text">#ffb5b5b4</color>
+    <color name="common_login_text_light">#ffb4b4b4</color>
     <color name="floralwhite">#fffffaf0</color>
     <color name="dimgrey">#ff696969</color>
     <color name="gray">#ff808080</color>
@@ -80,6 +87,7 @@
     <color name="common_webview_green">#ff50b983</color>
     <color name="common_webview_green_press">#ff40b28d</color>
     <color name="common_webview_share_text">#ff7a7a7a</color>
+    <color name="common_athens_gray">#ffdfdede</color>
     <color name="default_progress_bar_color">#ff209e85</color>
     <color name="community_top_green">#ff8ac9bd</color>
     <color name="community_user_space">#ffedebeb</color>
@@ -101,10 +109,21 @@
     <color name="community_upload_image_cancel_bg">#ffe4e4e4</color>
     <color name="community_upload_image_cancel">#ff7a7a7a</color>
     <color name="community_avatar_bg">#fff0f0e6</color>
+    <color name="community_invite_bg">#ffac90da</color>
+    <color name="community_invite_friend_text">#ff5f5f5f</color>
+    <color name="community_border">#ffd6d6d6</color>
+    <color name="community_charge_item_bg">#fff1efe4</color>
+    <color name="community_aluminum">#ffc1c1c1</color>
     <color name="bright_gray">#ff5d5d5d</color>
     <color name="aluminum">#ff9a9795</color>
+    <color name="choiceness_comment">#ffbdbdbd</color>
+    <color name="choiceness_like">#ffbdbdbd</color>
+    <color name="topic_top">#ff73a963</color>
+    <color name="topic_new">#ffdc6848</color>
+    <color name="topic_pressed_bg">#fff8f7eb</color>
     <color name="spb_default_color">#ff209e85</color>
     <color name="sw_common_black">#ff5f5f5f</color>
+    <color name="sw_common_gray">#ffebebeb</color>
     <color name="sw_button_red_bg">#ff9e2020</color>
     <color name="sw_button_red_press_bg">#ff82191a</color>
     <color name="sw_button_fg">#ffffffff</color>
@@ -115,10 +134,14 @@
     <color name="sw_explor_text_bg">#fffcf8e3</color>
     <color name="sw_explor_text_color">#ffc39c5b</color>
     <color name="sw_hite_text_bg">#ffd0ddda</color>
+    <color name="sw_home_white_bg">#fff5f5f5</color>
+    <color name="sw_text_color_dark">#ff919191</color>
+    <color name="sw_text_color_green">#ff939581</color>
     <color name="sw_user_nickname">#ff49576a</color>
     <color name="sw_user_desc">#ff747474</color>
     <color name="sw_word_wrong">#ffc6464c</color>
     <color name="sw_alpha">#64000000</color>
+    <color name="sw_common_text">#ff7b7977</color>
     <color name="qin_header_green">#ff1c9881</color>
     <color name="qin_window_background">#fff0eef0</color>
     <color name="qin_highlight_green">#ff1c9881</color>

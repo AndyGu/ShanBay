@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000">
+        <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/padding6" android:paddingRight="@dimen/padding6" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin8">
+                <RelativeLayout android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5" android:onClick="showQuotaList">
+                    <TextView android:textSize="@dimen/textsize20" android:layout_gravity="left|center" android:id="@id/text_quota" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/icon_learning_plan" />
+                    <ImageView android:gravity="center" android:id="@id/icon_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_arrow_down" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+                <View android:background="@color/sw_setting_divide" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+                <LinearLayout android:orientation="horizontal" android:id="@id/current_quota" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5">
+                    <RelativeLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="@dimen/textsize20" android:textColor="@color/common_green" android:id="@id/cur_quota" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/sw_setting_quota_text" android:id="@id/cur_quota_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="单词" android:layout_alignBaseline="@id/cur_quota" android:layout_centerHorizontal="true" />
+                    </RelativeLayout>
+                    <RelativeLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="@dimen/textsize20" android:textColor="@color/sw_setting_quota_text" android:id="@id/cur_fresh" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                        <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/sw_setting_quota_text" android:id="@id/cur_fresh_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="新词" android:layout_alignBaseline="@id/cur_fresh" android:layout_centerHorizontal="true" />
+                    </RelativeLayout>
+                    <LinearLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.8" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/quota_list" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10">
+                <TextView android:textSize="@dimen/textsize20" android:textColor="@color/common_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5" android:layout_marginBottom="@dimen/margin3" android:text="@string/icon_learning_mode" />
+                <View android:background="@color/sw_setting_divide" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+                <RelativeLayout android:id="@id/container_recognition" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5">
+                    <TextView android:textSize="@dimen/normal_text_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/icon_recognition" android:layout_centerVertical="true" />
+                    <RadioButton android:layout_gravity="center" android:id="@id/study_mode_recognition" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/cb_wb" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:background="@drawable/line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <RelativeLayout android:id="@id/container_write" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5">
+                    <TextView android:textSize="@dimen/normal_text_size" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/icon_writing" android:layout_centerVertical="true" />
+                    <RadioButton android:gravity="center" android:id="@id/study_mode_writing" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/cb_wb" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:background="@drawable/line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10">
+                <TextView android:textSize="@dimen/textsize20" android:textColor="@color/common_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5" android:layout_marginBottom="@dimen/margin3" android:text="@string/icon_pronounce" />
+                <View android:background="@color/sw_setting_divide" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+                <RelativeLayout android:id="@id/container_sound_uk" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5">
+                    <ImageView android:id="@id/img_sound_uk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_uk_flag" android:layout_centerVertical="true" />
+                    <TextView android:textSize="@dimen/normal_text_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:text="@string/label_uk_audio" android:layout_toRightOf="@id/img_sound_uk" android:layout_centerVertical="true" />
+                    <RadioButton android:gravity="center" android:id="@id/radio_sound_uk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/cb_wb" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:background="@drawable/line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <RelativeLayout android:id="@id/container_sound_us" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5">
+                    <ImageView android:id="@id/img_sound_us" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_us_flag" android:layout_centerVertical="true" />
+                    <TextView android:textSize="@dimen/normal_text_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:text="@string/label_us_audio" android:layout_toRightOf="@id/img_sound_us" android:layout_centerVertical="true" />
+                    <RadioButton android:id="@id/radio_sound_us" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/cb_wb" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:background="@drawable/line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <RelativeLayout android:id="@id/container_sound_mute" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5">
+                    <ImageView android:id="@id/img_sound_mute" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_mute" android:layout_centerVertical="true" />
+                    <TextView android:textSize="@dimen/normal_text_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:text="@string/label_mute" android:layout_toRightOf="@id/img_sound_mute" android:layout_centerVertical="true" />
+                    <RadioButton android:id="@id/radio_sound_mute" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/cb_wb" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:background="@drawable/line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10">
+                <TextView android:textSize="@dimen/textsize20" android:textColor="@color/common_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5" android:layout_marginBottom="@dimen/margin3" android:text="@string/label_setting_notify" />
+                <View android:background="@color/sw_setting_divide" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/notification_container" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:orientation="vertical" android:id="@id/container_account" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin13">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5" android:layout_marginBottom="@dimen/margin3">
+                    <TextView android:textSize="@dimen/textsize20" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_setting_account" />
+                    <ImageView android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_arrow_right" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+                <View android:background="@color/sw_setting_divide" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin13">
+                <TextView android:textSize="@dimen/textsize20" android:textColor="@color/common_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5" android:layout_marginBottom="@dimen/margin3" android:text="@string/icon_else" />
+                <View android:background="@color/sw_setting_divide" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+                <RelativeLayout android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5" android:onClick="testMedia">
+                    <ImageView android:id="@id/img_media_test" android:layout_width="@dimen/width13" android:layout_height="@dimen/height13" android:src="@drawable/icon_debug" android:scaleType="fitXY" android:layout_centerVertical="true" />
+                    <TextView android:textSize="@dimen/normal_text_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin4" android:text="@string/label_test_media" android:layout_toRightOf="@id/img_media_test" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:id="@id/debug_line" android:background="@drawable/line" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <RelativeLayout android:id="@id/debug_container" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5" android:onClick="debug">
+                    <ImageView android:id="@id/img_debug" android:layout_width="@dimen/width13" android:layout_height="@dimen/height13" android:src="@drawable/icon_debug" android:scaleType="fitXY" android:layout_centerVertical="true" />
+                    <TextView android:textSize="@dimen/normal_text_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:text="DEBUG" android:layout_toRightOf="@id/img_debug" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:background="@drawable/line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <RelativeLayout android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5" android:onClick="clearCache">
+                    <ImageView android:id="@id/img_clear_cache" android:layout_width="@dimen/width13" android:layout_height="@dimen/height13" android:src="@drawable/icon_clear_cache" android:scaleType="fitXY" android:layout_centerVertical="true" />
+                    <TextView android:textSize="@dimen/normal_text_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin4" android:text="@string/label_clear_cache" android:layout_toRightOf="@id/img_clear_cache" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <ImageView android:background="@drawable/line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <Button android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin15" android:layout_marginBottom="@dimen/margin10" android:text="@string/icon_logout" android:onClick="exit" style="@style/SBBaseButton.Warn" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

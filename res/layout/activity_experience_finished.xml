@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/sw_experience_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_horizontal" android:layout_width="@dimen/width65" android:layout_height="@dimen/height65" android:layout_marginTop="@dimen/margin40" android:src="@drawable/icon_exp_finished" android:scaleType="fitCenter" />
+    <TextView android:textSize="@dimen/textsize24" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin15" android:text="@string/label_congratulation" />
+    <TextView android:textSize="@dimen/textsize18" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10" android:text="@string/label_exp_finished" />
+    <TextView android:textSize="@dimen/textsize18" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10" android:text="@string/label_exp_share" />
+    <RelativeLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:visibility="gone" android:layout_width="@dimen/width70" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin20">
+        <ImageView android:id="@id/share_to_weibo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_exp_weibo" android:layout_alignParentLeft="true" />
+        <ImageView android:id="@id/share_to_weibo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_exp_weixin" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin40" android:layout_centerHorizontal="true">
+        <Button android:textSize="@dimen/textsize20" android:textColor="@android:color/white" android:id="@id/signup" android:background="@drawable/btn_experience" android:layout_width="@dimen/width52" android:layout_height="@dimen/height20" android:text="@string/btn_signup" />
+        <Button android:textSize="@dimen/textsize20" android:textColor="@android:color/white" android:id="@id/login" android:background="@drawable/btn_experience" android:layout_width="@dimen/width52" android:layout_height="@dimen/height20" android:layout_marginLeft="@dimen/margin20" android:text="@string/btn_login" />
+    </LinearLayout>
+</LinearLayout>

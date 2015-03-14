@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:padding="@dimen/padding7" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include android:id="@id/word" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/word" />
+        <TextView android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/one_example_hint" style="@style/SWReviewLabel" />
+        <LinearLayout android:orientation="vertical" android:id="@id/example_container" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <Button android:layout_gravity="center_horizontal" android:id="@id/btn_add_word" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10" android:layout_marginBottom="@dimen/margin2" android:text="@string/query_add_word" android:onClick="collectNote" style="@style/SBBaseButton.Normal" />
+        <Button android:layout_gravity="center_horizontal" android:id="@id/btn_forget_word" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10" android:layout_marginBottom="@dimen/margin2" android:text="@string/query_forget_word" android:onClick="deleteNote" style="@style/SBBaseButton.Warn" />
+        <Button android:layout_gravity="center_horizontal" android:id="@id/btn_already_in_study_plan" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10" android:layout_marginBottom="@dimen/margin2" android:text="已加入学习计划" style="@style/SBBaseButton.Unclickable" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingLeft="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="@dimen/height30" android:layout_marginTop="@dimen/margin5">
+        <ImageView android:id="@id/checkin_medal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin1" android:src="@drawable/icon_medal_small" android:layout_toLeftOf="@id/checkin_days" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/textsize45" android:textStyle="bold" android:textColor="@color/common_green" android:id="@id/checkin_days" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin1" android:text="天打卡" android:layout_toRightOf="@id/checkin_days" android:layout_alignBaseline="@id/checkin_days" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5">
+        <ImageView android:id="@id/arrowLeft" android:background="@drawable/item_calendar_pressed" android:padding="@dimen/padding5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin3" android:src="@drawable/icon_calendar_left" android:scaleType="centerInside" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:padding="@dimen/padding5" android:layout_width="@dimen/width100" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/textsize20" android:textColor="@color/common_text_dark" android:id="@id/yearCenter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2014年" />
+            <TextView android:textSize="@dimen/textsize20" android:textColor="@color/common_text_dark" android:id="@id/monthCenter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12月" />
+        </LinearLayout>
+        <ImageView android:id="@id/arrowRight" android:background="@drawable/item_calendar_pressed" android:padding="@dimen/padding5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin3" android:src="@drawable/icon_calendar_right" android:scaleType="centerInside" />
+    </LinearLayout>
+    <com.shanbay.community.checkin.CalendarView android:id="@id/calendar" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="@dimen/margin5" android:layout_marginTop="@dimen/margin5" android:layout_marginRight="@dimen/margin5" android:layout_weight="1.0" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="#ffeeeded" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin20">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin20" android:layout_weight="1.0">
+            <View android:background="@drawable/circle_checked" android:layout_width="@dimen/width13" android:layout_height="@dimen/height13" android:layout_marginRight="@dimen/margin5" />
+            <TextView android:textSize="@dimen/textsize18" android:textColor="@color/common_checkinin_calendar_note" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="已打卡" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin20" android:layout_weight="1.0">
+            <View android:background="@drawable/icon_star_little" android:layout_width="@dimen/width13" android:layout_height="@dimen/height13" android:layout_marginRight="@dimen/margin5" />
+            <TextView android:textSize="@dimen/textsize18" android:textColor="@color/common_checkinin_calendar_note" android:id="@id/special_day" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="纪念日" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

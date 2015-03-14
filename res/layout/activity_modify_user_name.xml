@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/padding14" android:paddingRight="@dimen/padding14" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:paddingTop="@dimen/padding10" android:paddingBottom="@dimen/padding10" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <EditText android:textSize="@dimen/textsize16" android:textColor="@color/common_green" android:textColorHint="@color/common_login_text_light" android:ellipsize="start" android:gravity="center" android:id="@id/et_current_username" android:background="@drawable/shape_edit_text_boader" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin8" android:lines="1" android:textCursorDrawable="@drawable/shape_cursor" style="@style/SBInput" />
+    <Button android:textSize="@dimen/textsize16" android:id="@id/confirm" android:background="@drawable/selector_btn_corners" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin3" android:text="确认修改" style="@style/SBBaseButton.Green" />
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/current_quota" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginRight="@dimen/margin5">
+        <LinearLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="0.7">
+            <RelativeLayout android:layout_width="@dimen/width40" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_green" android:id="@id/quota" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="40" />
+                <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/sw_setting_quota_text" android:id="@id/quota_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="单词" android:layout_alignBaseline="@id/quota" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <RelativeLayout android:layout_width="@dimen/width40" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/textsize15" android:textColor="@color/sw_setting_quota_text" android:id="@id/fresh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="40" />
+                <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/sw_setting_quota_text" android:id="@id/fresh_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="新词" android:layout_alignBaseline="@id/fresh" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.3">
+            <ImageView android:id="@id/check_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/cb_wb_on" android:scaleType="centerInside" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView android:background="@drawable/line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

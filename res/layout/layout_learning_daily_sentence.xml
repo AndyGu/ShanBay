@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/daily_sentence_container" android:background="@color/sw_home_white_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/padding5" android:paddingRight="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="@dimen/height15">
+        <TextView android:textSize="@dimen/textsize12" android:textColor="@color/sw_text_color_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="每日一句" android:layout_weight="1.0" />
+        <ImageView android:id="@id/daily_sentence_weibo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_share_weibo_gray" />
+        <ImageView android:id="@id/daily_sentence_weixin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin15" android:src="@drawable/icon_share_weixin_gray" />
+    </LinearLayout>
+    <View android:background="@color/common_bg" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TextView android:textSize="@dimen/textsize17" android:textColor="#ff606060" android:id="@id/daily_sentence_en_content" android:paddingLeft="@dimen/padding5" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding5" android:paddingBottom="@dimen/padding2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lineSpacingExtra="3.0dip" />
+    <TextView android:textSize="@dimen/textsize15" android:textColor="@color/sw_text_color_green" android:id="@id/daily_sentence_cn_content" android:paddingLeft="@dimen/padding5" android:paddingRight="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lineSpacingExtra="5.0dip" />
+    <TextView android:textSize="@dimen/textsize15" android:textColor="@color/sw_text_color_green" android:gravity="right" android:id="@id/daily_sentence_author" android:paddingLeft="@dimen/padding5" android:paddingRight="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <com.shanbay.words.view.AutoResizeTextView android:textSize="@dimen/textsize13" android:textColor="@android:color/white" android:gravity="center" android:id="@id/daily_sentence_focus" android:background="#ffc4e5d0" android:paddingTop="@dimen/padding1" android:paddingBottom="@dimen/padding1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" />
+</LinearLayout>

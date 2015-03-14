@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="horizontalSpacing" format="dimension" />
+    <attr name="verticalSpacing" format="dimension" />
+    <attr name="layout_breakLine" format="boolean" />
+    <attr name="layout_horizontalSpacing" format="dimension" />
+    <attr name="simple_flow_layout_gravity">
+        <enum name="top" value="48" />
+        <enum name="bottom" value="80" />
+        <enum name="center_vertical" value="16" />
+    </attr>
+    <attr name="panel_anchor" format="reference" />
+    <attr name="draw_view" format="reference" />
+    <attr name="alway_collapse_to_dismiss" format="boolean" />
+    <attr name="slide_state">
+        <enum name="dismiss" value="0" />
+        <enum name="expand" value="1" />
+        <enum name="full_expand" value="2" />
+    </attr>
+    <attr name="animation" format="reference" />
+    <attr name="drawable" format="reference" />
+    <attr name="progress" format="integer" />
+    <attr name="max" format="integer" />
+    <attr name="progressTextColor" format="reference|color" />
+    <attr name="maxTextColor" format="reference|color" />
+    <attr name="progressDrawable" format="reference" />
+    <attr name="progressTextSize" format="dimension" />
+    <attr name="maxTextSize" format="dimension" />
+    <attr name="drawMaxText" format="boolean" />
+    <attr name="drawProgressText" format="boolean" />
+    <attr name="textDecorate" format="string" />
+    <attr name="progressTextGravity">
+        <enum name="left" value="1" />
+        <enum name="right" value="2" />
+        <enum name="center" value="3" />
+        <enum name="toRight" value="4" />
+    </attr>
+    <attr name="spbStyle" format="reference" />
+    <attr name="spb_color" format="color" />
+    <attr name="spb_stroke_width" format="dimension" />
+    <attr name="spb_stroke_separator_length" format="dimension" />
+    <attr name="spb_sections_count" format="integer" />
+    <attr name="spb_speed" format="float" />
+    <attr name="spb_progressiveStart_speed" format="float" />
+    <attr name="spb_progressiveStop_speed" format="float" />
+    <attr name="spb_interpolator">
+        <enum name="spb_interpolator_accelerate" value="0" />
+        <enum name="spb_interpolator_linear" value="1" />
+        <enum name="spb_interpolator_acceleratedecelerate" value="2" />
+        <enum name="spb_interpolator_decelerate" value="3" />
+    </attr>
+    <attr name="spb_reversed" format="boolean" />
+    <attr name="spb_mirror_mode" format="boolean" />
+    <attr name="spb_colors" format="reference" />
+    <attr name="spb_progressiveStart_activated" format="boolean" />
+    <attr name="spb_background" format="reference" />
+    <attr name="spb_generate_background_with_colors" format="boolean" />
+    <attr name="spb_gradients" format="boolean" />
+    <attr name="ptrViewDelegateClass" format="reference|string" />
+    <attr name="ptrHeaderStyle" format="reference" />
+    <attr name="ptrHeaderBackground" format="reference|color" />
+    <attr name="ptrHeaderHeight" format="reference|dimension" />
+    <attr name="ptrHeaderTitleTextAppearance" format="reference" />
+    <attr name="ptrProgressBarColor" format="reference|color" />
+    <attr name="ptrProgressBarStyle">
+        <flag name="inside" value="0x00000000" />
+        <flag name="outside" value="0x00000001" />
+    </attr>
+    <attr name="ptrProgressBarHeight" format="reference|dimension" />
+    <attr name="ptrPullText" format="reference|string" />
+    <attr name="ptrRefreshingText" format="reference|string" />
+    <attr name="ptrReleaseText" format="reference|string" />
+    <attr name="ptrSmoothProgressBarStyle" format="reference" />
+    <attr name="edge_size" format="dimension" />
+    <attr name="edge_flag">
+        <enum name="bottom" value="2" />
+        <enum name="left" value="0" />
+        <enum name="right" value="1" />
+        <enum name="all" value="3" />
+    </attr>
+    <attr name="shadow_left" format="reference" />
+    <attr name="shadow_right" format="reference" />
+    <attr name="shadow_bottom" format="reference" />
+    <attr name="SlidingLayoutStyle" format="reference" />
+    <attr name="progress_bar" format="integer" />
+    <attr name="progress_max" format="integer" />
+    <attr name="progress_unreached_color" format="color" />
+    <attr name="progress_reached_color" format="color" />
+    <attr name="progress_reached_bar_height" format="dimension" />
+    <attr name="progress_unreached_bar_height" format="dimension" />
+    <attr name="progress_text_size" format="dimension" />
+    <attr name="progress_text_color" format="color" />
+    <attr name="progress_text_offset" format="dimension" />
+    <attr name="progress_text_visibility">
+        <enum name="visible" value="0" />
+        <enum name="invisible" value="1" />
+    </attr>
+    <attr name="numberProgressBarStyle" format="reference" />
+</resources>

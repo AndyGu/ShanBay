@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/normal_text_size" android:textColor="@color/community_user_space_text" android:paddingLeft="@dimen/padding4" android:paddingTop="@dimen/padding6" android:paddingRight="@dimen/padding4" android:paddingBottom="@dimen/padding6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="我的徽章" />
+    <LinearLayout android:orientation="vertical" android:id="@id/award_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/container_postcard" android:background="#ff4dc3a9" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="@dimen/online_store_padding_leftright" android:layout_marginTop="@dimen/margin3" android:layout_marginRight="@dimen/online_store_padding_leftright" android:layout_marginBottom="@dimen/margin3" android:layout_weight="0.33">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerInParent="true">
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin8" android:layout_marginTop="@dimen/margin8" android:layout_marginRight="@dimen/margin8" android:src="@drawable/image_postcard02" />
+                <TextView android:textSize="@dimen/textsize17" android:textColor="#ff3f817b" android:layout_gravity="center_vertical" android:id="@id/img_postcard2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin12" android:layout_marginTop="@dimen/margin3" android:layout_marginRight="@dimen/margin12" android:text="世界名著\n双语明信片" />
+            </LinearLayout>
+            <ImageView android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin10" android:layout_marginTop="@dimen/margin10" android:layout_marginRight="@dimen/margin10" android:src="@drawable/image_postcard01" android:scaleType="fitEnd" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/container_schedule" android:background="#ff92d266" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="@dimen/online_store_padding_leftright" android:layout_marginTop="@dimen/margin3" android:layout_marginRight="@dimen/online_store_padding_leftright" android:layout_marginBottom="@dimen/margin3" android:layout_weight="0.33">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerInParent="true">
+            <ImageView android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin15" android:layout_marginTop="@dimen/margin15" android:layout_marginRight="@dimen/margin3" android:src="@drawable/image_schedule01" android:scaleType="fitEnd" />
+            <TextView android:textSize="@dimen/textsize17" android:textColor="#ff779960" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin5" android:text="30天计划表" android:drawableTop="@drawable/image_schedule02" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/container_book" android:background="#ffffc423" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="@dimen/online_store_padding_leftright" android:layout_marginTop="@dimen/margin3" android:layout_marginRight="@dimen/online_store_padding_leftright" android:layout_marginBottom="@dimen/margin3" android:layout_weight="0.33">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerInParent="true">
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/textsize16" android:textColor="#ffa17e31" android:layout_gravity="center_vertical" android:id="@id/textview_book_description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin10" android:layout_marginTop="@dimen/margin8" android:layout_marginRight="@dimen/margin8" android:text="扇贝炼句实体书" android:drawableTop="@drawable/image_book02" />
+                <TextView android:textSize="@dimen/textsize12" android:textColor="#ffa17e31" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin10" android:layout_marginRight="@dimen/margin8" android:text="附赠35元课程兑换码" />
+            </LinearLayout>
+            <ImageView android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin8" android:layout_marginTop="@dimen/margin8" android:layout_marginRight="@dimen/margin8" android:src="@drawable/image_book01" android:scaleType="fitEnd" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

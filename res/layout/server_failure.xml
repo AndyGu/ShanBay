@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center" android:id="@id/imageView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_server_failure" />
+    <TextView android:textSize="@dimen/normal_text_size" android:gravity="center" android:layout_gravity="center" android:paddingLeft="@dimen/padding26" android:paddingRight="@dimen/padding26" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/server_failure_hint" style="@style/SBShadowText" />
+    <Button android:layout_gravity="center_horizontal" android:id="@id/btn_home" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/back_home" android:onClick="home" style="@style/SBHomeButton" />
+</LinearLayout>

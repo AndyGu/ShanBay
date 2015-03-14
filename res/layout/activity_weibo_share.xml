@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/btn_item_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginTop="@dimen/margin10" android:layout_marginRight="@dimen/margin5">
+        <EditText android:textColor="@color/common_weibo_share_text" android:gravity="start" android:id="@id/content" android:background="@color/common_transparent" android:padding="@dimen/padding10" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minLines="3" />
+        <LinearLayout android:background="@color/common_weibo_share_bg" android:padding="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:layout_marginRight="0.5dip">
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/app_logo" android:layout_width="@dimen/height25" android:layout_height="@dimen/height25" android:src="@drawable/com_shanbay_words_cornor" android:scaleType="fitXY" />
+                <TextView android:textSize="@dimen/textsize8" android:textColor="@color/common_weibo_share_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="来自：扇贝网" />
+            </LinearLayout>
+            <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_weibo_share_text" android:gravity="center_vertical" android:id="@id/description" android:layout_width="wrap_content" android:layout_height="@dimen/height25" android:layout_marginLeft="@dimen/margin5" android:text="@string/share_weibo_description" android:maxLines="3" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

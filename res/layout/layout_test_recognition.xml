@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/test_content" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ViewStub android:id="@id/roots_container" android:layout="@layout/item_roots" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" />
+    <LinearLayout android:id="@id/example_container" android:paddingLeft="@dimen/padding9" android:paddingTop="@dimen/padding7" android:paddingRight="@dimen/padding9" android:paddingBottom="@dimen/padding7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5">
+        <include android:id="@id/example_view" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/example" />
+    </LinearLayout>
+    <ViewStub android:id="@id/word_collins_viewstub" android:layout="@layout/item_collins" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" />
+    <ViewStub android:id="@id/word_en_definition_viewstub" android:layout="@layout/item_word" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" />
+    <ViewStub android:id="@id/word_cn_definition_viewstub" android:layout="@layout/item_word" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" />
+</LinearLayout>

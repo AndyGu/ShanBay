@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/roots_item_container" android:background="@drawable/btn_item" android:paddingLeft="@dimen/padding10" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding3" android:paddingBottom="@dimen/padding5" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="0.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/normal_text_size" android:textColor="@color/common_green" android:id="@id/roots_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/test_padding" android:text="flect,flex" android:layout_alignParentLeft="true" />
+    <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/sw_common_text" android:id="@id/meaning_cn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin2" android:layout_marginRight="@dimen/test_padding" android:text="=bend,表示“弯曲”" android:layout_below="@id/roots_content" android:layout_alignParentLeft="true" />
+    <ImageView android:id="@id/more_roots" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_arrows" android:adjustViewBounds="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

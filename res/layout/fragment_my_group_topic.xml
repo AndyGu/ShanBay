@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.shanbay.ProgressBar.PullToRefreshLayout android:id="@id/ptr_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ListView android:scrollbarStyle="outsideOverlay" android:id="@id/list" android:paddingLeft="@dimen/padding5" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:divider="@null" android:footerDividersEnabled="false" />
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/my_group_empty_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/empty_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_no_team" />
+            <TextView android:textSize="@dimen/textsize18" android:textColor="@color/common_text" android:id="@id/empty_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_no_team" />
+        </LinearLayout>
+    </RelativeLayout>
+</com.shanbay.ProgressBar.PullToRefreshLayout>

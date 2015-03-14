@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:paddingLeft="@dimen/padding6" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding6" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.shanbay.widget.RoundImageView android:id="@id/avatar" android:layout_width="@dimen/width20" android:layout_height="@dimen/height20" android:layout_marginRight="@dimen/padding12" />
+            <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_green" android:layout_gravity="center_vertical" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="right" android:orientation="horizontal" android:paddingTop="@dimen/padding1" android:paddingRight="@dimen/padding6" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:layout_gravity="center_vertical" android:id="@id/leader" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/width50" android:singleLine="true" />
+            <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:layout_gravity="center_vertical" android:id="@id/date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin3" android:singleLine="true" />
+        </LinearLayout>
+        <ImageView android:id="@id/iv_dashed_line" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin3" android:layout_marginBottom="@dimen/margin3" />
+        <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/padding6" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding6" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin32">
+            <TextView android:textSize="@dimen/textsize16" android:textColor="@color/community_common_text" android:layout_gravity="left|center" android:id="@id/motto" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+            <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_text" android:layout_gravity="left|center" android:id="@id/description" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:textSize="@dimen/textsize13" android:textColor="@android:color/white" android:gravity="bottom|center" android:id="@id/cornule" android:background="@drawable/icon_cornule" android:paddingRight="@dimen/padding9" android:visibility="gone" android:layout_width="@dimen/width20" android:layout_height="@dimen/height15" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" />
+</RelativeLayout>

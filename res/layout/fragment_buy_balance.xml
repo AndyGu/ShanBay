@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/common_dialog_fragment_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/height20">
+        <TextView android:textSize="@dimen/textsize17" android:textColor="#64000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/user_balance_count" />
+        <TextView android:textSize="@dimen/textsize17" android:textColor="@color/common_green" android:id="@id/account_balance" android:paddingLeft="@dimen/padding5" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View android:background="@color/common_bg" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:orientation="vertical" android:id="@id/container_buy" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="bottom|center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin15" android:layout_marginBottom="@dimen/margin15">
+            <TextView android:textSize="@dimen/textsize18" android:textColor="@color/common_green" android:id="@id/rmb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="50元" />
+            <TextView android:textSize="@dimen/textsize18" android:textColor="@color/common_text" android:paddingLeft="@dimen/padding5" android:paddingRight="@dimen/padding5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="充值" />
+            <TextView android:textSize="@dimen/textsize18" android:textColor="@color/common_green" android:id="@id/coins" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5000贝壳" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin8" android:layout_marginRight="@dimen/margin8">
+            <View android:background="@color/community_aluminum" android:layout_width="@dimen/width45" android:layout_height="1.0dip" />
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/community_invite_friend_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin4" android:layout_marginRight="@dimen/margin4" android:text="选择支付方式" />
+            <View android:background="@color/community_aluminum" android:layout_width="@dimen/width45" android:layout_height="1.0dip" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/image_alipay" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10" android:layout_marginBottom="@dimen/margin10" android:src="@drawable/icon_alipay" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/container_buy_success" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin15" android:layout_marginBottom="@dimen/margin5">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_charge_success" />
+            <TextView android:textSize="@dimen/textsize23" android:textColor="@color/community_invite_friend_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="贝壳购买成功" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/textsize15" android:textColor="@color/community_invite_friend_text" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin15" android:text="(可用贝壳购买刚才未完成的请求)" />
+        <View android:background="@color/common_bg" android:layout_width="wrap_content" android:layout_height="1.0dip" />
+        <TextView android:textSize="@dimen/textsize23" android:textColor="@color/community_invite_friend_text" android:gravity="center" android:id="@id/back" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="返回" />
+    </LinearLayout>
+</LinearLayout>

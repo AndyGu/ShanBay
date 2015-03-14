@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin10" android:layout_marginTop="@dimen/margin3" android:layout_marginRight="@dimen/margin10" android:layout_marginBottom="@dimen/margin3">
+        <TextView android:textSize="@dimen/textsize15" android:textColor="@color/sw_text_color_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="扇贝打卡" android:layout_alignParentLeft="true" />
+        <ImageView android:id="@id/checkin_introduction_dismiss" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_cancel_round" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <View android:background="@color/common_bg" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="@dimen/margin10" android:layout_marginRight="@dimen/margin10" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin10" android:layout_marginTop="@dimen/margin5" android:layout_marginRight="@dimen/margin5" android:layout_marginBottom="@dimen/margin5">
+        <TextView android:textSize="@dimen/textsize12" android:textColor="#ff545351" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="获得徽章" android:layout_weight="1.0" />
+        <TextView android:textSize="@dimen/textsize12" android:textColor="#ff545351" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="打卡天数" android:layout_weight="1.0" />
+        <TextView android:textSize="@dimen/textsize12" android:textColor="#ff545351" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="获得贝壳" android:layout_weight="1.0" />
+    </LinearLayout>
+    <ListView android:scrollbarStyle="outsideOverlay" android:id="@id/checkin_introduction_awards_container" android:paddingLeft="@dimen/padding10" android:paddingRight="@dimen/padding5" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="@dimen/height170" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:divider="@android:color/transparent" android:footerDividersEnabled="false" />
+    <com.shanbay.words.view.AutoResizeTextView android:textSize="@dimen/textsize12" android:textColor="@color/common_text_dark" android:id="@id/checkin_introduction_reminder" android:background="#ffededed" android:paddingLeft="@dimen/padding8" android:paddingTop="@dimen/padding8" android:paddingRight="@dimen/padding8" android:paddingBottom="@dimen/padding12" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="2" android:lineSpacingExtra="@dimen/height2" />
+</LinearLayout>

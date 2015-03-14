@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:id="@id/progress" android:visibility="gone" android:layout_width="fill_parent" layout="@layout/item_load_more" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/refresh_arrow_down" />
+            <TextView android:textSize="@dimen/textsize14" android:gravity="center_vertical" android:id="@id/refresh_hint" android:paddingLeft="@dimen/padding5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/refresh_down_text" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

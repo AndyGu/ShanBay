@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@drawable/btn_learn_other_way" android:paddingLeft="@dimen/test_padding" android:paddingTop="@dimen/test_padding_vertical" android:paddingBottom="@dimen/test_padding_vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/test_padding">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_number_learn" />
+        <TextView android:textColor="@android:color/white" android:id="@id/text_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/normal_text_size" android:textStyle="bold" android:layout_gravity="center_vertical" android:id="@id/text_learning_way" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>

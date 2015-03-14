@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/textsize12" android:id="@id/num_comment" android:background="@color/common_gray" android:paddingLeft="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <View android:id="@id/dashed_line" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+</LinearLayout>

@@ -3,8 +3,9 @@ package com.shanbay.app;
 import android.app.Application;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.util.Log;
+
 import com.loopj.android.http.PersistentCookieStore;
-import com.shanbay.Config;
 import com.shanbay.util.Misc;
 
 public abstract class BaseApplication extends Application
@@ -19,9 +20,9 @@ public abstract class BaseApplication extends Application
     {
       str = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
     }
-    catch (PackageManager.NameNotFoundException localNameNotFoundException)
+    catch (PackageManager.NameNotFoundException exception)
     {
-        localNameNotFoundException.printStackTrace();
+    	exception.printStackTrace();
     }
     return getPackageName() + "/" + str + " (Android," + Build.VERSION.RELEASE + "," + Build.MODEL + "," + Build.MANUFACTURER + ")";
   }
@@ -37,6 +38,7 @@ public abstract class BaseApplication extends Application
   {
     if (this.userAgent == null)
       this.userAgent = buildUserAgent();
+    Log.e("getUserAgent()", "userAgent="+userAgent);
     return this.userAgent;
   }
 

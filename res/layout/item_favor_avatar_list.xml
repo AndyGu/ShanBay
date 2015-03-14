@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:paddingTop="@dimen/padding4" android:paddingBottom="@dimen/padding4" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="@dimen/width20" android:layout_height="@dimen/height20" android:layout_marginLeft="@dimen/padding5" android:layout_marginRight="@dimen/padding6">
+            <com.shanbay.widget.RoundImageView android:id="@id/avatar" android:layout_width="@dimen/width20" android:layout_height="@dimen/height20" android:layout_marginRight="@dimen/padding6" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_green" android:gravity="left|center" android:id="@id/nickname" android:layout_width="0.0dip" android:layout_height="fill_parent" android:singleLine="true" android:layout_weight="0.4" />
+        <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_text_dark" android:gravity="right|center" android:id="@id/date" android:paddingRight="@dimen/padding5" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.3" />
+    </LinearLayout>
+    <ImageView android:id="@id/dashed_line" android:background="@drawable/dashed_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="@dimen/margin1" android:layout_marginRight="@dimen/margin1" />
+</LinearLayout>

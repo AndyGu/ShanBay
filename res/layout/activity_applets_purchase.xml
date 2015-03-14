@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/purchase_container" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:paddingTop="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="4.0">
+        <ImageView android:id="@id/img_applet" android:layout_width="@dimen/width38" android:layout_height="@dimen/height38" android:layout_marginLeft="@dimen/margin5" android:layout_marginTop="@dimen/margin5" />
+        <LinearLayout android:orientation="vertical" android:id="@id/layout_applets_introduction" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginTop="@dimen/margin5">
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/sw_applets_desp_text" android:id="@id/label_description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin5" android:lineSpacingExtra="10.0dip" />
+            <LinearLayout android:gravity="right" android:paddingRight="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <Button android:textSize="@dimen/textsize15" android:id="@id/btn_buy" android:layout_width="@dimen/width30" android:layout_height="@dimen/height15" android:text="@string/purchase_buy" style="@style/SBBaseButton.Small" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:background="@color/sw_common_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.25" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/select" android:background="@drawable/btn_list_corners" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="3.0">
+            <Button android:layout_width="0.9dip" android:layout_height="0.9dip" />
+            <Button android:textColor="@drawable/btn_colors" android:id="@id/purchase_printscreen" android:background="@drawable/btn_choices_purchase_printscreen" android:layout_width="0.0dip" android:layout_height="@dimen/height15" android:text="@string/purchase_printscreen" android:layout_weight="1.0" />
+            <Button android:textColor="@drawable/btn_colors" android:id="@id/purchase_price_plan" android:background="@drawable/btn_choices_purchase_price_plan" android:layout_width="0.0dip" android:layout_height="@dimen/height15" android:layout_margin="0.9dip" android:text="@string/purchase_price_plan" android:layout_weight="1.0" />
+            <Button android:textColor="@drawable/btn_colors" android:id="@id/purchase_records" android:background="@drawable/btn_choices_purchase_records" android:layout_width="0.0dip" android:layout_height="@dimen/height15" android:text="@string/purchase_records" android:layout_weight="1.0" />
+            <Button android:layout_width="0.9dip" android:layout_height="0.9dip" />
+        </LinearLayout>
+        <Button android:background="@color/sw_common_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.25" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/container" android:background="@color/sw_purchase_fragment_bg" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="6.0" />
+</LinearLayout>

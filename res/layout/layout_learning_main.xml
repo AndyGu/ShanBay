@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/main_container" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/learning_container" android:layout_width="fill_parent" android:layout_height="@dimen/height158">
+        <RelativeLayout android:id="@id/learning_top_container" android:layout_width="fill_parent" android:layout_height="@dimen/height70">
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/sw_home_white_bg" android:layout_width="fill_parent" android:layout_height="@dimen/height70">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/learning_checkin_days_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <TextView android:textSize="@dimen/textsize45" android:textStyle="bold" android:textColor="@color/common_green" android:id="@id/learning_checkin_days" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/textsize12" android:textColor="@color/sw_text_color_green" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin1" android:text="打卡天数" android:layout_below="@id/learning_checkin_days" />
+                </LinearLayout>
+                <RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <TextView android:textSize="@dimen/textsize28" android:textColor="#ff606060" android:id="@id/learning_num_total" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="@dimen/textsize12" android:textColor="@color/sw_text_color_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin2" android:layout_marginBottom="@dimen/margin4" android:text="/累计学习单词数" android:layout_toRightOf="@id/learning_num_total" android:layout_alignBottom="@id/learning_num_total" />
+                    <TextView android:textSize="@dimen/textsize28" android:textColor="#ff606060" android:id="@id/learning_num_mastered" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/learning_num_total" />
+                    <TextView android:textSize="@dimen/textsize12" android:textColor="@color/sw_text_color_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin2" android:layout_marginBottom="@dimen/margin4" android:text="/掌握单词数" android:layout_toRightOf="@id/learning_num_mastered" android:layout_alignBottom="@id/learning_num_mastered" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/learning_no_checkin_container" android:background="@color/sw_home_white_bg" android:paddingTop="@dimen/padding15" android:paddingBottom="@dimen/padding15" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/height70">
+                <TextView android:textSize="@dimen/textsize30" android:textColor="@color/common_text_dark" android:id="@id/learning_user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Annabubu" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5">
+                    <TextView android:textSize="@dimen/textsize17" android:textColor="@color/sw_text_color_dark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="你还没有" />
+                    <TextView android:textSize="@dimen/textsize17" android:textColor="@color/common_green" android:id="@id/learning_checkin_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin3" android:text="打卡" android:drawableRight="@drawable/icon_arrow_checkin" android:drawablePadding="@dimen/padding1" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <com.shanbay.words.view.HomeAnimationScrollView android:id="@id/learning_bottom_container" android:background="@color/sw_home_white_bg" android:scrollbars="none" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="@dimen/height80" android:layout_marginTop="@dimen/margin8" android:cacheColorHint="@android:color/transparent" android:footerDividersEnabled="false">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/learning_bottom_state_container" android:layout_width="fill_parent" android:layout_height="@dimen/height80">
+                    <LinearLayout android:orientation="horizontal" android:paddingLeft="@dimen/padding5" android:paddingRight="@dimen/padding5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <TextView android:textSize="@dimen/textsize35" android:textColor="#ff585858" android:gravity="center" android:id="@id/learning_num_today" android:layout_width="@dimen/width30" android:layout_height="wrap_content" />
+                            <TextView android:textSize="@dimen/textsize12" android:textColor="@color/sw_text_color_dark" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" android:text="今日单词" android:layout_below="@id/learning_num_today" android:layout_alignLeft="@id/learning_num_today" android:layout_alignRight="@id/learning_num_today" />
+                        </RelativeLayout>
+                        <RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <TextView android:textSize="@dimen/textsize35" android:textColor="#ff585858" android:gravity="center" android:id="@id/learning_num_new" android:layout_width="@dimen/width30" android:layout_height="wrap_content" />
+                            <TextView android:textSize="@dimen/textsize12" android:textColor="@color/sw_text_color_dark" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" android:text="新词数" android:layout_below="@id/learning_num_new" android:layout_alignLeft="@id/learning_num_new" android:layout_alignRight="@id/learning_num_new" />
+                        </RelativeLayout>
+                        <RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                            <TextView android:textSize="@dimen/textsize35" android:textColor="@color/common_green" android:gravity="center" android:id="@id/learning_num_passed" android:layout_width="@dimen/width30" android:layout_height="wrap_content" />
+                            <TextView android:textSize="@dimen/textsize12" android:textColor="@color/sw_text_color_dark" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" android:text="已完成" android:layout_below="@id/learning_num_passed" android:layout_alignLeft="@id/learning_num_passed" android:layout_alignRight="@id/learning_num_passed" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <View android:background="#ffbdbdbd" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="@dimen/margin20" android:layout_marginBottom="@dimen/margin20" />
+                    <RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <ImageView android:id="@id/learning_test_image" android:visibility="visible" android:layout_width="@dimen/width20" android:layout_height="@dimen/width20" android:src="@drawable/icon_test" android:scaleType="fitCenter" android:layout_centerHorizontal="true" />
+                        <TextView android:textSize="@dimen/textsize14" android:textColor="@color/sw_text_color_dark" android:gravity="center" android:id="@id/learning_test_text" android:paddingTop="@dimen/padding5" android:visibility="visible" android:layout_width="@dimen/width30" android:layout_height="wrap_content" android:text="去测试" android:drawableRight="@drawable/icon_arrow_test" android:layout_below="@id/learning_test_image" android:layout_centerHorizontal="true" />
+                        <Button android:textSize="@dimen/textsize17" android:textColor="@color/sw_home_white_bg" android:id="@id/learning_start" android:background="@drawable/btn_home_learning" android:visibility="gone" android:layout_width="@dimen/width30" android:layout_height="@dimen/height30" android:text="开始" />
+                        <Button android:textSize="@dimen/textsize15" android:textColor="@color/sw_home_white_bg" android:id="@id/learning_finished" android:background="@drawable/btn_home_learning" android:visibility="gone" android:layout_width="@dimen/width30" android:layout_height="@dimen/height30" android:text="学完了" />
+                        <Button android:textSize="@dimen/textsize17" android:textColor="@color/sw_home_white_bg" android:id="@id/learning_checkin" android:background="@drawable/btn_home_learning" android:visibility="gone" android:layout_width="@dimen/width30" android:layout_height="@dimen/height30" android:text="打卡" />
+                        <RelativeLayout android:id="@id/learning_prepare" android:visibility="gone" android:clickable="false" android:layout_width="@dimen/width30" android:layout_height="@dimen/height30">
+                            <TextView android:textSize="@dimen/textsize14" android:textColor="@color/sw_text_color_green" android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="准备中" />
+                            <View android:id="@id/learning_prepare_border" android:background="@drawable/icon_animation_circle" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/learning_bottom_progress_container" android:background="@drawable/bg_home_progress_container" android:paddingTop="@dimen/padding2" android:paddingBottom="@dimen/padding2" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <com.shanbay.words.view.DownloadView android:id="@id/learning_progress_download_view" android:visibility="gone" android:layout_width="@dimen/width12" android:layout_height="@dimen/height12" android:layout_marginRight="@dimen/margin1" />
+                    <ProgressBar android:id="@id/learning_progress_loading_view" android:visibility="gone" android:layout_width="@dimen/width12" android:layout_height="@dimen/height12" android:layout_marginRight="@dimen/margin1" style="?android:attr/progressBarStyleSmall" />
+                    <ImageView android:id="@id/learning_progress_data_state_img" android:visibility="gone" android:layout_width="@dimen/width12" android:layout_height="@dimen/height12" android:layout_marginRight="@dimen/margin1" android:scaleType="fitCenter" />
+                    <TextView android:textSize="@dimen/textsize13" android:textColor="#ff919191" android:gravity="center" android:id="@id/learning_progress_data_state_text" android:layout_width="wrap_content" android:layout_height="@dimen/height12" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.shanbay.words.view.HomeAnimationScrollView>
+    </LinearLayout>
+    <RelativeLayout android:id="@id/init_container" android:layout_width="fill_parent" android:layout_height="@dimen/height158">
+        <RelativeLayout android:gravity="center" android:id="@id/init_go_init_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <RelativeLayout android:gravity="center" android:id="@id/init_initializing_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include layout="@layout/layout_learning_init" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

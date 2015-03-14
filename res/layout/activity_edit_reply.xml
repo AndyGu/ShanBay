@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="@dimen/padding8" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textSize="@dimen/textsize16" android:gravity="top|left|center" android:id="@id/content" android:background="@drawable/btn_item_normal" android:paddingLeft="@dimen/padding7" android:paddingTop="@dimen/padding8" android:paddingRight="@dimen/padding7" android:paddingBottom="@dimen/padding8" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="10" android:ems="10" android:inputType="textMultiLine" />
+</LinearLayout>

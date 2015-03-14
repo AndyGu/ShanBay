@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/container_others" android:paddingLeft="@dimen/padding10" android:paddingRight="@dimen/padding10" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/textsize12" android:textColor="@color/common_feedback_text" android:gravity="left|center" android:layout_gravity="right" android:id="@id/reply_time_others" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin3" android:layout_marginBottom="@dimen/margin3" android:text="12小时前" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin3">
+                <com.shanbay.widget.RoundImageView android:layout_gravity="center" android:id="@id/avatar_others" android:layout_width="@dimen/width18" android:layout_height="@dimen/height18" android:scaleType="fitXY" />
+                <TextView android:textSize="@dimen/textsize12" android:layout_gravity="center" android:id="@id/user_name_others" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin3" />
+            </LinearLayout>
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_feedback_text" android:gravity="center_vertical" android:id="@id/content_others" android:background="@drawable/bg_message_reply_others" android:paddingLeft="@dimen/padding8" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="@dimen/height23" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/container_me" android:paddingLeft="@dimen/padding10" android:paddingRight="@dimen/padding10" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/textsize12" android:textColor="@color/common_feedback_text" android:gravity="left|center" android:layout_gravity="left" android:id="@id/reply_time_me" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin3" android:layout_marginBottom="@dimen/margin3" android:text="12小时前" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@android:color/white" android:gravity="center_vertical" android:id="@id/content_me" android:background="@drawable/bg_message_reply_me" android:paddingLeft="@dimen/padding5" android:paddingTop="@dimen/padding5" android:paddingRight="@dimen/padding8" android:paddingBottom="@dimen/padding5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="@dimen/height23" android:layout_weight="1.0" />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin3">
+                <com.shanbay.widget.RoundImageView android:layout_gravity="center" android:id="@id/avatar_me" android:layout_width="@dimen/width18" android:layout_height="@dimen/height18" android:scaleType="fitXY" />
+                <TextView android:textSize="@dimen/textsize12" android:layout_gravity="center" android:id="@id/user_name_me" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin3" android:text="Shanbay" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

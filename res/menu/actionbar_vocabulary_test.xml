@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/icon_share" android:id="@id/share" android:title="分享" app:showAsAction="always">
+        <menu>
+            <item android:icon="@drawable/icon_share_weixin" android:id="@id/share_contract" android:title="@string/actionbar_weixin_friends_share" />
+            <item android:icon="@drawable/icon_share_pengyouquan" android:id="@id/share_weixin" android:title="@string/actionbar_weixin_share" />
+            <item android:icon="@drawable/icon_share_weibo" android:id="@id/share_weibo" android:title="@string/actionbar_weibo_share" />
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:scrollbarStyle="outsideOverlay" android:id="@id/comment_container" android:background="@android:color/transparent" android:paddingLeft="@dimen/padding_right_left" android:paddingTop="@dimen/padding_top_bottom" android:paddingRight="@dimen/padding_right_left" android:paddingBottom="@dimen/padding_top_bottom" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:divider="@android:color/transparent" android:footerDividersEnabled="false" />
+    <include android:id="@id/reply_frame" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" layout="@layout/item_checkin_comment_edit" />
+</RelativeLayout>

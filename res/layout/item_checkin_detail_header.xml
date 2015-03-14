@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@color/checkin_header_title_bg" android:paddingLeft="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="@dimen/height30" android:layout_marginLeft="0.5dip" android:layout_marginRight="0.5dip">
+        <ImageView android:id="@id/checkin_medal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin1" android:src="@drawable/icon_medal_small" android:layout_toLeftOf="@id/checkin_days" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/textsize40" android:textStyle="bold" android:textColor="@color/common_green" android:id="@id/checkin_days" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin1" android:text="天打卡" android:layout_toRightOf="@id/checkin_days" android:layout_alignBaseline="@id/checkin_days" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:padding="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.shanbay.widget.RoundImageView android:id="@id/checkin_avatar" android:layout_width="@dimen/width20" android:layout_height="@dimen/width20" android:scaleType="fitXY" />
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_green" android:id="@id/checkin_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_toRightOf="@id/checkin_avatar" />
+            <TextView android:textSize="@dimen/textsize15" android:textColor="@color/common_text" android:id="@id/checkin_info" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginTop="@dimen/margin2" android:layout_toRightOf="@id/checkin_avatar" android:layout_below="@id/checkin_name" android:lineSpacingMultiplier="1.1" />
+        </RelativeLayout>
+        <TextView android:textSize="@dimen/textsize17" android:textColor="@color/common_text_dark" android:id="@id/checkin_note" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin2" android:layout_marginBottom="@dimen/margin2" android:lineSpacingMultiplier="1.5" />
+        <ImageView android:layout_gravity="center" android:id="@id/checkin_note_more" android:padding="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/icon_checkin_arrow_down" />
+        <LinearLayout android:layout_gravity="right|center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin2">
+            <ImageView android:id="@id/checkin_like" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin12" android:src="@drawable/icon_punch_card_midddle" />
+            <ImageView android:id="@id/checkin_comment" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_reply_midddle" />
+            <TextView android:textColor="@color/common_text" android:gravity="bottom|center" android:id="@id/checkin_edit_note" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="编辑" android:drawableLeft="@drawable/icon_checkin_edit" />
+        </LinearLayout>
+    </LinearLayout>
+    <View android:background="@color/common_item_stroke" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    <LinearLayout android:orientation="vertical" android:id="@id/liked_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_marginTop="@dimen/margin5" android:layout_marginRight="@dimen/margin1" android:layout_marginBottom="@dimen/margin5" android:src="@drawable/icon_liked" />
+            <TextView android:textSize="@dimen/textsize12" android:textColor="@color/common_checkin_like_red" android:id="@id/number_total_liked" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/liked_avatar_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin2" />
+        </LinearLayout>
+        <View android:background="@color/common_item_stroke" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    </LinearLayout>
+</LinearLayout>

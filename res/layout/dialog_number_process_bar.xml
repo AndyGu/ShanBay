@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/padding5" android:paddingTop="@dimen/padding10" android:paddingRight="@dimen/padding5" android:paddingBottom="@dimen/padding13" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:processBar="http://schemas.android.com/apk/res/com.shanbay.words">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.4">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin3" android:src="@drawable/icon_easy" />
+        <TextView android:textSize="@dimen/textsize17" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin3" android:text="正在清除缓存中" />
+    </LinearLayout>
+    <com.shanbay.words.view.NumberProgressBar android:id="@id/progress_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.6" android:layout_centerInParent="true" processBar:progress_max="100" processBar:progress_text_size="@dimen/textsize15" processBar:progress_text_visibility="visible" />
+</LinearLayout>

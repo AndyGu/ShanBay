@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/textsize18" android:textStyle="bold" android:textColor="@color/common_header_text" android:gravity="center" android:id="@id/price_list_disable" android:layout_width="0.0dip" android:layout_height="@dimen/height25" android:layout_weight="1.0" />
+    <TextView android:textSize="@dimen/textsize18" android:id="@id/price_list_disable_blank" android:layout_width="0.0dip" android:layout_height="@dimen/height25" android:layout_weight="1.8" />
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/footprint_container" android:paddingLeft="@dimen/padding8" android:paddingRight="@dimen/padding6" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/textsize16" android:textColor="@color/common_green" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" android:singleLine="true" />
+    <TextView android:textSize="@dimen/textsize15" android:textColor="@android:color/darker_gray" android:ellipsize="end" android:id="@id/summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin1" android:layout_marginTop="@dimen/margin3" android:layout_marginBottom="@dimen/margin5" android:maxLines="3" android:lineSpacingExtra="3.0dip" />
+    <LinearLayout android:gravity="right" android:layout_gravity="right" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin5">
+        <TextView android:textSize="@dimen/textsize12" android:textColor="@color/choiceness_like" android:id="@id/choiceness_like" android:layout_width="@dimen/width26" android:layout_height="wrap_content" android:drawableLeft="@drawable/icon_feature_like" />
+        <TextView android:textSize="@dimen/textsize12" android:textColor="@color/choiceness_comment" android:id="@id/choiceness_comments" android:layout_width="@dimen/width22" android:layout_height="wrap_content" android:drawableLeft="@drawable/icon_choiceness_comment" />
+    </LinearLayout>
+</LinearLayout>

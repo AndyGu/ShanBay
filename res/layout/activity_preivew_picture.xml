@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:id="@id/container_list" android:background="@color/community_user_space" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/preview_image" android:layout_width="@dimen/height130" android:layout_height="@dimen/height130" android:layout_marginBottom="@dimen/margin20" android:scaleType="fitXY" />
+</LinearLayout>

@@ -1,5 +1,7 @@
 package com.shanbay.app;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -7,12 +9,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import com.google.renamedgson.JsonElement;
-import com.shanbay.R.string;
 import com.shanbay.http.APIClient;
 import com.shanbay.http.DataResponseHandler;
 import com.shanbay.http.HttpClient;
 import com.shanbay.http.ModelResponseException;
 import com.shanbay.model.App;
+import com.shanbay.words.R;
 
 public abstract class ShanbayActivity<T extends APIClient> extends BaseActivity<T>
 {
@@ -78,6 +80,7 @@ public abstract class ShanbayActivity<T extends APIClient> extends BaseActivity<
 
   public abstract void onRequestLogin();
 
+  @SuppressLint("NewApi")
   public void startApp(App paramApp)
   {
     Intent localIntent = getPackageManager().getLaunchIntentForPackage(paramApp.identifier);

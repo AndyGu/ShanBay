@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin5">
+        <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/columnar_marking" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+            <View android:id="@id/need_to_learn" android:background="@drawable/item_progress_marking_need_to_learn" android:layout_width="@dimen/width8" android:layout_height="@dimen/height8" />
+            <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin3" android:text="@string/need_to_learn" />
+            <View android:id="@id/learned" android:background="@drawable/item_progress_marking_learned" android:layout_width="@dimen/width8" android:layout_height="@dimen/height8" android:layout_marginLeft="@dimen/margin5" />
+            <TextView android:textSize="@dimen/textsize13" android:textColor="@color/common_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin3" android:text="@string/learning" />
+        </LinearLayout>
+    </RelativeLayout>
+    <com.shanbay.stats.ChartView android:id="@id/chart" android:layout_width="fill_parent" android:layout_height="@dimen/height80" />
+</LinearLayout>

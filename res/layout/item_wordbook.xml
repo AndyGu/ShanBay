@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/textsize15" android:textStyle="bold" android:textColor="@color/common_text" android:id="@id/header" android:paddingLeft="@dimen/padding5" android:paddingTop="@dimen/padding7" android:paddingBottom="@dimen/padding1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="正在学习" />
+    <RelativeLayout android:id="@id/item_detail" android:padding="@dimen/padding5" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.loopj.android.image.SmartImageView android:id="@id/cover" android:layout_width="@dimen/width40" android:layout_height="@dimen/height60" android:layout_marginRight="@dimen/margin5" android:scaleType="fitXY" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin1" android:layout_toRightOf="@id/cover" android:layout_alignParentTop="true" android:layout_alignParentRight="true">
+            <TextView android:textSize="@dimen/textsize17" android:textColor="@color/sw_wordbook_title" android:layout_gravity="left" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="SAT官方" android:maxLines="2" android:layout_alignParentTop="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:paddingBottom="@dimen/padding1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/cover" android:layout_alignBottom="@id/cover">
+            <LinearLayout android:orientation="vertical" android:id="@id/count_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textSize="@dimen/textsize17" android:textColor="@color/sw_common_black" android:layout_gravity="center" android:id="@id/count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="776" />
+                <TextView android:textSize="@dimen/textsize14" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wb_wordcount" style="@style/SBShadowText" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/progress_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_weight="1.0">
+                <TextView android:textSize="@dimen/textsize17" android:textColor="@color/common_green" android:layout_gravity="center" android:id="@id/progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="24.0%" />
+                <TextView android:textSize="@dimen/textsize14" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wb_progress" style="@style/SBShadowText" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/finish_date_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:layout_weight="1.0">
+                <TextView android:textSize="@dimen/textsize17" android:textColor="@color/sw_common_black" android:layout_gravity="center" android:id="@id/finish_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2013.06.06" />
+                <TextView android:textSize="@dimen/textsize14" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wordbook_finish_time" style="@style/SBShadowText" />
+            </LinearLayout>
+        </LinearLayout>
+        <Button android:textSize="@dimen/textsize14" android:textColor="@color/common_btn_text" android:gravity="center" android:id="@id/learning" android:layout_width="@dimen/width35" android:layout_height="@dimen/width14" android:layout_marginRight="@dimen/margin3" android:layout_marginBottom="@dimen/margin3" android:text="开始学习" android:layout_alignBottom="@id/cover" android:layout_alignParentRight="true" style="@style/SBBaseButton.Small" />
+    </RelativeLayout>
+</LinearLayout>
