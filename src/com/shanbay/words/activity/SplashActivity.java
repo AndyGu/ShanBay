@@ -1,5 +1,6 @@
 package com.shanbay.words.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -28,12 +29,13 @@ public class SplashActivity extends WordsActivity {
 		}
 	}
 
+	@SuppressLint("NewApi")
 	private void checkExternalStorageSize() {
 		StatFs localStatFs = new StatFs(Environment
 				.getExternalStorageDirectory().getPath());
-		Log.e("checkExternalStorageSize", "size=" + localStatFs.getBlockSize()
-				* localStatFs.getAvailableBlocks() / 1048576L);
-		if (localStatFs.getBlockSize() * localStatFs.getAvailableBlocks()
+		Log.e("checkExternalStorageSize", "size=" + localStatFs.getBlockSizeLong()
+				* localStatFs.getAvailableBlocksLong() / 1048576L);
+		if (localStatFs.getBlockSizeLong() * localStatFs.getAvailableBlocksLong()
 				/ 1048576L < 10L)
 			showToast("手机存储空间不足，可能影响软件使用，请及时清理");
 	}
@@ -50,6 +52,7 @@ public class SplashActivity extends WordsActivity {
 		checkExternalStorageSize();
 		// WebResourceService.startService(this);
 		if (SessionDateUtils.isValid(this)) {
+			Log.e("SplashActivity.SessionDateUtils", "isValid");
 			goHome();
 			finish();
 			return;
@@ -61,7 +64,9 @@ public class SplashActivity extends WordsActivity {
 			this.mUserHandler.user();
 			return;
 		}
+		
 		if (UserCache.isUserLogin(this)) {
+			Log.e("SplashActivity.isUserLogin", "isUserLogin");
 			goHome();
 			finish();
 			return;

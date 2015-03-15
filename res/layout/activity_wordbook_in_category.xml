@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.shanbay.widget.IndicatorWrapper android:id="@id/indicator_wrapper" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" app:drawable="@drawable/ic_spinner">
-        <ListView android:id="@id/wordbook_list" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="@android:color/transparent" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="0.0dip" >
+
+    <com.shanbay.widget.IndicatorWrapper
+        android:id="@id/indicator_wrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="0.0dip"
+        app:drawable="@drawable/ic_spinner" >
+
+        <ListView
+            android:id="@id/wordbook_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:cacheColorHint="@android:color/transparent"
+            android:descendantFocusability="blocksDescendants" />
     </com.shanbay.widget.IndicatorWrapper>
+
 </LinearLayout>

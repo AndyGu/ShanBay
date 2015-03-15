@@ -7,5 +7,5 @@ public class Config {
 	
 
 	public static boolean SENTRY_ENABLE = true;
-	public static String LOG_PREFIX = null;
+	public static String LOG_PREFIX = "";
 }

@@ -17,23 +17,23 @@ import com.shanbay.util.LogUtils;
 public class BaseActivityHelper<T extends APIClient>
 {
   protected final String TAG = LogUtils.makeLogTag(getClass());
-  protected BaseActivity<T> c;
+  protected BaseActivity<T> bActivity;
   protected T mClient;
 
   public BaseActivityHelper(BaseActivity<T> paramBaseActivity)
   {
-    this.c = paramBaseActivity;
+    this.bActivity = paramBaseActivity;
     this.mClient = getClient();
   }
 
   public boolean bindService(Intent paramIntent, ServiceConnection paramServiceConnection, int paramInt)
   {
-    return this.c.bindService(paramIntent, paramServiceConnection, paramInt);
+    return this.bActivity.bindService(paramIntent, paramServiceConnection, paramInt);
   }
 
   public void checkUpdate()
   {
-    this.c.checkUpdate();
+    this.bActivity.checkUpdate();
   }
 
   protected void d(String paramString)
@@ -48,58 +48,58 @@ public class BaseActivityHelper<T extends APIClient>
 
   public void dismissProgressDialog()
   {
-    this.c.dismissProgressDialog();
+    this.bActivity.dismissProgressDialog();
   }
 
   public View findViewById(int paramInt)
   {
-    return this.c.findViewById(paramInt);
+    return this.bActivity.findViewById(paramInt);
   }
 
   public void finish()
   {
-    this.c.finish();
+    this.bActivity.finish();
   }
 
   public T getClient()
   {
-    return this.c.getClient();
+    return this.bActivity.getClient();
   }
 
   public Intent getIntent()
   {
-    return this.c.getIntent();
+    return this.bActivity.getIntent();
   }
 
   public LayoutInflater getLayoutInflater()
   {
-    return this.c.getLayoutInflater();
+    return this.bActivity.getLayoutInflater();
   }
 
   public Resources getResources()
   {
-    return this.c.getResources();
+    return this.bActivity.getResources();
   }
 
   public SharedPreferences getSharedPreferences(String paramString, int paramInt)
   {
-    return this.c.getSharedPreferences(paramString, paramInt);
+    return this.bActivity.getSharedPreferences(paramString, paramInt);
   }
 
   public String getString(int paramInt)
   {
-    return this.c.getString(paramInt);
+    return this.bActivity.getString(paramInt);
   }
 
   public boolean handleCommonException(ModelResponseException paramModelResponseException)
   {
-    return this.c.handleCommonException(paramModelResponseException);
+    return this.bActivity.handleCommonException(paramModelResponseException);
   }
 
   @SuppressLint("NewApi")
   public void onBackPressed()
   {
-    this.c.onBackPressed();
+    this.bActivity.onBackPressed();
   }
 
   public void onCreate(Bundle paramBundle)
@@ -141,46 +141,46 @@ public class BaseActivityHelper<T extends APIClient>
 
   public void setContentView(int paramInt)
   {
-    this.c.setContentView(paramInt);
+    this.bActivity.setContentView(paramInt);
   }
 
   public AlertDialog showExceptionDialog(ModelResponseException paramModelResponseException)
   {
-    return this.c.showExceptionDialog(paramModelResponseException);
+    return this.bActivity.showExceptionDialog(paramModelResponseException);
   }
 
   public AlertDialog showExceptionDialog(ModelResponseException paramModelResponseException, boolean paramBoolean)
   {
-    return this.c.showExceptionDialog(paramModelResponseException, paramBoolean);
+    return this.bActivity.showExceptionDialog(paramModelResponseException, paramBoolean);
   }
 
   public void showProgressDialog()
   {
-    this.c.showProgressDialog();
+    this.bActivity.showProgressDialog();
   }
 
   public void showProgressDialog(String paramString)
   {
-    this.c.showProgressDialog(paramString);
+    this.bActivity.showProgressDialog(paramString);
   }
 
   public void showToast(int paramInt)
   {
-    this.c.showToast(paramInt);
+    this.bActivity.showToast(paramInt);
   }
 
   public void showToast(String paramString)
   {
-    this.c.showToast(paramString);
+    this.bActivity.showToast(paramString);
   }
 
   public void startActivity(Intent paramIntent)
   {
-    this.c.startActivity(paramIntent);
+    this.bActivity.startActivity(paramIntent);
   }
 
   public void unbindService(ServiceConnection paramServiceConnection)
   {
-    this.c.unbindService(paramServiceConnection);
+    this.bActivity.unbindService(paramServiceConnection);
   }
 }

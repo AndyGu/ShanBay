@@ -1,10 +1,12 @@
 package com.shanbay.http;
 
 import android.os.Message;
-import com.google.renamedgson.JsonElement;
-import com.google.renamedgson.JsonObject;
-import com.google.renamedgson.JsonParseException;
-import com.google.renamedgson.JsonParser;
+import android.util.Log;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonParser;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.shanbay.util.LogUtils;
 import org.apache.http.Header;
@@ -26,7 +28,7 @@ public abstract class GsonResponseHandler extends AsyncHttpResponseHandler {
 	public void onFailure(int arg0, Header[] arg1, byte[] bytes, Throwable throwable) {
 		// TODO Auto-generated method stub
 		try {
-			LogUtils.LOGD(this.TAG, "handle Failure:" + bytes.toString());
+			LogUtils.LOGD(this.TAG, "handle Failure:" + new String(bytes));
 			throwable.printStackTrace();
 			if (((throwable instanceof HttpResponseException))
 					&& (((HttpResponseException) throwable)
@@ -34,8 +36,8 @@ public abstract class GsonResponseHandler extends AsyncHttpResponseHandler {
 				onAuthenticationFailure();
 				return;
 			}
-			if (bytes.toString() != null) {
-				JsonElement jsonElement = parseResponse(bytes.toString());
+			if (new String(bytes) != null) {
+				JsonElement jsonElement = parseResponse(new String(bytes));
 				onFailure(new ModelResponseException(throwable), jsonElement);
 				return;
 			}
@@ -85,6 +87,7 @@ public abstract class GsonResponseHandler extends AsyncHttpResponseHandler {
 	}
 
 	protected JsonElement parseResponse(String paramString) {
+		Log.e("parseResponse", "paramString="+paramString);
 		String str = paramString.trim();
 		return new JsonParser().parse(str);
 	}
@@ -93,7 +96,7 @@ public abstract class GsonResponseHandler extends AsyncHttpResponseHandler {
 			Header[] header, byte[] bytes) {
 		if (status != 204)
 			try {
-				JsonElement localJsonElement = parseResponse(bytes.toString());
+				JsonElement localJsonElement = parseResponse(new String(bytes));
 				Object[] arrayOfObject2 = new Object[3];
 				arrayOfObject2[0] = Integer.valueOf(status);
 				arrayOfObject2[1] = header;

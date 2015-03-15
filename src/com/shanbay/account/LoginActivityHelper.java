@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import com.google.renamedgson.JsonElement;
 import com.shanbay.app.BaseActivityHelper;
 import com.shanbay.app.ShanbayActivity;
 import com.shanbay.http.APIClient;
@@ -16,6 +15,7 @@ import com.shanbay.http.DataResponseHandler;
 import com.shanbay.http.ModelResponseException;
 import com.shanbay.words.R;
 
+import com.google.gson.JsonElement;
 import java.io.PrintStream;
 
 public class LoginActivityHelper<T extends APIClient> extends BaseActivityHelper<T>
@@ -84,7 +84,7 @@ public class LoginActivityHelper<T extends APIClient> extends BaseActivityHelper
       return;
     }
     showProgressDialog();
-    this.mClient.login(this.c, str1, str2, new DataResponseHandler()
+    this.mClient.login(this.bActivity, str1, str2, new DataResponseHandler()
     {
       public void onFailure(ModelResponseException paramAnonymousModelResponseException, JsonElement paramAnonymousJsonElement)
       {

@@ -13,8 +13,8 @@ import org.apache.http.client.CookieStore;
 
 public abstract class HttpClient
 {
-  private static final String SHANBAY_API_VERSION_HEADER_KEY = "SBAY-API-VER";
-  private static final String SHANBAY_API_VERSION_HEADER_VAL = "1.0";
+  public static final String SHANBAY_API_VERSION_HEADER_KEY = "SBAY-API-VER";
+  public static final String SHANBAY_API_VERSION_HEADER_VAL = "1.0";
   private final String TAG = LogUtils.makeLogTag(getClass());
   private AsyncHttpClient client = new AsyncHttpClient();
 
@@ -96,8 +96,8 @@ public abstract class HttpClient
     return getAsyncHttpClient().put(str, paramRequestParams, paramAsyncHttpResponseHandler);
   }
 
-  public void setCookieStore(CookieStore paramCookieStore)
+  public void setCookieStore(CookieStore cookieStore)
   {
-    getAsyncHttpClient().setCookieStore(paramCookieStore);
+    getAsyncHttpClient().setCookieStore(cookieStore);
   }
 }

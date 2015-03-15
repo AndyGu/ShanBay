@@ -1,14 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical" android:background="@color/sw_experience_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/experience_img_top_margin" android:src="@drawable/image_experience" android:scaleType="fitXY" android:layout_centerHorizontal="true" />
-    <LinearLayout android:orientation="vertical" android:id="@id/label" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" android:layout_alignParentTop="true">
-        <TextView android:textSize="@dimen/textsize23" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:id="@id/label_app" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin7" android:text="@string/app_name" />
-        <TextView android:textSize="@dimen/textsize14" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:paddingLeft="@dimen/padding5" android:paddingRight="@dimen/padding5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" android:text="@string/label_experience_intro" android:layout_below="@id/label_app" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/sw_experience_bg"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/experience_img_top_margin"
+        android:scaleType="fitXY"
+        android:src="@drawable/image_experience" />
+
+    <LinearLayout
+        android:id="@id/label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/margin5"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@id/label_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin7"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textsize23" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_app"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin5"
+            android:paddingLeft="@dimen/padding5"
+            android:paddingRight="@dimen/padding5"
+            android:text="@string/label_experience_intro"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textsize14" />
     </LinearLayout>
-    <Button android:textSize="@dimen/textsize22" android:textColor="@android:color/white" android:id="@id/experience" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin8" android:text="@string/label_experience" android:drawableRight="@drawable/icon_arrow_experience" android:drawablePadding="@dimen/padding3" android:layout_above="@id/btn" android:layout_centerHorizontal="true" />
-    <LinearLayout android:orientation="horizontal" android:id="@id/btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin20" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
-        <Button android:textSize="@dimen/textsize20" android:textColor="@android:color/white" android:id="@id/signup" android:background="@drawable/btn_experience" android:layout_width="@dimen/width52" android:layout_height="@dimen/height20" android:text="@string/btn_signup" />
-        <Button android:textSize="@dimen/textsize20" android:textColor="@android:color/white" android:id="@id/login" android:background="@drawable/btn_experience" android:layout_width="@dimen/width52" android:layout_height="@dimen/height20" android:layout_marginLeft="@dimen/margin20" android:text="@string/btn_login" />
+
+    <Button
+        android:id="@id/experience"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin8"
+        android:background="@android:color/transparent"
+        android:drawablePadding="@dimen/padding3"
+        android:drawableRight="@drawable/icon_arrow_experience"
+        android:text="@string/label_experience"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/textsize22" />
+
+    <LinearLayout
+        android:id="@id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin20"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@id/signup"
+            android:layout_width="@dimen/width52"
+            android:layout_height="@dimen/height20"
+            android:background="@drawable/btn_experience"
+            android:text="@string/btn_signup"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textsize20" />
+
+        <Button
+            android:id="@id/login"
+            android:layout_width="@dimen/width52"
+            android:layout_height="@dimen/height20"
+            android:layout_marginLeft="@dimen/margin20"
+            android:background="@drawable/btn_experience"
+            android:text="@string/btn_login"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/textsize20" />
     </LinearLayout>
+
 </RelativeLayout>

@@ -1,6 +1,9 @@
 package com.shanbay.account;
 
-import com.google.renamedgson.JsonElement;
+import android.util.Log;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.shanbay.app.ShanbayActivity;
 import com.shanbay.http.APIClient;
 import com.shanbay.http.ModelResponseException;
@@ -19,27 +22,32 @@ public class UserHandler<T extends APIClient> extends ModelResponseHandler<User>
 
   protected void onAuthenticationFailure()
   {
+	  Log.e("UserHandler", "onAuthenticationFailure()");
     this.mActivity.finish();
     this.mActivity.onRequestLogin();
   }
 
-  public void onFailure(ModelResponseException paramModelResponseException, JsonElement paramJsonElement)
+  public void onFailure(ModelResponseException mrException, JsonElement jsonElement)
   {
-    this.mActivity.handleCommonException(paramModelResponseException);
-  }
 
-  public void onSuccess(int paramInt, User paramUser)
+	  Log.e("UserHandler", "onFailure()");
+    this.mActivity.handleCommonException(mrException);
+  }
+  
+  public void onSuccess(int paramInt, User user)
   {
-    UserCache.update(this.mActivity, paramUser);
+	  Log.e("UserHandler", "onSuccess()");
+    UserCache.update(this.mActivity, user);
     onUserLoaded();
   }
 
   protected void onUserLoaded()
   {
+	  Log.e("UserHandler", "onUserLoaded()");
   }
 
-  public void user()
-  {
-    this.mActivity.getClient().user(this.mActivity, this);
-  }
+	public void user() {
+		Log.e("UserHandler", "user()");
+		this.mActivity.getClient().user(this.mActivity, this);
+	}
 }

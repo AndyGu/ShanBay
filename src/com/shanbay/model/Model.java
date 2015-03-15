@@ -1,11 +1,5 @@
 package com.shanbay.model;
 
-import com.google.renamedgson.FieldNamingPolicy;
-import com.google.renamedgson.Gson;
-import com.google.renamedgson.GsonBuilder;
-import com.google.renamedgson.JsonArray;
-import com.google.renamedgson.JsonElement;
-import com.google.renamedgson.JsonParser;
 import java.io.PrintStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;
@@ -13,6 +7,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 public class Model
 {

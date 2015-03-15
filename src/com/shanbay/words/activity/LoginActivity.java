@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.view.View;
+
+import com.shanbay.words.R;
 import com.shanbay.words.WordsClient;
 import com.shanbay.words.handler.WordsUserHandler;
 import com.shanbay.words.helper.WordsLoginActivityHelper;
@@ -19,19 +21,20 @@ public class LoginActivity extends WordsActivity
     this.mLoginHelper.login();
   }
 
-  protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
+  protected void onActivityResult(int requestCode, int resultCode, Intent intent)
   {
-    if ((paramInt1 == 33) && (paramInt2 == -1))
+    if ((requestCode == 33) && (resultCode == -1))
     {
       setResult(-1);
       finish();
     }
   }
 
-  protected void onCreate(Bundle paramBundle)
+  @SuppressWarnings({ "rawtypes", "unchecked" })
+protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130903094);
+    setContentView(R.layout.activity_log_in);
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     this.mUserHandler = new WordsUserHandler(this);
     this.mLoginHelper = new WordsLoginActivityHelper(this, this.mUserHandler);

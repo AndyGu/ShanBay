@@ -1,10 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.shanbay.widget.IndicatorWrapper android:id="@id/indicator_wrapper" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" app:drawable="@drawable/ic_spinner"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ScrollView android:scrollbarStyle="outsideOverlay" android:orientation="vertical" android:paddingBottom="@dimen/padding8" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scrollingCache="false" android:overScrollMode="never">
-        <LinearLayout android:orientation="vertical" android:id="@id/root" android:paddingLeft="@dimen/margin6" android:paddingTop="@dimen/margin8" android:paddingRight="@dimen/margin6" android:paddingBottom="@dimen/margin16" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <TextView android:textSize="@dimen/small_text_size" android:gravity="center" android:background="@color/sw_common_bg_new" android:paddingTop="@dimen/padding5" android:paddingBottom="@dimen/padding5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/label_select_word_book" />
-            <View android:background="@color/sw_common_bg" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+<com.shanbay.widget.IndicatorWrapper xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/indicator_wrapper"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="0.0dip"
+    app:drawable="@drawable/ic_spinner" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clipToPadding="false"
+        android:fadingEdge="none"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        android:paddingBottom="@dimen/padding8"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollingCache="false" >
+
+        <LinearLayout
+            android:id="@id/root"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin16"
+            android:paddingLeft="@dimen/margin6"
+            android:paddingRight="@dimen/margin6"
+            android:paddingTop="@dimen/margin8" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sw_common_bg_new"
+                android:gravity="center"
+                android:paddingBottom="@dimen/padding5"
+                android:paddingTop="@dimen/padding5"
+                android:text="@string/label_select_word_book"
+                android:textSize="@dimen/small_text_size" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"
+                android:background="@color/sw_common_bg" />
         </LinearLayout>
     </ScrollView>
+
 </com.shanbay.widget.IndicatorWrapper>

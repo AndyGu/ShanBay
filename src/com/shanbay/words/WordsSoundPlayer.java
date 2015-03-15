@@ -177,7 +177,7 @@ public class WordsSoundPlayer
 
 	@Override
 	public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
-		WordsSoundPlayer.this.play(arg2.toString());
+		WordsSoundPlayer.this.play(new String(arg2));
 		
 	}
     });

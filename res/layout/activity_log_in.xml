@@ -1,24 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:scrollbarStyle="outsideOverlay" android:id="@id/scroll" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="#00000000" android:cacheColorHint="@android:color/transparent" android:footerDividersEnabled="false"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/padding15" android:paddingTop="@dimen/padding20" android:paddingRight="@dimen/padding15" android:paddingBottom="@dimen/padding15" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <LinearLayout android:background="@drawable/bg_login" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin10" android:layout_marginTop="@dimen/margin4" android:layout_marginRight="@dimen/margin10" android:layout_marginBottom="@dimen/margin4" android:src="@drawable/icon_name" />
-            <LinearLayout android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0px" android:layout_height="0.0px" />
-            <EditText android:textColor="@color/common_green" android:textColorHint="@color/sw_login_text_light" android:ellipsize="start" android:gravity="center" android:id="@id/tv_username" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="@dimen/margin20" android:hint="用户名" android:lines="1" android:textCursorDrawable="@null" style="@style/SBInput" />
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/scroll"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:cacheColorHint="@android:color/transparent"
+    android:clipToPadding="false"
+    android:fadingEdge="none"
+    android:footerDividersEnabled="false"
+    android:listSelector="#00000000"
+    android:scrollbarStyle="outsideOverlay" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/padding15"
+        android:paddingLeft="@dimen/padding15"
+        android:paddingRight="@dimen/padding15"
+        android:paddingTop="@dimen/padding20" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_login" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin4"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_marginRight="@dimen/margin10"
+                android:layout_marginTop="@dimen/margin4"
+                android:src="@drawable/icon_name" />
+
+            <LinearLayout
+                android:layout_width="0.0px"
+                android:layout_height="0.0px"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+            <EditText
+                android:id="@id/tv_username"
+                style="@style/SBInput"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/margin20"
+                android:ellipsize="start"
+                android:gravity="center"
+                android:hint="用户名"
+                android:lines="1"
+                android:textColor="@color/common_green"
+                android:textColorHint="@color/sw_login_text_light"
+                android:textCursorDrawable="@null" />
         </LinearLayout>
-        <LinearLayout android:background="@drawable/bg_login" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin10">
-            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin10" android:layout_marginTop="@dimen/margin4" android:layout_marginRight="@dimen/margin10" android:layout_marginBottom="@dimen/margin4" android:src="@drawable/icon_password" />
-            <EditText android:textColor="@color/common_green" android:textColorHint="@color/sw_login_text_light" android:ellipsize="start" android:gravity="center" android:id="@id/tv_password" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="@dimen/margin20" android:hint="密 码" android:lines="1" android:inputType="textPassword" android:textCursorDrawable="@null" style="@style/SBInput" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10"
+            android:background="@drawable/bg_login" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin4"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_marginRight="@dimen/margin10"
+                android:layout_marginTop="@dimen/margin4"
+                android:src="@drawable/icon_password" />
+
+            <EditText
+                android:id="@id/tv_password"
+                style="@style/SBInput"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/margin20"
+                android:ellipsize="start"
+                android:gravity="center"
+                android:hint="密 码"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:textColor="@color/common_green"
+                android:textColorHint="@color/sw_login_text_light"
+                android:textCursorDrawable="@null" />
         </LinearLayout>
-        <Button android:textSize="@dimen/textsize20" android:layout_gravity="center_horizontal" android:id="@id/btn_login" android:layout_width="fill_parent" android:layout_height="@dimen/height22" android:layout_marginTop="@dimen/margin10" android:text="登 录" android:onClick="login" style="@style/SBBaseButton.Normal" />
-        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin15">
-            <CheckBox android:textSize="@dimen/small_text_size" android:textColor="@color/common_text" android:id="@id/cb_remember_me" android:paddingLeft="@dimen/padding12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" android:button="@drawable/cb_gray" android:text="@string/label_remember_password" android:layout_centerVertical="true" />
-            <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/common_text" android:id="@id/link_forget" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" android:layout_marginRight="@dimen/margin2" android:text="@string/label_forget" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:onClick="reset" />
+
+        <Button
+            android:id="@id/btn_login"
+            style="@style/SBBaseButton.Normal"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/height22"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin10"
+            android:onClick="login"
+            android:text="登 录"
+            android:textSize="@dimen/textsize20" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin15" >
+
+            <CheckBox
+                android:id="@id/cb_remember_me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/margin5"
+                android:button="@drawable/cb_gray"
+                android:paddingLeft="@dimen/padding12"
+                android:text="@string/label_remember_password"
+                android:textColor="@color/common_text"
+                android:textSize="@dimen/small_text_size" />
+
+            <TextView
+                android:id="@id/link_forget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin2"
+                android:layout_marginTop="@dimen/margin5"
+                android:clickable="true"
+                android:onClick="reset"
+                android:text="@string/label_forget"
+                android:textColor="@color/common_text"
+                android:textSize="@dimen/small_text_size" />
         </RelativeLayout>
-        <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin30">
-            <TextView android:textSize="@dimen/textsize20" android:textColor="@color/common_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="您还没有扇贝账号？" />
-            <TextView android:textSize="@dimen/textsize20" android:textColor="@color/common_green" android:id="@id/sign_up" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin5" android:text="注 册" android:onClick="signup" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin30"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您还没有扇贝账号？"
+                android:textColor="@color/common_text"
+                android:textSize="@dimen/textsize20" />
+
+            <TextView
+                android:id="@id/sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin5"
+                android:clickable="true"
+                android:onClick="signup"
+                android:text="注 册"
+                android:textColor="@color/common_green"
+                android:textSize="@dimen/textsize20" />
         </LinearLayout>
     </LinearLayout>
+
 </ScrollView>

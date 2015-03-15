@@ -1,7 +1,9 @@
 package com.shanbay.words.handler;
 
 import android.content.Intent;
-import com.google.renamedgson.JsonElement;
+import android.util.Log;
+
+import com.google.gson.JsonElement;
 import com.shanbay.app.ShanbayActivity;
 import com.shanbay.community.model.CheckinDate;
 import com.shanbay.http.ModelResponseException;
@@ -24,6 +26,7 @@ public class WordSessionDateHandler extends ModelResponseHandler<CheckinDate>
 
   public void checkinSessionDate()
   {
+	  Log.e("WordSessionDateHandler", "checkinSessionDate()");
     if (this.mIsChecking)
       return;
     this.mIsChecking = true;
@@ -32,26 +35,32 @@ public class WordSessionDateHandler extends ModelResponseHandler<CheckinDate>
 
   protected void onAuthenticationFailure()
   {
+	  Log.e("WordSessionDateHandler", "onAuthenticationFailure()");
     this.mActivity.finish();
     this.mActivity.startActivity(new Intent(this.mActivity, LoginActivity.class));
   }
 
   protected void onCheckinSessisonFailure()
   {
+	  Log.e("WordSessionDateHandler", "onCheckinSessisonFailure()");
   }
 
   protected void onCheckinSessisonFinish(boolean paramBoolean, CheckinDate paramCheckinDate)
   {
+	  Log.e("WordSessionDateHandler", "onCheckinSessisonFinish()");
   }
 
   public void onFailure(ModelResponseException paramModelResponseException, JsonElement paramJsonElement)
   {
+
+	  Log.e("WordSessionDateHandler", "onFailure()");
     this.mIsChecking = false;
     onCheckinSessisonFailure();
   }
 
   public void onSuccess(int paramInt, CheckinDate paramCheckinDate)
   {
+	  Log.e("WordSessionDateHandler", "onSuccess()");
     boolean bool = SessionDateUtils.isExpired(this.mActivity, paramCheckinDate.sessionDate);
     this.mIsChecking = false;
     onCheckinSessisonFinish(bool, paramCheckinDate);

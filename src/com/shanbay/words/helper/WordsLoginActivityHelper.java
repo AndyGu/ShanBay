@@ -8,6 +8,7 @@ import com.shanbay.account.LoginActivityHelper;
 import com.shanbay.account.UserHandler;
 import com.shanbay.app.ShanbayActivity;
 import com.shanbay.http.APIClient;
+import com.shanbay.words.R;
 
 public class WordsLoginActivityHelper<T extends APIClient> extends LoginActivityHelper<T>
   implements View.OnFocusChangeListener
@@ -26,14 +27,16 @@ public class WordsLoginActivityHelper<T extends APIClient> extends LoginActivity
 
   public void onFocusChange(View paramView, boolean paramBoolean)
   {
-    if (2131034148 == paramView.getId())
+    if (R.id.tv_username == paramView.getId())
     {
       this.mUsernameTextView.setHint("");
       this.mPasswordTextView.setHint("密 码");
     }
-    while (2131034151 != paramView.getId())
-      return;
-    this.mPasswordTextView.setHint("");
-    this.mUsernameTextView.setHint("用户名");
+    
+    if (R.id.tv_password == paramView.getId())
+    {
+    	this.mPasswordTextView.setHint("");
+        this.mUsernameTextView.setHint("用户名");
+    }
   }
 }

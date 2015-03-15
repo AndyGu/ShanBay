@@ -8,7 +8,8 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import com.google.renamedgson.JsonElement;
+
+import com.google.gson.JsonElement;
 import com.shanbay.http.APIClient;
 import com.shanbay.http.DataResponseHandler;
 import com.shanbay.http.HttpClient;
@@ -45,12 +46,14 @@ public abstract class ShanbayActivity<T extends APIClient> extends BaseActivity<
   {
     this.mClient.logout(this, new DataResponseHandler()
     {
+      @Override
       public void onFailure(ModelResponseException paramAnonymousModelResponseException, JsonElement paramAnonymousJsonElement)
       {
         if (!ShanbayActivity.this.handleCommonException(paramAnonymousModelResponseException))
           ShanbayActivity.this.showToast(paramAnonymousModelResponseException.getMessage());
       }
 
+      @Override
       public void onSuccess(int paramAnonymousInt, JsonElement paramAnonymousJsonElement)
       {
         ShanbayActivity.this.dismissProgressDialog();

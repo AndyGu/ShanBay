@@ -22,7 +22,6 @@ public class UserCache
 
   public static boolean isUserLogin(Context paramContext)
   {
-	
     String str = paramContext.getSharedPreferences("com.shanbay.common", 0).getString("user_info", null);
     Log.e("isUserLogin", "isUserLogin="+str);
     boolean bool = false;

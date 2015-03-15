@@ -1,5 +1,8 @@
 package com.shanbay.words.handler;
 
+import android.util.Log;
+
+import com.google.gson.JsonObject;
 import com.shanbay.account.UserHandler;
 import com.shanbay.app.ShanbayActivity;
 import com.shanbay.community.model.CheckinDate;
@@ -16,13 +19,15 @@ public class WordsUserHandler extends UserHandler<WordsClient>
     super(mActivity);
     this.mActivity = ((WordsActivity)mActivity);
   }
-
+  
   protected void onUserLoaded()
   {
+	  Log.e("WordsUserHandler", "onUserLoaded()");
     this.mSessionDateHandler = new WordSessionDateHandler(this.mActivity)
     {
       protected void onCheckinSessisonFinish(boolean paramAnonymousBoolean, CheckinDate paramAnonymousCheckinDate)
       {
+    	  Log.e("WordsUserHandler", "onCheckinSessisonFinish() "+paramAnonymousBoolean);
         if (paramAnonymousBoolean){
         	WordsUserHandler.this.mActivity.goHomeInit(paramAnonymousCheckinDate.sessionDate);
         }else{

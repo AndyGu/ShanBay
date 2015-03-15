@@ -1,5 +1,7 @@
 package com.shanbay.words.activity;
 
+import com.shanbay.words.R;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -45,27 +47,30 @@ public class WelcomeActivity extends WordsActivity
   {
     switch (paramView.getId())
     {
-    default:
-      return;
-    case 2131034258:
+    
+    case R.id.experience:
 //      startActivityForResult(new Intent(this, ExpCategoryActivity.class), 37);
       return;
-    case 2131034247:
+    case R.id.login:
       startActivityForResult(new Intent(this, LoginActivity.class), 32);
       return;
-    case 2131034246:
+    case R.id.signup:
+    	startActivityForResult(new Intent(this, SignupActivity.class), 33);
+    	return;
+    default:
+        return;
     }
-    startActivityForResult(new Intent(this, SignupActivity.class), 33);
+    
   }
 
   @Override
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130903122);
-    this.mBtnExperience = ((Button)findViewById(2131034258));
-    this.mBtnLogin = ((Button)findViewById(2131034247));
-    this.mBtnSinup = ((Button)findViewById(2131034246));
+    setContentView(R.layout.activity_welcome);
+    this.mBtnExperience = ((Button)findViewById(R.id.experience));
+    this.mBtnLogin = ((Button)findViewById(R.id.login));
+    this.mBtnSinup = ((Button)findViewById(R.id.signup));
     this.mBtnExperience.setOnClickListener(this);
     this.mBtnLogin.setOnClickListener(this);
     this.mBtnSinup.setOnClickListener(this);

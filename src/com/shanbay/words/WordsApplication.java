@@ -21,7 +21,7 @@ public class WordsApplication extends BaseApplication
   public void onCreate()
   {
     super.onCreate();
-    Log.e("WordsApplication.onCreate", "getCookieStore()="+getCookieStore().toString());
+    Log.e("WordsApplication.onCreate", "getCookieStore()="+(getCookieStore().getCookies().size()==0?" getCookieStore().getCookies() size=0":getCookieStore().getCookies().get(0).toString()));
     WordsClient.getInstance().setCookieStore(getCookieStore());
     WordsSyncClient.getInstance().setCookieStore(getCookieStore());
     Env.init(this);
