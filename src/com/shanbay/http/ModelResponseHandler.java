@@ -2,9 +2,9 @@ package com.shanbay.http;
 
 import android.util.Log;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonSyntaxException;
+import com.google.renamedgson.JsonElement;
+import com.google.renamedgson.JsonObject;
+import com.google.renamedgson.JsonSyntaxException;
 import com.shanbay.model.Model;
 import java.util.List;
 

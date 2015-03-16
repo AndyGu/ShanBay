@@ -3,7 +3,7 @@ package com.shanbay.words.handler;
 import android.content.Intent;
 import android.util.Log;
 
-import com.google.gson.JsonElement;
+import com.google.renamedgson.JsonElement;
 import com.shanbay.app.ShanbayActivity;
 import com.shanbay.community.model.CheckinDate;
 import com.shanbay.http.ModelResponseException;

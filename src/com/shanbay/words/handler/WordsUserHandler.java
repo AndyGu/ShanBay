@@ -1,8 +1,6 @@
 package com.shanbay.words.handler;
 
 import android.util.Log;
-
-import com.google.gson.JsonObject;
 import com.shanbay.account.UserHandler;
 import com.shanbay.app.ShanbayActivity;
 import com.shanbay.community.model.CheckinDate;

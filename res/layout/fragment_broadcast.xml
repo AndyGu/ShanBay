@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.shanbay.widget.IndicatorWrapper android:id="@id/indicator_wrapper" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" app:drawable="@drawable/ic_spinner">
-        <ListView android:scrollbarStyle="outsideOverlay" android:id="@id/broadcast_list" android:paddingLeft="@dimen/broadcast_padding" android:paddingTop="@dimen/new_feedback_padding_topbottom" android:paddingRight="@dimen/broadcast_padding" android:paddingBottom="@dimen/padding10" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@android:color/transparent" android:dividerHeight="@dimen/height4" android:footerDividersEnabled="false" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <com.shanbay.widget.IndicatorWrapper
+        android:id="@id/indicator_wrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="0.0dip"
+        app:drawable="@drawable/ic_spinner" >
+
+        <ListView
+            android:id="@id/broadcast_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="@dimen/height4"
+            android:fadingEdge="none"
+            android:footerDividersEnabled="false"
+            android:paddingBottom="@dimen/padding10"
+            android:paddingLeft="@dimen/broadcast_padding"
+            android:paddingRight="@dimen/broadcast_padding"
+            android:paddingTop="@dimen/new_feedback_padding_topbottom"
+            android:scrollbarStyle="outsideOverlay" />
     </com.shanbay.widget.IndicatorWrapper>
+
 </LinearLayout>

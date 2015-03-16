@@ -2,8 +2,7 @@ package com.shanbay.account;
 
 import android.util.Log;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import com.google.renamedgson.JsonElement;
 import com.shanbay.app.ShanbayActivity;
 import com.shanbay.http.APIClient;
 import com.shanbay.http.ModelResponseException;

@@ -1,6 +1,7 @@
 package com.shanbay.words.activity;
 
 import com.shanbay.words.R;
+import com.shanbay.words.review.experience.ExpCategoryActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -49,7 +50,7 @@ public class WelcomeActivity extends WordsActivity
     {
     
     case R.id.experience:
-//      startActivityForResult(new Intent(this, ExpCategoryActivity.class), 37);
+      startActivityForResult(new Intent(this, ExpCategoryActivity.class), 37);
       return;
     case R.id.login:
       startActivityForResult(new Intent(this, LoginActivity.class), 32);

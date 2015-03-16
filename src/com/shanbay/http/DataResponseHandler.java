@@ -1,8 +1,8 @@
 package com.shanbay.http;
 
 import org.apache.http.Header;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import com.google.renamedgson.JsonElement;
+import com.google.renamedgson.JsonObject;
 
 public class DataResponseHandler extends GsonResponseHandler
 {

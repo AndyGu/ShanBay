@@ -9,7 +9,7 @@ import com.shanbay.http.APIClient;
 import com.shanbay.http.DataResponseHandler;
 import com.shanbay.http.ModelResponseException;
 import com.shanbay.words.R;
-import com.google.gson.JsonElement;
+import com.google.renamedgson.JsonElement;
 
 public class SignupActivityHelper<T extends APIClient> extends
 		BaseActivityHelper<T> {
@@ -62,6 +62,7 @@ public class SignupActivityHelper<T extends APIClient> extends
 					public void onFailure(
 							ModelResponseException paramAnonymousModelResponseException,
 							JsonElement paramAnonymousJsonElement) {
+						Log.e("SignupActivityHelper", "onFailure-"+paramAnonymousJsonElement);
 						if (!SignupActivityHelper.this
 								.handleCommonException(paramAnonymousModelResponseException)) {
 							SignupActivityHelper.this.dismissProgressDialog();

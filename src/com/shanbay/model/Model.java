@@ -8,11 +8,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
+import com.google.renamedgson.FieldNamingPolicy;
+import com.google.renamedgson.Gson;
+import com.google.renamedgson.GsonBuilder;
+import com.google.renamedgson.JsonElement;
+import com.google.renamedgson.JsonParser;
 
 public class Model
 {

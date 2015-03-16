@@ -419,13 +419,14 @@ public class APIClient extends HttpClient {
 				paramAsyncHttpResponseHandler);
 	}
 
-	public void login(Context paramContext, String usernameStr,
+	public void login(Context mContext, String usernameStr,
 			String passwordStr,
 			AsyncHttpResponseHandler ahrh) {
+		Log.e("APIClient", "login");
 		RequestParams localRequestParams = new RequestParams();
 		localRequestParams.put("username", usernameStr);
 		localRequestParams.put("password", passwordStr);
-		put(paramContext, "api/v1/account/login/", localRequestParams, ahrh);
+		put(mContext, "api/v1/account/login/", localRequestParams, ahrh);
 	}
 
 	public void logout(Context paramContext,

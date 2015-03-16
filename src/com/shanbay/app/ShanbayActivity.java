@@ -8,8 +8,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-
-import com.google.gson.JsonElement;
+import com.google.renamedgson.JsonElement;
 import com.shanbay.http.APIClient;
 import com.shanbay.http.DataResponseHandler;
 import com.shanbay.http.HttpClient;

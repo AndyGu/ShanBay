@@ -3,10 +3,10 @@ package com.shanbay.http;
 import android.os.Message;
 import android.util.Log;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.JsonParser;
+import com.google.renamedgson.JsonElement;
+import com.google.renamedgson.JsonObject;
+import com.google.renamedgson.JsonParseException;
+import com.google.renamedgson.JsonParser;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.shanbay.util.LogUtils;
 import org.apache.http.Header;
