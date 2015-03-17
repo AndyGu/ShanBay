@@ -18,7 +18,6 @@
         <enum name="full_expand" value="2" />
     </attr>
     <attr name="animation" format="reference" />
-    <attr name="drawable" format="reference" />
     <attr name="progress" format="integer" />
     <attr name="max" format="integer" />
     <attr name="progressTextColor" format="reference|color" />
@@ -98,9 +97,7 @@
     <attr name="numberProgressBarStyle" format="reference" />
     
     <declare-styleable name="IndicatorWrapper">
-        <attr name="indicator" format="reference" /> 
-        <attr name="text1"    format="string"/>  
-        <attr name="text2"    format="string"/>  
-        <attr name="image"    format="reference|integer"/>   
+    	<attr name="drawable" format="reference" /> 
+    	<attr name="animi" format="reference" /> 
     </declare-styleable> 
 </resources>

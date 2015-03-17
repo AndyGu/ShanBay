@@ -1,9 +1,7 @@
 package com.shanbay.widget;
 
 import com.shanbay.words.R;
-
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
@@ -11,10 +9,7 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
-import android.view.View.MeasureSpec;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -56,26 +51,28 @@ public class IndicatorWrapper extends ViewGroup
 		DisplayMetrics localDisplayMetrics = getResources().getDisplayMetrics();
 		w_screen = localDisplayMetrics.widthPixels;
 		h_screen = localDisplayMetrics.heightPixels;
+		
 		TypedArray localTypedArray = context.obtainStyledAttributes(
 				attributeSet, R.styleable.IndicatorWrapper);
 
-		Drawable drawable = localTypedArray.getDrawable(1);
+		Drawable drawable = localTypedArray.getDrawable(R.styleable.IndicatorWrapper_drawable);
 		if ((drawable != null) && ((drawable instanceof AnimationDrawable))) {
 			setIndicatorAnimationDrawable((AnimationDrawable) drawable);
 			mIndicatorView.setImageDrawable(drawable);
 		}
 
 		mAnimation = AnimationUtils.loadAnimation(context,
-				localTypedArray.getResourceId(0, R.anim.rotate));
-		localTypedArray.recycle();
+				localTypedArray.getResourceId(R.styleable.IndicatorWrapper_animi, R.anim.rotate));
 		mIndicatorView.setVisibility(View.GONE);
 		addView(mIndicatorView);
+		
 		mIndicatorFailureView.setVisibility(View.GONE);
-		Drawable localDrawable2 = getResources().getDrawable(
+		Drawable drawableFailure = getResources().getDrawable(
 				R.drawable.icon_loading_failure);
-		mIndicatorFailureView.setImageDrawable(localDrawable2);
+		mIndicatorFailureView.setImageDrawable(drawableFailure);
 		mIndicatorFailureView.setOnClickListener(this);
 		addView(mIndicatorFailureView);
+		
 		mFailureMessageView = new TextView(context, attributeSet, mInt);
 		mFailureMessageView.setVisibility(View.GONE);
 		mFailureMessageView.setText("加载失败，点击重新加载");
@@ -104,31 +101,29 @@ public class IndicatorWrapper extends ViewGroup
     return mMessageView.getText();
   }
 
-  public void hideIndicator()
-  {
-    int i = getChildCount();
-    int j = 0;
-    if (j < i)
-    {
-      View localView = getChildAt(j);
-      if ((localView == mIndicatorView) || (localView == mMessageView) || (localView == mIndicatorFailureView) || (localView == mFailureMessageView));
-      while (true)
-      {
-        j++;
-        break;
-//        localView.setVisibility(0);
-      }
-    }
-    if (mAnimationDrawable != null)
-      mAnimationDrawable.stop();
-    mAnimation.cancel();
-    mIndicatorView.clearAnimation();
-    mIndicatorView.setVisibility(8);
-    mMessageView.setVisibility(8);
-    mIndicatorFailureView.setVisibility(8);
-    mFailureMessageView.setVisibility(8);
-    mShowIndicator = false;
-  }
+	public void hideIndicator() {
+		int i = getChildCount();
+		int j = 0;
+		while (j < i) {
+			View localView = getChildAt(j);
+			if ((localView == mIndicatorView) || (localView == mMessageView)
+					|| (localView == mIndicatorFailureView)
+					|| (localView == mFailureMessageView)) {
+				localView.setVisibility(View.VISIBLE);
+			}
+			j++;
+		}
+		if (mAnimationDrawable != null){
+			mAnimationDrawable.stop();
+		}
+		mAnimation.cancel();
+		mIndicatorView.clearAnimation();
+		mIndicatorView.setVisibility(View.GONE);
+		mMessageView.setVisibility(View.GONE);
+		mIndicatorFailureView.setVisibility(View.GONE);
+		mFailureMessageView.setVisibility(View.GONE);
+		mShowIndicator = false;
+	}
 
   public boolean isShowIndicator()
   {
@@ -149,16 +144,13 @@ public class IndicatorWrapper extends ViewGroup
   {
     int i = getChildCount();
     int j = 0;
-    if (j < i)
+    while (j < i)
     {
       View localView = getChildAt(j);
-      if ((localView == mIndicatorView) || (localView == mIndicatorFailureView));
-      while (true)
-      {
-        j++;
-        break;
-//        localView.layout(getPaddingLeft(), getPaddingTop(), getPaddingLeft() + localView.getMeasuredWidth(), getPaddingTop() + localView.getMeasuredHeight());
+      if ((localView == mIndicatorView) || (localView == mIndicatorFailureView)){
+    	  localView.layout(getPaddingLeft(), getPaddingTop(), getPaddingLeft() + localView.getMeasuredWidth(), getPaddingTop() + localView.getMeasuredHeight());
       }
+      j++;
     }
     int k = Math.min(w_screen, getMeasuredWidth());
     int m = (k - mIndicatorView.getMeasuredWidth()) / 2;
@@ -176,60 +168,110 @@ public class IndicatorWrapper extends ViewGroup
     mFailureMessageView.layout(i6, i7 + i5, i6 + mFailureMessageView.getMeasuredWidth(), i5 + (i7 + mFailureMessageView.getMeasuredHeight()));
   }
 
-  protected void onMeasure(int paramInt1, int paramInt2)
+  protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+//  {
+//	  int measureWidth = MeasureSpec.getSize(widthMeasureSpec);
+//      int measureHeigth = MeasureSpec.getSize(heightMeasureSpec);
+//      setMeasuredDimension(measureWidth, measureHeigth);
+//      for(int i= 0;i<getChildCount();i++){
+//          View v = getChildAt(i);
+//          Log.v(TAG, "measureWidth is " +v.getMeasuredWidth() + "measureHeight is " +v.getMeasuredHeight());
+//          int widthSpec = 0;
+//          int heightSpec = 0;
+//          LayoutParams params = v.getLayoutParams();
+//          if(params.width > 0){
+//              widthSpec = MeasureSpec.makeMeasureSpec(params.width, MeasureSpec.EXACTLY);
+//          }else if (params.width == -1) {
+//              widthSpec = MeasureSpec.makeMeasureSpec(measureWidth, MeasureSpec.EXACTLY);
+//          } else if (params.width == -2) {
+//              widthSpec = MeasureSpec.makeMeasureSpec(measureWidth, MeasureSpec.AT_MOST);
+//          }
+//           
+//          if(params.height > 0){
+//              heightSpec = MeasureSpec.makeMeasureSpec(params.height, MeasureSpec.EXACTLY);
+//          }else if (params.height == -1) {
+//              heightSpec = MeasureSpec.makeMeasureSpec(measureHeigth, MeasureSpec.EXACTLY);
+//          } else if (params.height == -2) {
+//              heightSpec = MeasureSpec.makeMeasureSpec(measureWidth, MeasureSpec.AT_MOST);
+//          }
+//          v.measure(widthSpec, heightSpec);
+//           
+//      }
+//  }
   {
-    int i = View.MeasureSpec.getSize(paramInt1);
-    int j = View.MeasureSpec.getSize(paramInt2);
+    int widthSize = View.MeasureSpec.getSize(widthMeasureSpec);
+    int heightSize = View.MeasureSpec.getSize(heightMeasureSpec);
+    
     int k = 0;
     int m = 0;
-    int n = i - getPaddingLeft() - getPaddingRight();
-    int i1 = j - getPaddingTop() - getPaddingBottom();
-    int i2 = getChildCount();
-    if (i2 > 5)
+    int widthWithoutPadding = widthSize - getPaddingLeft() - getPaddingRight();
+    int heigthWithoutPadding = heightSize - getPaddingTop() - getPaddingBottom();
+
+    Log.e("onMeasure", " widthWithoutPadding="+widthWithoutPadding);
+    Log.e("onMeasure", " heigthWithoutPadding="+heigthWithoutPadding);
+    int childCount = getChildCount();
+    Log.e("onMeasure", " childCount="+childCount);
+    if (childCount > 5)
       Log.e("IndicatorWrapper", "onMeasure: More than one child views are not supported.");
-    int i3 = 0;
-    while (i3 < i2)
+    int index = 0;
+    while (index < childCount)
     {
-      View localView = getChildAt(i3);
-      if (localView == mIndicatorView)
-      {
-        i3++;
-      }
-      else
-      {
-        ViewGroup.LayoutParams localLayoutParams = localView.getLayoutParams();
-        int i4;
-        int i5;
-        if (localLayoutParams.width == -2)
+    	
+      View childView = getChildAt(index);
+      if (childView == mIndicatorView){
+    	  Log.e("aaaaaaaa", "index="+index);
+    	  ViewGroup.LayoutParams localLayoutParams = childView.getLayoutParams();
+
+    	  mIndicatorView.measure(View.MeasureSpec.makeMeasureSpec(widthWithoutPadding, MeasureSpec.AT_MOST), View.MeasureSpec.makeMeasureSpec(heigthWithoutPadding, MeasureSpec.AT_MOST));
+    	    
+    	  Log.e("aaaaaaaa", "localLayoutParams.width="+localLayoutParams.width+" localLayoutParams.height="+localLayoutParams.height);
+  	  }else{
+  		  Log.e("bbbbbbbb", "index="+index);
+  		ViewGroup.LayoutParams localLayoutParams = childView.getLayoutParams();
+        int childWidthMeasureSpec;
+        int childHeightMeasureSpec;
+
+		  Log.e("bbbbbbbb", "localLayoutParams.width="+localLayoutParams.width+" localLayoutParams.height="+localLayoutParams.height);
+        if (localLayoutParams.width == LayoutParams.WRAP_CONTENT)
         {
-          i4 = View.MeasureSpec.makeMeasureSpec(n, -2147483648);
-          if (localLayoutParams.height != -2)
-            break ;
-          i5 = View.MeasureSpec.makeMeasureSpec(i1, -2147483648);
+          childWidthMeasureSpec = View.MeasureSpec.makeMeasureSpec(widthWithoutPadding, MeasureSpec.AT_MOST);
+          childWidthMeasureSpec = View.MeasureSpec.makeMeasureSpec(localLayoutParams.height, MeasureSpec.AT_MOST);
+          if (localLayoutParams.height != LayoutParams.WRAP_CONTENT){
+              childHeightMeasureSpec = View.MeasureSpec.makeMeasureSpec(heigthWithoutPadding, MeasureSpec.AT_MOST);
+          }else{
+        	  childHeightMeasureSpec = View.MeasureSpec.makeMeasureSpec(localLayoutParams.height, MeasureSpec.EXACTLY);
+          }
+          Log.e("childWidthMeasureSpec1", index+" childWidthMeasureSpec="+childWidthMeasureSpec);
+          Log.e("childHeightMeasureSpec1", index+" childHeightMeasureSpec="+childHeightMeasureSpec);
+          childView.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+          k = Math.max(k, getPaddingLeft() + getPaddingRight() + childView.getMeasuredWidth());
+          m = Math.max(m, getPaddingTop() + getPaddingBottom() + childView.getMeasuredHeight());
+          
+        }else if(localLayoutParams.width == LayoutParams.MATCH_PARENT){
+          childWidthMeasureSpec = View.MeasureSpec.makeMeasureSpec(widthWithoutPadding, MeasureSpec.EXACTLY);
+          if (localLayoutParams.height == LayoutParams.MATCH_PARENT){
+              childHeightMeasureSpec = View.MeasureSpec.makeMeasureSpec(heigthWithoutPadding, MeasureSpec.EXACTLY);
+          }else{
+              childHeightMeasureSpec = View.MeasureSpec.makeMeasureSpec(localLayoutParams.height, MeasureSpec.EXACTLY);
+          }
+          childView.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+          k = Math.max(k, getPaddingLeft() + getPaddingRight() + childView.getMeasuredWidth());
+          m = Math.max(m, getPaddingTop() + getPaddingBottom() + childView.getMeasuredHeight());
+
+          Log.e("childWidthMeasureSpec2", index+" childWidthMeasureSpec="+childWidthMeasureSpec);
+          Log.e("childHeightMeasureSpec2", index+" childHeightMeasureSpec="+childHeightMeasureSpec);
         }
-        while (true)
-        {
-//          localView.measure(i4, i5);
-          k = Math.max(k, getPaddingLeft() + getPaddingRight() + localView.getMeasuredWidth());
-          m = Math.max(m, getPaddingTop() + getPaddingBottom() + localView.getMeasuredHeight());
-          break;
-//          if (localLayoutParams.width == -1)
-//          {
-//            i4 = View.MeasureSpec.makeMeasureSpec(n, 1073741824);
-//            break label125;
-//          }
-//          i4 = View.MeasureSpec.makeMeasureSpec(localLayoutParams.width, 1073741824);
-//          break ;
-//          label239: if (localLayoutParams.height == -1)
-//            i5 = View.MeasureSpec.makeMeasureSpec(i1, 1073741824);
-//          else
-//            i5 = View.MeasureSpec.makeMeasureSpec(localLayoutParams.height, 1073741824);
-        }
-      }
+  	  }
+      
+      
+      
+//      if (childView == mIndicatorView){
+        index++;
+//      }else{
+        
+//      }
     }
-    mIndicatorView.measure(View.MeasureSpec.makeMeasureSpec(n, -2147483648), View.MeasureSpec.makeMeasureSpec(i1, -2147483648));
-    mIndicatorView.measure(View.MeasureSpec.makeMeasureSpec(n, -2147483648), View.MeasureSpec.makeMeasureSpec(i1, -2147483648));
-    setMeasuredDimension(resolveSize(k, paramInt1), resolveSize(m, paramInt2));
+    setMeasuredDimension(resolveSize(k, widthMeasureSpec), resolveSize(m, heightMeasureSpec));
   }
 
   public void setIndicatorAnimation(int paramInt)
@@ -282,32 +324,27 @@ public class IndicatorWrapper extends ViewGroup
     mShowIndicator = true;
   }
 
-  public void showIndicator()
-  {
-    int i = getChildCount();
-    int j = 0;
-    if (j < i)
-    {
-      View localView = getChildAt(j);
-      if ((localView == mIndicatorView) || (localView == mMessageView));
-      while (true)
-      {
-        j++;
-        break;
-//        localView.setVisibility(4);
-      }
-    }
-    mIndicatorView.setVisibility(0);
-    mMessageView.setVisibility(0);
-    if (mAnimationDrawable != null)
-      mAnimationDrawable.start();
-    while (true)
-    {
-      mShowIndicator = true;
-      return;
-//      mIndicatorView.startAnimation(mAnimation);
-    }
-  }
+	public void showIndicator() {
+		int i = getChildCount();
+		int j = 0;
+		if (j < i) {
+			View localView = getChildAt(j);
+			if ((localView == mIndicatorView) || (localView == mMessageView))
+				;
+			while (true) {
+				j++;
+				break;
+				// localView.setVisibility(4);
+			}
+		}
+		mIndicatorView.setVisibility(View.VISIBLE);
+		mMessageView.setVisibility(View.VISIBLE);
+		if (mAnimationDrawable != null) {
+			mAnimationDrawable.start();
+		}
+		mIndicatorView.startAnimation(mAnimation);
+		mShowIndicator = true;
+	}
 
   public static abstract interface onHandleFailureListener
   {

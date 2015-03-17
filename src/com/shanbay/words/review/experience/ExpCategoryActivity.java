@@ -2,6 +2,7 @@ package com.shanbay.words.review.experience;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -63,6 +64,8 @@ public class ExpCategoryActivity extends WordsActivity
 private void fetchCategories()
   {
     showProgressDialog();
+
+    Log.e("fetchCategories", "fetchCategories");
     ((WordsClient)this.mClient).experienceCategory(this, new ModelResponseHandler(WordbookCategory.class)
     {
       public void onFailure(ModelResponseException paramAnonymousModelResponseException, JsonElement paramAnonymousJsonElement)
@@ -72,6 +75,7 @@ private void fetchCategories()
       }
 
 	public void onSuccess(int paramInt, List paramList) {
+	    Log.e("onSuccess", "onSuccessonSuccess");
 		ExpCategoryActivity.this.layout(paramList);
       ExpCategoryActivity.this.dismissProgressDialog();
 	}
@@ -82,24 +86,27 @@ private void fetchCategories()
   {
     LayoutInflater localLayoutInflater = LayoutInflater.from(this);
     int i = 2 * ((1 + paramList.size()) / 2);
+    Log.e("layout", "i="+i);
     this.mCategoryBtns = new RadioButton[i];
     this.mIvChoices = new ImageView[i];
     for (int j = 0; j < i; j += 2)
     {
-      RelativeLayout localRelativeLayout = (RelativeLayout)localLayoutInflater.inflate(2130903219, null);
-      Misc.disableHardwareAcceleration(localRelativeLayout.findViewById(2131034624));
-      Misc.disableHardwareAcceleration(localRelativeLayout.findViewById(2131034623));
-      this.mCategoryBtns[j] = ((RadioButton)localRelativeLayout.findViewById(2131034586));
+      Log.e("layout", "j="+j);
+      RelativeLayout localRelativeLayout = (RelativeLayout)localLayoutInflater.inflate(R.layout.item_experience_category, null);
+      Misc.disableHardwareAcceleration(localRelativeLayout.findViewById(R.id.dash_line_vertical));
+      Misc.disableHardwareAcceleration(localRelativeLayout.findViewById(R.id.dash_line_horizontal));
+      this.mCategoryBtns[j] = ((RadioButton)localRelativeLayout.findViewById(R.id.button1));
       this.mCategoryBtns[j].setOnClickListener(this.mOnClickListener);
-      this.mIvChoices[j] = ((ImageView)localRelativeLayout.findViewById(2131034621));
-      this.mIvChoices[(j + 1)] = ((ImageView)localRelativeLayout.findViewById(2131034622));
-      this.mCategoryBtns[(j + 1)] = ((RadioButton)localRelativeLayout.findViewById(2131034587));
+      this.mIvChoices[j] = ((ImageView)localRelativeLayout.findViewById(R.id.img1));
+      this.mIvChoices[(j + 1)] = ((ImageView)localRelativeLayout.findViewById(R.id.img2));
+      this.mCategoryBtns[(j + 1)] = ((RadioButton)localRelativeLayout.findViewById(R.id.button2));
       this.mCategoryBtns[(j + 1)].setOnClickListener(this.mOnClickListener);
-      this.mCategoryContainer.addView(localRelativeLayout, new LinearLayout.LayoutParams(-1, -2));
+      this.mCategoryContainer.addView(localRelativeLayout, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
     }
     for (int k = 0; k < paramList.size(); k++)
     {
       RadioButton localRadioButton = this.mCategoryBtns[k];
+      Log.e("((WordbookCategory)paramList.get(k)).name", ((WordbookCategory)paramList.get(k)).name);
       localRadioButton.setText(((WordbookCategory)paramList.get(k)).name);
       localRadioButton.setTag(paramList.get(k));
     }
@@ -124,9 +131,12 @@ private void fetchCategories()
   {
     super.onCreate(paramBundle);
     setContentView(R.layout.activity_experience_category);
+    Log.e("onCreate", "onCreate");
     this.mIndicatorWrapper = ((IndicatorWrapper)findViewById(R.id.indicator_wrapper));
     this.mCategoryContainer = ((LinearLayout)findViewById(R.id.root));
     Misc.disableHardwareAcceleration(findViewById(R.id.bottom_line));
+
+    Log.e("onCreate2", "onCreate2");
     fetchCategories();
   }
 
