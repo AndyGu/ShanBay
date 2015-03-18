@@ -108,7 +108,12 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
     dismissProgressDialog();
     return false;
   }
-
+  
+  public boolean isCommonException(ModelResponseException paramModelResponseException)
+  {
+    return (paramModelResponseException.getStatusCode() == 268369921) || (paramModelResponseException.getStatusCode() == 983040) || (paramModelResponseException.getStatusCode() == 16711680) || (paramModelResponseException.getStatusCode() == 268369922);
+  }
+  
   protected boolean isFirstActivity()
   {
     return false;
@@ -124,16 +129,17 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
     showToast(getString(R.string.msg_connect_exception));
   }
 
+  @SuppressWarnings({ "unchecked", "rawtypes" })
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    this.mClient = getClient();
+    mClient = getClient();
     if (isFirstActivity())
       onFirstActivity();
     if (isMainActivity())
       onMainActivity();
-    this.mCommit = new LinkedList();
-    this.mStateSaved = false;
+    mCommit = new LinkedList();
+    mStateSaved = false;
     d("onCreate");
   }
 
@@ -141,8 +147,8 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
   {
     d("onDestroy");
     dismissProgressDialog();
-    this.mProgressDialog = null;
-    this.mCommit.clear();
+    mProgressDialog = null;
+    mCommit.clear();
     super.onDestroy();
   }
 
@@ -195,7 +201,7 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
     super.onResume();
 //    if (Config.UMENG_ENABLE)
 //      MobclickAgent.onResume(this);
-    this.mStateSaved = false;
+    mStateSaved = false;
     d("onResume");
   }
 
@@ -203,7 +209,7 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
   {
     d("onResumeFragments");
     super.onResumeFragments();
-    while (!this.mCommit.isEmpty())
+    while (!mCommit.isEmpty())
       ((FragmentTransaction)this.mCommit.removeFirst()).commit();
   }
 
@@ -216,7 +222,7 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
   protected void onStart()
   {
     super.onStart();
-    this.mStateSaved = false;
+    mStateSaved = false;
 //    if (Config.GA_ENABLE)
 //      EasyTracker.getInstance(this).activityStart(this);
     d("onStart");
@@ -225,7 +231,7 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
   protected void onStop()
   {
     super.onStop();
-    this.mStateSaved = true;
+    mStateSaved = true;
 //    if (Config.GA_ENABLE)
 //      EasyTracker.getInstance(this).activityStop(this);
     d("onStop");
@@ -269,29 +275,29 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
 
   public void showProgressDialog(String paramString)
   {
-	  if(this.mProgressDialog == null){
-		  this.mProgressDialog = new ShanbayProgressDialog(this);
-		  this.mProgressDialog.setCanceledOnTouchOutside(false);
-		  this.mProgressDialog.setCancelable(true);
-		  this.mProgressDialog.show();
+	  if(mProgressDialog == null){
+		  mProgressDialog = new ShanbayProgressDialog(this);
+		  mProgressDialog.setCanceledOnTouchOutside(false);
+		  mProgressDialog.setCancelable(true);
+		  mProgressDialog.show();
 	  }else{
 		  if (paramString != null)
-	          this.mProgressDialog.setContentMessage(paramString);
-		  if(!this.mProgressDialog.isShowing()){
-			  this.mProgressDialog.setCanceledOnTouchOutside(false);
-			  this.mProgressDialog.setCancelable(true);
-			  this.mProgressDialog.show();
+	          mProgressDialog.setContentMessage(paramString);
+		  if(!mProgressDialog.isShowing()){
+			  mProgressDialog.setCanceledOnTouchOutside(false);
+			  mProgressDialog.setCancelable(true);
+			  mProgressDialog.show();
 		  }
 	  }
   }
 
-  public void showToast(int paramInt)
+  public void showToast(int str)
   {
-    Toast.makeText(this, paramInt, 0).show();
+    Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
   }
 
-  public void showToast(String paramString)
+  public void showToast(String str)
   {
-    Toast.makeText(this, paramString, 0).show();
+    Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
   }
 }

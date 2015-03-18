@@ -1,12 +1,11 @@
 package com.shanbay.words.review.experience;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
@@ -34,79 +33,74 @@ public class ExpCategoryActivity extends WordsActivity
   private ImageView[] mIvChoices;
   private View.OnClickListener mOnClickListener = new View.OnClickListener()
   {
-    public void onClick(View paramAnonymousView)
+    public void onClick(View view)
     {
       int i = 0;
-      if (i < ExpCategoryActivity.this.mCategoryBtns.length)
-        if (ExpCategoryActivity.this.mCategoryBtns[i] == paramAnonymousView)
-          if (!StringUtils.isBlank(ExpCategoryActivity.this.mCategoryBtns[i].getText().toString()));
-      WordbookCategory localWordbookCategory;
-      do
-      {
-//        return;
-        ExpCategoryActivity.this.mCategoryBtns[i].setChecked(true);
-        ExpCategoryActivity.this.mIvChoices[i].setVisibility(0);
-//        while (true)
-//        {
-//          i++;
-//          break;
-//          ExpCategoryActivity.this.mCategoryBtns[i].setChecked(false);
-//          ExpCategoryActivity.this.mIvChoices[i].setVisibility(4);
-//        }
-        localWordbookCategory = (WordbookCategory)paramAnonymousView.getTag();
+      while(i < mCategoryBtns.length){
+    	  if (mCategoryBtns[i] == view){
+    		  if (!StringUtils.isBlank(mCategoryBtns[i].getText().toString())){
+            	  mCategoryBtns[i].setChecked(true);
+                  mIvChoices[i].setVisibility(View.VISIBLE);
+              }
+    	  }else{
+        	  mCategoryBtns[i].setChecked(false);
+        	  mIvChoices[i].setVisibility(View.INVISIBLE);
+          } 
+    	  i++;
       }
-      while (localWordbookCategory == null);
-//      ExpCategoryActivity.this.startActivityForResult(ExpModeActivity.createIntent(ExpCategoryActivity.this, localWordbookCategory), 35);
+        
+      WordbookCategory wordbookCategory = (WordbookCategory)view.getTag();
+      if(wordbookCategory != null){
+        ExpCategoryActivity.this.startActivityForResult(ExpModeActivity.createIntent(ExpCategoryActivity.this, wordbookCategory), 35);
+      }
     }
   };
 
-  @SuppressWarnings({ "unchecked", "rawtypes" })
-private void fetchCategories()
-  {
-    showProgressDialog();
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	private void fetchCategories() {
+		showProgressDialog();
 
-    Log.e("fetchCategories", "fetchCategories");
-    ((WordsClient)this.mClient).experienceCategory(this, new ModelResponseHandler(WordbookCategory.class)
-    {
-      public void onFailure(ModelResponseException paramAnonymousModelResponseException, JsonElement paramAnonymousJsonElement)
-      {
-        if (!ExpCategoryActivity.this.handleCommonException(paramAnonymousModelResponseException))
-          ExpCategoryActivity.this.showToast(paramAnonymousModelResponseException.getMessage());
-      }
+		Log.e("fetchCategories", "fetchCategories");
+		((WordsClient) this.mClient).experienceCategory(this,
+				new ModelResponseHandler(WordbookCategory.class) {
+					public void onFailure(ModelResponseException mre,
+							JsonElement jsonElement) {
+						if (!ExpCategoryActivity.this
+								.handleCommonException(mre))
+							showToast(mre.getMessage());
+					}
 
-	public void onSuccess(int paramInt, List paramList) {
-	    Log.e("onSuccess", "onSuccessonSuccess");
-		ExpCategoryActivity.this.layout(paramList);
-      ExpCategoryActivity.this.dismissProgressDialog();
+					public void onSuccess(int paramInt, List paramList) {
+						layout(paramList);
+						dismissProgressDialog();
+					}
+				});
 	}
-    });
-  }
 
+  @SuppressLint("InflateParams")
   private void layout(List<WordbookCategory> paramList)
   {
     LayoutInflater localLayoutInflater = LayoutInflater.from(this);
     int i = 2 * ((1 + paramList.size()) / 2);
-    Log.e("layout", "i="+i);
-    this.mCategoryBtns = new RadioButton[i];
-    this.mIvChoices = new ImageView[i];
+    mCategoryBtns = new RadioButton[i];
+    mIvChoices = new ImageView[i];
     for (int j = 0; j < i; j += 2)
     {
       Log.e("layout", "j="+j);
       RelativeLayout localRelativeLayout = (RelativeLayout)localLayoutInflater.inflate(R.layout.item_experience_category, null);
       Misc.disableHardwareAcceleration(localRelativeLayout.findViewById(R.id.dash_line_vertical));
       Misc.disableHardwareAcceleration(localRelativeLayout.findViewById(R.id.dash_line_horizontal));
-      this.mCategoryBtns[j] = ((RadioButton)localRelativeLayout.findViewById(R.id.button1));
-      this.mCategoryBtns[j].setOnClickListener(this.mOnClickListener);
-      this.mIvChoices[j] = ((ImageView)localRelativeLayout.findViewById(R.id.img1));
-      this.mIvChoices[(j + 1)] = ((ImageView)localRelativeLayout.findViewById(R.id.img2));
-      this.mCategoryBtns[(j + 1)] = ((RadioButton)localRelativeLayout.findViewById(R.id.button2));
-      this.mCategoryBtns[(j + 1)].setOnClickListener(this.mOnClickListener);
-      this.mCategoryContainer.addView(localRelativeLayout, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+      mCategoryBtns[j] = ((RadioButton)localRelativeLayout.findViewById(R.id.button1));
+      mCategoryBtns[j].setOnClickListener(mOnClickListener);
+      mIvChoices[j] = ((ImageView)localRelativeLayout.findViewById(R.id.img1));
+      mIvChoices[(j + 1)] = ((ImageView)localRelativeLayout.findViewById(R.id.img2));
+      mCategoryBtns[(j + 1)] = ((RadioButton)localRelativeLayout.findViewById(R.id.button2));
+      mCategoryBtns[(j + 1)].setOnClickListener(mOnClickListener);
+      mCategoryContainer.addView(localRelativeLayout, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
     }
     for (int k = 0; k < paramList.size(); k++)
     {
-      RadioButton localRadioButton = this.mCategoryBtns[k];
-      Log.e("((WordbookCategory)paramList.get(k)).name", ((WordbookCategory)paramList.get(k)).name);
+      RadioButton localRadioButton = mCategoryBtns[k];
       localRadioButton.setText(((WordbookCategory)paramList.get(k)).name);
       localRadioButton.setTag(paramList.get(k));
     }
@@ -114,7 +108,7 @@ private void fetchCategories()
 
   public void dismissProgressDialog()
   {
-    this.mIndicatorWrapper.hideIndicator();
+    mIndicatorWrapper.hideIndicator();
   }
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
@@ -131,17 +125,15 @@ private void fetchCategories()
   {
     super.onCreate(paramBundle);
     setContentView(R.layout.activity_experience_category);
-    Log.e("onCreate", "onCreate");
-    this.mIndicatorWrapper = ((IndicatorWrapper)findViewById(R.id.indicator_wrapper));
-    this.mCategoryContainer = ((LinearLayout)findViewById(R.id.root));
+    mIndicatorWrapper = ((IndicatorWrapper)findViewById(R.id.indicator_wrapper));
+    mCategoryContainer = ((LinearLayout)findViewById(R.id.root));
     Misc.disableHardwareAcceleration(findViewById(R.id.bottom_line));
 
-    Log.e("onCreate2", "onCreate2");
     fetchCategories();
   }
 
   public void showProgressDialog()
   {
-    this.mIndicatorWrapper.showIndicator();
+    mIndicatorWrapper.showIndicator();
   }
 }
