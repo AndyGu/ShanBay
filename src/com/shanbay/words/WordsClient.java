@@ -153,9 +153,9 @@ public class WordsClient extends APIClient
     get(paramContext, "/api/v1/bdc/experience/category/", null, paramAsyncHttpResponseHandler);
   }
 
-  public void experienceData(Context paramContext, int paramInt1, int paramInt2, long paramLong, AsyncHttpResponseHandler paramAsyncHttpResponseHandler)
+  public void experienceData(Context mContext, int root, int collin, long category, AsyncHttpResponseHandler ahrh)
   {
-    get(paramContext, "/api/v1/bdc/experience/?roots={root}&collins={collin}&category={category}".replace("{root}", Integer.toString(paramInt1)).replace("{collin}", Integer.toString(paramInt2)).replace("{category}", Long.toString(paramLong)), null, paramAsyncHttpResponseHandler);
+    get(mContext, "/api/v1/bdc/experience/?roots={root}&collins={collin}&category={category}".replace("{root}", Integer.toString(root)).replace("{collin}", Integer.toString(collin)).replace("{category}", Long.toString(category)), null, ahrh);
   }
 
   public void getAppletPrices(Context paramContext, String paramString, AsyncHttpResponseHandler paramAsyncHttpResponseHandler)

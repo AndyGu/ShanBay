@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, user-scalable=no">
+	    <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="msapplication-tap-highlight" content="no">
+        <title>打卡</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+    </head>
+    <body>
+        <div class="header"></div>
+        <div class="username hide">
+            <span class="data" id="user-name-data"></span>
+        </div>
+    	<div class="checkin-days">
+            <img src="./img/punch_card.png" class="special-day hide" id="special-day">
+    		<span class="num" id="checkin-days-data">0</span>
+    		<div class="des">扇贝打卡天数</div>
+    	</div>
+        <div class="triangle"></div>
+        <div class="data">
+            <table>
+                <tbody>
+                    <tr>
+                        <td id="words-data">0</td>
+                        <td id="reading-data">0</td>
+                        <td id="sentences-data">0</td>
+                        <td id="listening-data">0</td>
+                        <td id="used-time-data">0</td>
+                    </tr>
+                    <tr>
+                        <td>单词</td>
+                        <td>文章</td>
+                        <td>炼句</td>
+                        <td>听力</td>
+                        <td>分钟</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tip">
+            <img src="./img/award.png" class="tip-gift">
+            <div class="des">
+                <h2 class="head">分享=贝壳</h2>
+                <p class="hint">分享到微博和微信可获得&nbsp;<strong>20</strong>&nbsp;贝壳</p>
+                <p class="detail tap" onclick="void(0)">详细</p>
+            </div>
+        </div>
+        <div class="diary-box">
+           <img src="./img/note_bg_small.png" class="bg bg-default .diary-box">
+           <div class="diary hide tap" onclick="void(0)" id="diary-data-box">
+                <span class="hint" id="diary-hint">记录每天的学习心情...</span>
+                <span class="data" id="diary-data"></span>
+           </div>
+        </div>
+        <div class="share hide">
+            <img src="./img/icon_weibo.png" class="weibo hide tap" onclick="void(0)">
+            <img src="./img/icon_weixin.png" class="weixin hide weixin-moments tap" onclick="void(0)">
+        </div>
+        <script type="text/javascript" src="./scripts/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="./scripts/checkin.js"></script>
+    </body>
+</html>

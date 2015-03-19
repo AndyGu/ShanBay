@@ -1,0 +1,1 @@
+ALTER TABLE Example ADD COLUMN annotation VARCHAR;

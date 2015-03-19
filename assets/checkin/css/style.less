@@ -1,0 +1,221 @@
+@checkin-color: #a2605f;
+@data-font-color: #5f559d;
+@tip-bg-color: #5c4c78;
+
+.tap { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+.hide { display: none; }
+.ilb { display: inline-block; }
+
+@font-face {
+	font-family: 'Delhi';
+	src: url('./../fonts/Delhi.ttf');
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.header { height: 20px; }
+
+.username {
+	@size: 20px;
+	position: relative;
+	top: @size/2;
+	font-size: @size;
+	text-align: center;
+	color: #6f4671;
+	.data {
+		display: inline-block;
+		white-space: nowrap;
+		width: 180px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.checkin-days {
+	@size: 68px;
+	text-align: center;
+	font-family: 'Delhi';
+	.special-day {
+		height: @size;
+	}
+	.num {
+		position: relative;
+		top: -3px;
+		padding-left: 10px;
+		display: inline-block;
+		font-size: @size;
+		color: @checkin-color;
+	}
+	.des { 
+		position: relative;
+		top: -10px;
+		font-size: 20px;
+		color: #a4595e;
+	}
+}
+
+.data {
+	margin: 10px 0 20px;
+	table {
+		width: 100%;
+		text-align: center;
+		vertical-align: middle;
+		color: @data-font-color;
+		tr {
+			height: 30px;
+			&:first-of-type {
+				font-size: 28px;
+			}
+			&:last-of-type {
+				font-size: 12px;
+				height: 16px;
+			}
+			td {
+				width: 20%;	
+				overflow: hidden;
+				text-overflow: clip;
+			}
+		}
+	}
+}
+
+.tip {
+	background: @tip-bg-color;
+	text-align: center;
+	.tip-gift {
+		display: inline-block;
+		padding: 20px 0px 10px 0;
+		height: 90px;
+	}
+	.des {
+		display: inline-block;
+		position: relative;
+		top: -18px;
+		text-align: center;
+		color: white;
+		.head {
+			font-weight: lighter;
+			margin-bottom: 4px;
+		}
+		p { 
+			margin: 4px 0; 
+		}
+		.hint {
+			font-size: 13px;
+			strong {
+				font-size: 1.5em;
+				font-weight: normal;
+			}
+		}
+		.detail {
+			font-size: 18px;
+			color: #fbd942;
+		}
+	}
+}
+
+.diary-box {
+	padding: 10px 0 20px;
+	background: @tip-bg-color;	
+	text-align: center;
+	.bg {
+		width: 90%;
+	}
+	.diary {
+		position: absolute;
+		overflow: auto;
+		overflow-x: hidden;
+		color: white;
+		text-align: left;
+		.hint { color: silver }
+	}
+}
+
+.pad-version {
+	.header { height:40px; }
+
+	.username {
+		@size: 32px;
+		top: @size/2;
+		font-size: @size;
+		.data {
+			width: 360px;
+		}
+	}
+
+	.checkin-days {
+		@size: 120px;
+		position: relative;
+		top: -@size/4;
+		.special-day {
+			height: @size;
+		}
+		.num {
+			top: -6px;
+			font-size: @size;
+		}
+		.des { 
+			font-size: 32px;
+		}
+	}
+
+	.data {
+		margin: 0 0 60px;
+		table {
+			tr {
+				height: 60px;
+				&:first-of-type {
+					font-size: 50px;
+				}
+				&:last-of-type {
+					font-size: 24px;
+					height: 32px;
+				}
+			}
+		}
+	}
+
+	.tip {
+		.tip-gift {
+			display: inline-block;
+			padding: 40px 0 20px 0;
+			height: 180px;
+		}
+		.des {
+			top: -36px;
+			.head {
+				font-size: 38px;
+				margin-bottom: 8px;
+			}
+			p { 
+				margin: 8px 0; 
+			}
+			.hint {
+				font-size: 26px;
+				strong {
+					font-size: 1.5em;
+				}
+			}
+			.detail {
+				font-size: 36px;
+			}
+		}
+	}
+
+	.diary-box {
+		padding: 15px 0 40px;
+		.diary {
+			font-size: 28px;
+		}
+	}
+}
+
+/* Tablet portrait */
+@media only screen and (min-width: 768px) {
+	.pad-version;
+}

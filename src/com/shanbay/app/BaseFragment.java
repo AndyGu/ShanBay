@@ -151,17 +151,17 @@ public class BaseFragment<T extends APIClient> extends Fragment
     render(getView());
   }
 
-  protected final void render(View paramView)
+  protected final void render(View view)
   {
     if (isRenderable())
     {
       renderInternal();
-      if (paramView != null)
-        paramView.setVisibility(0);
+      if (view != null)
+        view.setVisibility(View.VISIBLE);
+    }else{
+      if (view != null)
+        view.setVisibility(View.INVISIBLE);
     }
-    while (paramView == null)
-      return;
-    paramView.setVisibility(4);
   }
 
   protected void renderInternal()

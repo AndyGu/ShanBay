@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title id="thread-title"></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="css/thread.css" type="text/css">
+        <script src="scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="scripts/jquery.tmpl.min.js" type="text/javascript"></script>
+        <script src="scripts/markdown.min.js" type="text/javascript"></script>
+        <script src="scripts/date.js" type="text/javascript"></script>
+        <script src="scripts/app.js" type="text/javascript"></script>
+
+        <script id="post-content-tmpl" type="text/x-jquery-tmpl">
+            {{html content}}
+        </script>
+        <script id="thread-tmpl" type="text/x-jquery-tmpl">
+            <div class="thread content-text">
+                ${t.title}
+            </div>
+        </script>
+        <script id="posts-tmpl" type="text/x-jquery-tmpl">
+            {{each posts}}
+                {{if $index == 0}}
+                    {{if first_page}}
+                        <div class="first-post post" id="post-${$value.id}">
+                    {{else}}
+                        <div class="post" id="post-${$value.id}">
+                    {{/if}}
+                {{else}}
+                    <div class="post" id="post-${$value.id}">
+                {{/if}}
+                    <div>
+                        <div>
+                         	<a onClick="callAuthorFromPost('${$value.id}');">
+                            	<img class="img-circle" src="${$value.author.avatar}" />
+                            </a>
+                        </div>
+                        <button onClick="callAuthorFromPost('${$value.id}');" class="user-info green-text content-text" data="${$value.author.id}">${$value.author.nickname}</button>
+                        
+                        {{if $value.team}}
+                            <button onClick="callTeam('${$value.team.id}');" class="pull-right gray-text team-info content-text" data="${$value.team.id}">小组：${$value.team.title}
+                            </button>
+                        {{/if}}
+                    </div>
+                    <div class="clear"></div>
+                    <div class="post-content content-text">
+                        {{if $value.post_to && $value.post_to.nickname}}
+                        <p class="gray-text">回复 <button class="green-text" onClick="callUserPostToFromPost('${$value.id}');">${$value.post_to.nickname}</button>:</p>
+                        {{/if}}
+                        <div class="post-body">
+                            {{html $value.body_html}}
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="info-row">
+                        <div class="gray-text pull-left time-row">
+                            ${$value.fancy_time}
+                        </div>
+                        <a class="gray-text pull-left time-row" style="padding-left:15px;">发自</a><div class="gray-text pull-left time-row" style="padding-left:5px;color:#209E85;">${$value.user_agent}</div>
+                        {{if !$value.thread.dead&&!$value.thread.closed}}
+                        <button onClick="replyPost('${$value.id}');" class="pull-right action-button action-button-reply"><img src="img/icon_reply.png" /><span class="gray-text">回复</span></button>
+                        {{/if}}
+                        {{if $value.author.id == user_id}}
+                            <button onClick="editPost('${$value.id}');" class="pull-right action-button action-button-edit"><img src="img/icon_edit.png" /><span class="gray-text">编辑</span></button>
+                        {{/if}}
+                            
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            {{/each}}
+        </script>
+    </head>
+    <body>
+        <div id="thread">
+            <div class="thread-title">
+            </div>
+            <div class="thread-posts">
+            </div>
+        </div>
+    </body>
+</html>

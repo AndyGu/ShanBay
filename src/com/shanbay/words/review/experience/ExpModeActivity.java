@@ -84,7 +84,7 @@ public class ExpModeActivity extends WordsActivity
 
   public void onClick(View paramView)
   {
-//    startActivity(ExpReviewActivity.createIntent(this, this.mExpMode));
+    startActivity(ExpReviewActivity.createIntent(this, this.mExpMode));
     setResult(34);
     finish();
   }
