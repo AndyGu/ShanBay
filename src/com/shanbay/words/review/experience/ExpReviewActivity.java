@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -60,9 +61,10 @@ private void fetchExpData()
   {
 	  showProgressDialog("正在加载数据...");
       this.mIsFetchingData = true;
+//      mExpMode.root?1:0
       ((WordsClient)this.mClient).experienceData(this, mExpMode.root?1:0, mExpMode.collins?1:0, mExpMode.categoryId, new ModelResponseHandler(ExpReview.class)
       {
-        public void onFailure(ModelResponseException paramAnonymousModelResponseException, JsonElement paramAnonymousJsonElement)
+        public void onFailure(ModelResponseException modelResponseException, JsonElement jsonElement)
         {
           dismissProgressDialog();
           mIsFetchingData = false;
@@ -99,9 +101,9 @@ private void fetchExpData()
     return arrayOfInt1;
   }
 
-  private boolean isFragmentEnd(String paramString)
+  private boolean isFragmentEnd(String tag)
   {
-    return (!ExpStudyQueueController.TAG_TEST_RECOGNITION.equals(paramString)) && (!ExpStudyQueueController.TAG_EXPLORE.equals(paramString)) && (!ExpStudyQueueController.TAG_SUMMARY.equals(paramString)) && (!ExpStudyQueueController.TAG_TEST_SPELL.equals(paramString));
+    return (!ExpStudyQueueController.TAG_TEST_RECOGNITION.equals(tag)) && (!ExpStudyQueueController.TAG_EXPLORE.equals(tag)) && (!ExpStudyQueueController.TAG_SUMMARY.equals(tag)) && (!ExpStudyQueueController.TAG_TEST_SPELL.equals(tag));
   }
 
 //  private boolean isViewPressed(float paramFloat1, float paramFloat2, View paramView)
@@ -118,14 +120,14 @@ private void fetchExpData()
 //    }
 //  }
 
-  private void renderPanel(String str)
+  private void renderPanel(String tag)
   {
-    ExpReviewFragment expReviewFragment = (ExpReviewFragment)getSupportFragmentManager().findFragmentByTag(str);
+    ExpReviewFragment expReviewFragment = (ExpReviewFragment)getSupportFragmentManager().findFragmentByTag(tag);
     if (expReviewFragment == null)
-      expReviewFragment = (ExpReviewFragment)Fragment.instantiate(this, str);
+      expReviewFragment = (ExpReviewFragment)Fragment.instantiate(this, tag);
     if(!expReviewFragment.isVisible())
     {
-      switchContent(curFragment, expReviewFragment, str);
+      switchContent(curFragment, expReviewFragment, tag);
     }
     expReviewFragment.render();
   }
@@ -185,24 +187,24 @@ private void fetchExpData()
 
   public void goToExplore(int paramInt)
   {
-    String str = this.mExpStudyQueueController.getNextFragmentSummaryToExp(paramInt);
-    this.mIsFromSummary = true;
+    String str = mExpStudyQueueController.getNextFragmentSummaryToExp(paramInt);
+    mIsFromSummary = true;
     renderPanel(str);
   }
 
   public boolean isEnableCollins()
   {
-    return this.mExpMode.collins;
+    return mExpMode.collins;
   }
 
   public boolean isEnableRoots()
   {
-    return this.mExpMode.root;
+    return mExpMode.root;
   }
 
   public boolean isFromSummary()
   {
-    return this.mIsFromSummary;
+    return mIsFromSummary;
   }
 
   public void nextFragment()
@@ -244,7 +246,7 @@ private void fetchExpData()
     
     mTypeface = Typeface.createFromAsset(getAssets(), "fonts/NotoSans-Regular.ttf");
     mTypefaceBlod = Typeface.createFromAsset(getAssets(), "fonts/NotoSans-Bold.ttf");
-    mErrorViewContainer = ((LinearLayout)findViewById(2131034241));
+    mErrorViewContainer = ((LinearLayout)findViewById(R.id.error_container));
     mErrorViewContainer.setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramAnonymousView)
@@ -270,26 +272,26 @@ private void fetchExpData()
     return super.onOptionsItemSelected(paramMenuItem);
   }
 
-  public void switchContent(ExpReviewFragment expReviewFragment, ExpReviewFragment expReviewFragment2, String str)
+  public void switchContent(ExpReviewFragment currentFragment, ExpReviewFragment newFragment, String tag)
   {
     FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
     
-    if (curFragment != expReviewFragment2)
+    if (curFragment != newFragment)
     {
-      curFragment = expReviewFragment2;
-      if (expReviewFragment2.isAdded())
+      curFragment = newFragment;
+      if (newFragment.isAdded())
         return;
-      if (expReviewFragment != null)
+      if (currentFragment != null)
         return;
-      ft.add(R.id.root, expReviewFragment2, str).commitAllowingStateLoss();
+      ft.add(R.id.root, newFragment, tag).commitAllowingStateLoss();
     }else{
-    	ft.hide(expReviewFragment).add(R.id.root, expReviewFragment2, str).commitAllowingStateLoss();
+    	ft.hide(currentFragment).add(R.id.root, newFragment, tag).commitAllowingStateLoss();
     	
-    	if (expReviewFragment == null)
-            ft.show(expReviewFragment2).commitAllowingStateLoss();
+    	if (currentFragment == null)
+            ft.show(newFragment).commitAllowingStateLoss();
         else
-            ft.hide(expReviewFragment).show(expReviewFragment2).commitAllowingStateLoss();
+            ft.hide(currentFragment).show(newFragment).commitAllowingStateLoss();
     }
-    expReviewFragment2.render();
+    newFragment.render();
   }
 }

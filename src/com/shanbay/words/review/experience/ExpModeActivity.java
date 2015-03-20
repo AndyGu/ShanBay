@@ -53,22 +53,22 @@ public class ExpModeActivity extends WordsActivity
     {
       LayoutParams lp = (LayoutParams) mSpellContainer.getLayoutParams();
       lp.addRule(RelativeLayout.CENTER_VERTICAL);
-      this.mCollinsContainer.setVisibility(View.GONE);
-      this.mExpMode.collins = false;
-      this.mRootsContainer.setVisibility(View.GONE);
-      this.mExpMode.root = false;
+      mCollinsContainer.setVisibility(View.GONE);
+      mRootsContainer.setVisibility(View.GONE);
+      mExpMode.collins = false;
+      mExpMode.root = false;
       return;
     }
     if (StringUtils.equals("六级", str))
     {
-      this.mCollinsContainer.setVisibility(View.GONE);
-      this.mExpMode.collins = false;
+      mCollinsContainer.setVisibility(View.GONE);
+      mExpMode.collins = false;
       return;
     }
     
     if(StringUtils.equals("GRE", str)){
-    	this.mSpellContainer.setVisibility(View.GONE);
-    	this.mExpMode.spell = false;
+    	mSpellContainer.setVisibility(View.GONE);
+    	mExpMode.spell = false;
     }
   }
 
@@ -84,7 +84,7 @@ public class ExpModeActivity extends WordsActivity
 
   public void onClick(View paramView)
   {
-    startActivity(ExpReviewActivity.createIntent(this, this.mExpMode));
+    startActivity(ExpReviewActivity.createIntent(this, mExpMode));
     setResult(34);
     finish();
   }

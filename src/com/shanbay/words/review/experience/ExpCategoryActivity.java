@@ -86,7 +86,6 @@ public class ExpCategoryActivity extends WordsActivity
     mIvChoices = new ImageView[i];
     for (int j = 0; j < i; j += 2)
     {
-      Log.e("layout", "j="+j);
       RelativeLayout localRelativeLayout = (RelativeLayout)localLayoutInflater.inflate(R.layout.item_experience_category, null);
       Misc.disableHardwareAcceleration(localRelativeLayout.findViewById(R.id.dash_line_vertical));
       Misc.disableHardwareAcceleration(localRelativeLayout.findViewById(R.id.dash_line_horizontal));

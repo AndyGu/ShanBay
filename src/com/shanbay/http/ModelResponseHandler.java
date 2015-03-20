@@ -14,19 +14,20 @@ public class ModelResponseHandler<T extends Model> extends DataResponseHandler
 
   public ModelResponseHandler()
   {
-    this.tClass = null;
+    tClass = null;
   }
 
   public ModelResponseHandler(Class<T> paramClass)
   {
-    this.tClass = paramClass;
+    tClass = paramClass;
   }
 
   @Override
   protected void handleSuccessData(JsonObject jsonObject)
   {
-	  Log.e("ModelResponseHandler.handleSuccessData", "JsonObject="+jsonObject);
+	Log.e("ModelResponseHandler.handleSuccessData", "JsonObject="+jsonObject);
     JsonElement jsonElement = getData(jsonObject);
+    Log.e("ModelResponseHandler.handleSuccessData", "jsonElement="+jsonElement);
     if ((jsonElement == null) || (jsonElement.isJsonNull()) || ((jsonElement.isJsonObject()) && (((JsonObject)jsonElement).entrySet().size() == 0)))
     {
     	Log.e("111", "111");
@@ -38,25 +39,25 @@ public class ModelResponseHandler<T extends Model> extends DataResponseHandler
       if (jsonElement.isJsonObject())
       {
       	Log.e("222", "222");
-        onSuccess(0, Model.create(jsonElement, this.tClass));
+        onSuccess(0, Model.create(jsonElement, tClass));
         return;
       }
       
       if (jsonElement.isJsonArray())
       {
       	Log.e("333", "333");
-        onSuccess(0, Model.createList(jsonElement, this.tClass));
+        onSuccess(0, Model.createList(jsonElement, tClass));
         return;
       }
     }
     catch (JsonSyntaxException localJsonSyntaxException)
     {
-      onFailure(new ModelResponseException(-65536, "fail map " + jsonElement + " to " + this.tClass.getCanonicalName()), (JsonElement)null);
+      onFailure(new ModelResponseException(-65536, "fail map " + jsonElement + " to " + tClass.getCanonicalName()), (JsonElement)null);
       return;
     }
     catch (IllegalArgumentException localIllegalArgumentException)
     {
-      onFailure(new ModelResponseException(-65536, "fail map " + jsonElement + " to " + this.tClass.getCanonicalName()), (JsonElement)null);
+      onFailure(new ModelResponseException(-65536, "fail map " + jsonElement + " to " + tClass.getCanonicalName()), (JsonElement)null);
       return;
     }
     onFailure(new ModelResponseException(268369920, "Unexpected type " + jsonElement.getClass().getName()), jsonElement);

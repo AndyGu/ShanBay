@@ -1,6 +1,8 @@
 package com.shanbay.words;
 
 import android.content.Context;
+import android.util.Log;
+
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.shanbay.account.UserCache;
@@ -155,7 +157,8 @@ public class WordsClient extends APIClient
 
   public void experienceData(Context mContext, int root, int collin, long category, AsyncHttpResponseHandler ahrh)
   {
-    get(mContext, "/api/v1/bdc/experience/?roots={root}&collins={collin}&category={category}".replace("{root}", Integer.toString(root)).replace("{collin}", Integer.toString(collin)).replace("{category}", Long.toString(category)), null, ahrh);
+	  Log.e("WordsClient.experienceData()", "WordsClient.experienceData()");
+	  get(mContext, "/api/v1/bdc/experience/?roots={root}&collins={collin}&category={category}".replace("{root}", Integer.toString(root)).replace("{collin}", Integer.toString(collin)).replace("{category}", Long.toString(category)), null, ahrh);
   }
 
   public void getAppletPrices(Context paramContext, String paramString, AsyncHttpResponseHandler paramAsyncHttpResponseHandler)

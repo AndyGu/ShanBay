@@ -28,13 +28,13 @@ public class ExpStudyQueueController
   public static final String TAG_TEST_RECOGNITION = ExpTestRecognitionFragment.class.getName();
   public static final String TAG_TEST_SPELL = ExpTestSpellFragment.class.getName();
   private ExpMode mExpMode;
-  private List<ExpReview> mGroupStudyQueue = new ArrayList();
-  private List<ExpReview> mLastGroupStudyQueue = new ArrayList();
+  private List<ExpReview> mGroupStudyQueue = new ArrayList<ExpReview>();
+  private List<ExpReview> mLastGroupStudyQueue = new ArrayList<ExpReview>();
   private String mNextFragment;
   private ReviewData mReviewData;
   private ReviewStat mReviewStat;
   private ExpReview mStudyData;
-  private List<ExpReview> mTotalStudyQueue = new ArrayList();
+  private List<ExpReview> mTotalStudyQueue = new ArrayList<ExpReview>();
 
   public ExpStudyQueueController(List<ExpReview> paramList, ExpMode paramExpMode)
   {
@@ -111,9 +111,9 @@ public class ExpStudyQueueController
 
   private String nextFragmentFromInital()
   {
-    if (!isSingleWord(this.mStudyData.content))
+    if (!isSingleWord(mStudyData.content))
       return TAG_TEST_RECOGNITION;
-    if (this.mExpMode.spell)
+    if (mExpMode.spell)
       return TAG_TEST_SPELL;
     return TAG_TEST_RECOGNITION;
   }
@@ -131,7 +131,7 @@ public class ExpStudyQueueController
   private String nextFragmentFromSummary()
   {
     if (this.mTotalStudyQueue.size() <= 0)
-      return "end";
+      return TAG_END;
     nextGroup();
     nextWord();
     if (!isSingleWord(this.mStudyData.content))

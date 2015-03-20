@@ -26,9 +26,7 @@ public abstract class GsonResponseHandler extends AsyncHttpResponseHandler {
 
 	@Override
 	public void onFailure(int arg0, Header[] arg1, byte[] bytes, Throwable throwable) {
-		// TODO Auto-generated method stub
 		try {
-			LogUtils.LOGD(this.TAG, "handle Failure:" + new String(bytes));
 			throwable.printStackTrace();
 			if (((throwable instanceof HttpResponseException))
 					&& (((HttpResponseException) throwable)

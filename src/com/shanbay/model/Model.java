@@ -8,6 +8,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import android.util.Log;
+
 import com.google.renamedgson.FieldNamingPolicy;
 import com.google.renamedgson.Gson;
 import com.google.renamedgson.GsonBuilder;
@@ -23,6 +25,7 @@ public class Model
 
   public static <T> List<T> createList(JsonElement paramJsonElement, Class<T> paramClass)
   {
+	  Log.e("createList", "createList="+paramJsonElement);
     ArrayList localArrayList = new ArrayList();
     Iterator localIterator = paramJsonElement.getAsJsonArray().iterator();
     while (localIterator.hasNext())
