@@ -1,5 +1,7 @@
 package com.shanbay.words.review.experience;
 
+import android.util.Log;
+
 import com.shanbay.words.constant.Result;
 import com.shanbay.words.constant.ReviewStatus;
 import com.shanbay.words.constant.ReviewType;
@@ -30,20 +32,20 @@ public class ExpStudyQueueController
   private ExpMode mExpMode;
   private List<ExpReview> mGroupStudyQueue = new ArrayList<ExpReview>();
   private List<ExpReview> mLastGroupStudyQueue = new ArrayList<ExpReview>();
-  private String mNextFragment;
+  private String mNextFragmentStr;
   private ReviewData mReviewData;
   private ReviewStat mReviewStat;
   private ExpReview mStudyData;
   private List<ExpReview> mTotalStudyQueue = new ArrayList<ExpReview>();
 
-  public ExpStudyQueueController(List<ExpReview> paramList, ExpMode paramExpMode)
+  public ExpStudyQueueController(List<ExpReview> list, ExpMode expMode)
   {
-    this.mExpMode = paramExpMode;
-    this.mTotalStudyQueue.addAll(paramList);
-    this.mReviewStat = new ReviewStat();
-    this.mReviewStat.setTotal(this.mTotalStudyQueue.size());
-    for (int i = 0; i < this.mTotalStudyQueue.size(); i++)
-      this.mReviewStat.incLevelByReviewStatus(0);
+    mExpMode = expMode;
+    mTotalStudyQueue.addAll(list);
+    mReviewStat = new ReviewStat();
+    mReviewStat.setTotal(mTotalStudyQueue.size());
+    for (int i = 0; i < mTotalStudyQueue.size(); i++)
+      mReviewStat.incLevelByReviewStatus(0);
     nextGroup();
     nextWord();
   }
@@ -56,31 +58,31 @@ public class ExpStudyQueueController
 
   private void adjustStudyQueue(ExpReview paramExpReview)
   {
-    Iterator localIterator = this.mTotalStudyQueue.iterator();
+    Iterator localIterator = mTotalStudyQueue.iterator();
     while (localIterator.hasNext())
       if (((ExpReview)localIterator.next()).id == paramExpReview.id)
         localIterator.remove();
     if (paramExpReview.reviewStatus != 1)
-      this.mTotalStudyQueue.add(paramExpReview);
+      mTotalStudyQueue.add(paramExpReview);
   }
 
-  private ReviewData buildReviewData(ExpReview paramExpReview)
+  private ReviewData buildReviewData(ExpReview eExpReview)
   {
-    ReviewData localReviewData = new ReviewData();
-    if (paramExpReview != null)
+    ReviewData reviewData = new ReviewData();
+    if (eExpReview != null)
     {
-      ExpDataTransferHelper localExpDataTransferHelper = new ExpDataTransferHelper();
-      VocabularyData localVocabularyData = localExpDataTransferHelper.getVocabularyData(paramExpReview);
-      ExampleData localExampleData = localExpDataTransferHelper.getExampleData(paramExpReview);
+      ExpDataTransferHelper mExpDataTransferHelper = new ExpDataTransferHelper();
+      VocabularyData mVocabularyData = mExpDataTransferHelper.getVocabularyData(eExpReview);
+      ExampleData localExampleData = mExpDataTransferHelper.getExampleData(eExpReview);
       RootsData localRootsData = new RootsData();
-      if (this.mExpMode.root)
-        localRootsData = localExpDataTransferHelper.getRootsData(paramExpReview);
-      localReviewData.setVocabularyData(localVocabularyData);
-      localReviewData.setExampleData(localExampleData);
-      localReviewData.setRootsData(localRootsData);
-      localReviewData.setNoteData(new NoteData());
+      if (mExpMode.root)
+        localRootsData = mExpDataTransferHelper.getRootsData(eExpReview);
+      reviewData.setVocabularyData(mVocabularyData);
+      reviewData.setExampleData(localExampleData);
+      reviewData.setRootsData(localRootsData);
+      reviewData.setNoteData(new NoteData());
     }
-    return localReviewData;
+    return reviewData;
   }
 
   private boolean isSingleWord(String paramString)
@@ -99,20 +101,21 @@ public class ExpStudyQueueController
 
   private String nextFragmentFromExpl()
   {
-    if (this.mGroupStudyQueue.size() <= 0)
+    if (mGroupStudyQueue.size() <= 0)
       return TAG_SUMMARY;
     nextWord();
-    if (!isSingleWord(this.mStudyData.content))
+    if (!isSingleWord(mStudyData.content))
       return TAG_TEST_RECOGNITION;
-    if (this.mExpMode.spell)
+    if (mExpMode.spell)
       return TAG_TEST_SPELL;
     return TAG_TEST_RECOGNITION;
   }
 
   private String nextFragmentFromInital()
   {
-    if (!isSingleWord(mStudyData.content))
-      return TAG_TEST_RECOGNITION;
+    if (!isSingleWord(mStudyData.content)){
+        return TAG_TEST_RECOGNITION;
+    }
     if (mExpMode.spell)
       return TAG_TEST_SPELL;
     return TAG_TEST_RECOGNITION;
@@ -130,7 +133,7 @@ public class ExpStudyQueueController
 
   private String nextFragmentFromSummary()
   {
-    if (this.mTotalStudyQueue.size() <= 0)
+    if (mTotalStudyQueue.size() <= 0)
       return TAG_END;
     nextGroup();
     nextWord();
@@ -143,12 +146,12 @@ public class ExpStudyQueueController
 
   private void nextGroup()
   {
-    ArrayList localArrayList1 = new ArrayList();
-    ArrayList localArrayList2 = new ArrayList();
-    if ((this.mTotalStudyQueue != null) && (this.mTotalStudyQueue.size() > 0))
+    ArrayList<ExpReview> localArrayList1 = new ArrayList<ExpReview>();
+    ArrayList<ExpReview> localArrayList2 = new ArrayList<ExpReview>();
+    if ((mTotalStudyQueue != null) && (mTotalStudyQueue.size() > 0))
     {
-      int i = Math.min(7, this.mTotalStudyQueue.size());
-      Iterator localIterator = this.mTotalStudyQueue.iterator();
+      int i = Math.min(REVIEW_GROUP_SIZE, mTotalStudyQueue.size());
+      Iterator<ExpReview> localIterator = mTotalStudyQueue.iterator();
       for (int j = 0; j < i; j++)
       {
         ExpReview localExpReview = (ExpReview)localIterator.next();
@@ -156,54 +159,54 @@ public class ExpStudyQueueController
         localArrayList2.add(localExpReview);
         localIterator.remove();
       }
-      this.mGroupStudyQueue = localArrayList1;
-      this.mLastGroupStudyQueue = localArrayList2;
+      mGroupStudyQueue = localArrayList1;
+      mLastGroupStudyQueue = localArrayList2;
     }
   }
 
   private void nextWord()
   {
-    this.mStudyData = ((ExpReview)this.mGroupStudyQueue.remove(0));
-    this.mReviewData = buildReviewData(this.mStudyData);
+    mStudyData = ((ExpReview)mGroupStudyQueue.remove(0));
+    mReviewData = buildReviewData(mStudyData);
   }
 
   public ExpReview getExpReview()
   {
-    return this.mStudyData;
+    return mStudyData;
   }
 
   public String getNextFragmentBackToSummary()
   {
-    this.mNextFragment = TAG_SUMMARY;
-    return this.mNextFragment;
+    mNextFragmentStr = TAG_SUMMARY;
+    return mNextFragmentStr;
   }
 
   public String getNextFragmentSummaryToExp(int paramInt)
   {
-    this.mStudyData = ((ExpReview)getSummaryData().get(paramInt));
-    this.mReviewData = buildReviewData(this.mStudyData);
-    this.mNextFragment = TAG_EXPLORE;
-    return this.mNextFragment;
+    mStudyData = ((ExpReview)getSummaryData().get(paramInt));
+    mReviewData = buildReviewData(mStudyData);
+    mNextFragmentStr = TAG_EXPLORE;
+    return mNextFragmentStr;
   }
 
   public ReviewData getReviewData()
   {
-    return this.mReviewData;
+    return mReviewData;
   }
 
   public long getReviewId()
   {
-    return this.mStudyData.id;
+    return mStudyData.id;
   }
 
   public long getReviewSenseId()
   {
-    return this.mStudyData.senseId;
+    return mStudyData.senseId;
   }
 
   public ReviewStat getReviewStat()
   {
-    return this.mReviewStat;
+    return mReviewStat;
   }
 
   public List<Roots.Representative> getRootsRepresentative(int paramInt)
@@ -250,28 +253,34 @@ public class ExpStudyQueueController
 
   public String getWordAudio()
   {
-    if (StringUtils.isNotBlank(this.mStudyData.usAudio))
-      return this.mStudyData.usAudio;
-    if (StringUtils.isNotBlank(this.mStudyData.ukAudio))
-      return this.mStudyData.ukAudio;
+    if (StringUtils.isNotBlank(mStudyData.usAudio))
+      return mStudyData.usAudio;
+    if (StringUtils.isNotBlank(mStudyData.ukAudio))
+      return mStudyData.ukAudio;
     return "";
   }
 
   public String nextFragment()
   {
-    if (StringUtils.isBlank(this.mNextFragment))
-        mNextFragment = nextFragmentFromInital();
+	  Log.e("nextFragment", "mNextFragmentStr="+mNextFragmentStr);
+    if (StringUtils.isBlank(mNextFragmentStr))
+        mNextFragmentStr = nextFragmentFromInital();
+	  Log.e("nextFragment", "nextFragmentFromInital="+mNextFragmentStr);
     
-    if (TAG_EXPLORE.equals(this.mNextFragment))
-        mNextFragment = nextFragmentFromExpl();
-      else if (TAG_TEST_RECOGNITION.equals(this.mNextFragment))
-        mNextFragment = nextFragmentFromRecogn();
-      else if (TAG_SUMMARY.equals(this.mNextFragment))
-        mNextFragment = nextFragmentFromSummary();
-      else if (TAG_TEST_SPELL.equals(this.mNextFragment))
-        mNextFragment = nextFragmentFromSpell();
-    
-    return mNextFragment;
+    if (TAG_EXPLORE.equals(mNextFragmentStr)){
+        mNextFragmentStr = nextFragmentFromExpl();
+        Log.e("nextFragment", "nextFragmentFromExpl="+mNextFragmentStr);
+    }else if (TAG_TEST_RECOGNITION.equals(mNextFragmentStr)){
+        mNextFragmentStr = nextFragmentFromRecogn();
+        Log.e("nextFragment", "nextFragmentFromRecogn="+mNextFragmentStr);
+    }else if (TAG_SUMMARY.equals(mNextFragmentStr)){
+        mNextFragmentStr = nextFragmentFromSummary();
+        Log.e("nextFragment", "nextFragmentFromSummary="+mNextFragmentStr);
+    }else if (TAG_TEST_SPELL.equals(mNextFragmentStr)){
+        mNextFragmentStr = nextFragmentFromSpell();
+        Log.e("nextFragment", "nextFragmentFromSpell="+mNextFragmentStr);
+    }
+    return mNextFragmentStr;
   }
 
   public void setResult(Result result)

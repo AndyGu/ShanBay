@@ -174,12 +174,12 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
   {
     switch (paramMenuItem.getItemId())
     {
-    default:
-      return super.onOptionsItemSelected(paramMenuItem);
     case 16908332:
+        finish();
+        return true;
+    default:
+        return super.onOptionsItemSelected(paramMenuItem);
     }
-    finish();
-    return true;
   }
 
   protected void onPause()

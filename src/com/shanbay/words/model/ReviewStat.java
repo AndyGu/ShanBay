@@ -106,7 +106,7 @@ public class ReviewStat {
 		}
 	}
 
-	public void setTotal(int paramInt) {
-		this.total = paramInt;
+	public void setTotal(int mTotal) {
+		total = mTotal;
 	}
 }

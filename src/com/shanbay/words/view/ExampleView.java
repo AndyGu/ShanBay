@@ -6,6 +6,8 @@ import android.text.Spanned;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.shanbay.words.R;
 import com.shanbay.words.model.ExampleContent;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -19,31 +21,44 @@ public class ExampleView
 
   public ExampleView(Activity paramActivity, ViewGroup paramViewGroup)
   {
-    this.mRoot = paramViewGroup;
-    this.mExampleEn = ((TextView)paramViewGroup.findViewById(2131034440));
-    this.mExampleCn = ((TextView)paramViewGroup.findViewById(2131034441));
+    mRoot = paramViewGroup;
+    mExampleEn = ((TextView)paramViewGroup.findViewById(R.id.tv_example_en));
+    mExampleCn = ((TextView)paramViewGroup.findViewById(R.id.tv_example_cn));
   }
 
-  private void setRootVisibility(boolean paramBoolean)
+  private void setRootVisibility(boolean isVisible)
   {
-//    if (this.mRoot.getParent() != null);
-//    for (ViewGroup localViewGroup = (ViewGroup)this.mRoot.getParent(); paramBoolean; localViewGroup = this.mRoot)
-//    {
-//      localViewGroup.setVisibility(0);
-//      return;
-//    }
-//    localViewGroup.setVisibility(8);
+	 ViewGroup localViewGroup;
+    if (mRoot.getParent() != null){
+    	localViewGroup = (ViewGroup)mRoot.getParent();
+    	if(isVisible){
+    		localViewGroup.setVisibility(View.VISIBLE);
+    	}else{
+    		localViewGroup.setVisibility(View.GONE);
+    	}
+    }else{
+    	localViewGroup = mRoot;
+    	if(isVisible){
+    		localViewGroup.setVisibility(View.VISIBLE);
+    	}else{
+    		localViewGroup.setVisibility(View.GONE);
+    	}
+    }
   }
 
   private Spanned wrapExample(boolean paramBoolean)
   {
-    if (this.mExample == null)
+    if (mExample == null)
       return Html.fromHtml("______");
-    String str1 = this.mExample.getAnnotation();
+    String str1 = mExample.getAnnotation();
     Matcher localMatcher = Pattern.compile("<vocab>(.*?)</vocab>").matcher(str1);
-    if (paramBoolean);
-    for (String str2 = "<font color=\"#" + Integer.toHexString(0) + "\">$1</font>"; ; str2 = "______")
-      return Html.fromHtml(localMatcher.replaceAll(str2));
+    String str2;
+    if (paramBoolean){
+        str2 = "<font color=\"#" + Integer.toHexString(0) + "\">$1</font>";
+    }else{
+    	str2 = "______";
+    }
+    return Html.fromHtml(localMatcher.replaceAll(str2));
   }
 
   public ExampleContent getExample()
@@ -56,46 +71,39 @@ public class ExampleView
     return this.mRoot;
   }
 
-  public void render(ExampleContent paramExampleContent, boolean paramBoolean1, boolean paramBoolean2)
+  public void render(ExampleContent exampleContent, boolean mBoolean1, boolean mBoolean2)
   {
     setRootVisibility(true);
-    this.mExample = paramExampleContent;
-    this.mExampleEn.setText(wrapExample(paramBoolean1));
-    if (paramBoolean2)
+    mExample = exampleContent;
+    mExampleEn.setText(wrapExample(mBoolean1));
+    if (mBoolean2)
     {
-      this.mExampleCn.setText(paramExampleContent.getTranslation());
-      this.mExampleCn.setVisibility(0);
+      mExampleCn.setText(exampleContent.getTranslation());
+      mExampleCn.setVisibility(View.VISIBLE);
       return;
     }
-    this.mExampleCn.setVisibility(8);
+    mExampleCn.setVisibility(View.GONE);
   }
 
-  public void setVisibility(boolean paramBoolean1, boolean paramBoolean2)
+  public void setVisibility(boolean isENVisible, boolean isCNVisible)
   {
-//    if (paramBoolean1)
-//    {
-//      this.mExampleEn.setVisibility(0);
-//      if (!paramBoolean2)
-//        break label54;
-//      this.mExampleCn.setVisibility(0);
-//    }
-//    while (true)
-//    {
-//      boolean bool;
-//      if (!paramBoolean1)
-//      {
-//        bool = false;
-//        if (!paramBoolean2);
-//      }
-//      else
-//      {
-//        bool = true;
-//      }
-//      setRootVisibility(bool);
-//      return;
-//      this.mExampleEn.setVisibility(8);
-//      break;
-//      label54: this.mExampleCn.setVisibility(8);
-//    }
+    if (isENVisible){
+    	mExampleEn.setVisibility(View.VISIBLE);
+    }else{
+    	mExampleEn.setVisibility(View.GONE);
+    }
+    
+	if (isCNVisible){
+  	  	mExampleCn.setVisibility(View.VISIBLE);
+    }else{
+    	mExampleCn.setVisibility(View.GONE);
+    }
+    
+    if (!isENVisible && !isCNVisible)
+    {
+    	setRootVisibility(false);
+    }else{
+    	setRootVisibility(true);
+    }
   }
 }

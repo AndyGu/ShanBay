@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.shanbay.model.Model;
+import com.shanbay.words.R;
 import com.shanbay.words.WordsSoundPlayer;
 import com.shanbay.words.model.ExampleContent;
 import com.shanbay.words.model.ExampleData;
@@ -43,15 +44,15 @@ public class ExpExploreFragment extends ExpReviewFragment
   private ViewGroup mRootsContainer;
   private View.OnClickListener mRootsItemOnClickListener = new View.OnClickListener()
   {
-    public void onClick(View paramAnonymousView)
+    public void onClick(View view)
     {
-//      if (!(paramAnonymousView.getTag() instanceof Integer))
-//        return;
-//      ExpExploreFragment.access$202(ExpExploreFragment.this, ((Integer)paramAnonymousView.getTag()).intValue());
-//      List localList = ExpExploreFragment.this.getRootsRepresentative(ExpExploreFragment.this.rootsContentsIdx);
-//      RootsContent localRootsContent = (RootsContent)ExpExploreFragment.this.getRootsContent().get(ExpExploreFragment.this.rootsContentsIdx);
-//      Intent localIntent = ExpRootsActivity.createIntent(ExpExploreFragment.this.mActivity, Model.toJson(localList), localRootsContent.getMeaningCn(), localRootsContent.getContent());
-//      ExpExploreFragment.this.startActivityForResult(localIntent, 20);
+      if (view.getTag() instanceof Integer){
+//    	  ExpExploreFragment.access$202(ExpExploreFragment.this, ((Integer)view.getTag()).intValue());
+//          List localList = getRootsRepresentative(rootsContentsIdx);
+//          RootsContent localRootsContent = (RootsContent)ExpExploreFragment.this.getRootsContent().get(rootsContentsIdx);
+//          Intent localIntent = ExpRootsActivity.createIntent(mActivity, Model.toJson(localList), localRootsContent.getMeaningCn(), localRootsContent.getContent());
+//          startActivityForResult(localIntent, 20);
+      }
     }
   };
   private TextView mRootsLabel;
@@ -76,80 +77,86 @@ public class ExpExploreFragment extends ExpReviewFragment
 
   private ExpStudyQueueController getStudyQueueController()
   {
-    return this.mActivity.getStudyQueueController();
+    return mActivity.getStudyQueueController();
   }
 
   private void playSound(View paramView)
   {
-    this.mActivity.getSoundPlayer().playSoundByUrl(getStudyQueueController().getWordAudio(), paramView);
+    mActivity.getSoundPlayer().playSoundByUrl(getStudyQueueController().getWordAudio(), paramView);
   }
 
   private void renderExamples(List<ExampleContent> paramList)
   {
-//    int i = 2;
-//    int j;
-//    if ((paramList != null) && (paramList.size() > 0))
-//    {
-//      this.mExampleContainer.removeAllViews();
-//      this.mExampleContainer.setVisibility(0);
-//      this.mExampleContainer.addView(this.mExampleLabel);
-//      if (paramList.size() < i)
-//        i = paramList.size();
-//      j = 0;
-//    }
-//    while (j < i)
-//    {
-//      ExampleContent localExampleContent = (ExampleContent)paramList.get(j);
-//      LinearLayout localLinearLayout = (LinearLayout)getActivity().getLayoutInflater().inflate(2130903218, null);
-//      TextView localTextView1 = (TextView)localLinearLayout.findViewById(2131034440);
-//      TextView localTextView2 = (TextView)localLinearLayout.findViewById(2131034441);
-//      localTextView1.setText(getSpannedAnnotation(localExampleContent.getAnnotation()));
-//      localTextView2.setText(localExampleContent.getTranslation());
-//      this.mExampleContainer.addView(localLinearLayout);
-//      j++;
-//      continue;
-//      this.mExampleContainer.setVisibility(8);
-//    }
+    int i = 2;
+    int j;
+    if ((paramList != null) && (paramList.size() > 0))
+    {
+      mExampleContainer.removeAllViews();
+      mExampleContainer.setVisibility(View.VISIBLE);
+      mExampleContainer.addView(mExampleLabel);
+      if (paramList.size() < i)
+        i = paramList.size();
+      j = 0;
+      
+      while (j < i)
+      {
+        ExampleContent localExampleContent = (ExampleContent)paramList.get(j);
+        LinearLayout localLinearLayout = (LinearLayout)getActivity().getLayoutInflater().inflate(R.layout.item_exp_example, null);
+        TextView localTextView1 = (TextView)localLinearLayout.findViewById(R.id.tv_example_en);
+        TextView localTextView2 = (TextView)localLinearLayout.findViewById(R.id.tv_example_cn);
+        localTextView1.setText(getSpannedAnnotation(localExampleContent.getAnnotation()));
+        localTextView2.setText(localExampleContent.getTranslation());
+        mExampleContainer.addView(localLinearLayout);
+        j++;
+        continue;
+      }
+    }else{
+    	mExampleContainer.setVisibility(View.GONE);
+    }
   }
 
   private void renderRoots(List<RootsContent> paramList)
   {
-//    int i;
-//    if ((paramList != null) && (paramList.size() > 0))
-//    {
-//      this.mRootsContainer.setVisibility(0);
-//      this.mRootsContainer.removeAllViews();
-//      this.mRootsContainer.addView(this.mRootsLabel);
-//      this.mRootsLabel.setVisibility(0);
-//      i = 0;
-//    }
-//    while (i < paramList.size())
-//    {
-//      RootsContent localRootsContent = (RootsContent)paramList.get(i);
-//      View localView = this.mActivity.getLayoutInflater().inflate(2130903251, null);
-//      localView.setOnClickListener(this.mRootsItemOnClickListener);
-//      localView.setTag(Integer.valueOf(i));
-//      TextView localTextView1 = (TextView)localView.findViewById(2131034363);
-//      TextView localTextView2 = (TextView)localView.findViewById(2131034362);
-//      localTextView2.setText(localRootsContent.getContent());
-//      localTextView1.setText(localRootsContent.getMeaningCn());
-//      localTextView2.setTypeface(this.mActivity.getTypeface());
-//      localTextView1.setTypeface(this.mActivity.getTypeface());
-//      this.mRootsContainer.addView(localView);
-//      i++;
-//      continue;
-//      this.mRootsContainer.setVisibility(8);
-//    }
+    int i;
+    if ((paramList != null) && (paramList.size() > 0))
+    {
+      mRootsContainer.setVisibility(View.VISIBLE);
+      mRootsContainer.removeAllViews();
+      mRootsContainer.addView(mRootsLabel);
+      mRootsLabel.setVisibility(View.VISIBLE);
+      i = 0;
+      
+      while (i < paramList.size())
+      {
+        RootsContent localRootsContent = (RootsContent)paramList.get(i);
+        View localView = mActivity.getLayoutInflater().inflate(R.layout.item_roots, null);
+        localView.setOnClickListener(mRootsItemOnClickListener);
+        localView.setTag(Integer.valueOf(i));
+        TextView localTextView1 = (TextView)localView.findViewById(R.id.meaning_cn);
+        TextView localTextView2 = (TextView)localView.findViewById(R.id.roots_content);
+        localTextView2.setText(localRootsContent.getContent());
+        localTextView1.setText(localRootsContent.getMeaningCn());
+        localTextView2.setTypeface(mActivity.getTypeface());
+        localTextView1.setTypeface(mActivity.getTypeface());
+        mRootsContainer.addView(localView);
+        i++;
+        continue;
+      }
+      
+    }else{
+    	mRootsContainer.setVisibility(View.GONE);
+    }
+    
   }
 
   private void showNextButton()
   {
-    if (this.mActivity.isFromSummary())
+    if (mActivity.isFromSummary())
     {
-      this.mBtnNext.setVisibility(8);
+      mBtnNext.setVisibility(View.GONE);
       return;
     }
-    this.mBtnNext.setVisibility(0);
+    mBtnNext.setVisibility(View.VISIBLE);
   }
 
   public void onActivityCreated(Bundle paramBundle)
@@ -157,11 +164,11 @@ public class ExpExploreFragment extends ExpReviewFragment
     super.onActivityCreated(paramBundle);
     if (!isRenderable())
       return;
-    this.mWordView = new ExpWordView(this.mActivity, (ViewGroup)this.mRootView.findViewById(2131034459), this.mActivity.isEnableCollins());
-    this.mWordView.init();
-    if (this.mActivity.isEnableCollins())
-      ((ImageView)this.mEnDefinitionContainer.findViewById(2131034443)).setVisibility(8);
-    render(this.mRootView);
+    mWordView = new ExpWordView(mActivity, (ViewGroup)mRootView.findViewById(R.id.word), mActivity.isEnableCollins());
+    mWordView.init();
+    if (mActivity.isEnableCollins())
+      ((ImageView)mEnDefinitionContainer.findViewById(R.id.arrow)).setVisibility(View.GONE);
+    render(mRootView);
   }
 
   public void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
@@ -196,15 +203,15 @@ public class ExpExploreFragment extends ExpReviewFragment
     }else{
     	mIsStateSaved = true;
     }
-    mRootView = paramLayoutInflater.inflate(2130903168, paramViewGroup, false);
-    mSoundImgBtn = ((ImageButton)this.mRootView.findViewById(2131034891));
-    mRootsLabel = ((TextView)this.mRootView.findViewById(2131034460));
-    mRootsContainer = ((ViewGroup)this.mRootView.findViewById(2131034252));
-    mBtnNext = ((Button)this.mRootView.findViewById(2131034458));
+    mRootView = paramLayoutInflater.inflate(R.layout.fragment_exp_explore, paramViewGroup, false);
+    mSoundImgBtn = ((ImageButton)mRootView.findViewById(R.id.btn_sound_in_word));
+    mRootsLabel = ((TextView)mRootView.findViewById(R.id.roots_label));
+    mRootsContainer = ((ViewGroup)mRootView.findViewById(R.id.roots_container));
+    mBtnNext = ((Button)mRootView.findViewById(R.id.next_button));
     mBtnNext.setOnClickListener(this);
-    mExampleLabel = ((TextView)this.mRootView.findViewById(2131034462));
-    mExampleContainer = ((LinearLayout)this.mRootView.findViewById(2131034461));
-    mEnDefinitionContainer = ((RelativeLayout)this.mRootView.findViewById(2131034894));
+    mExampleLabel = ((TextView)mRootView.findViewById(R.id.example_label));
+    mExampleContainer = ((LinearLayout)mRootView.findViewById(R.id.example_container));
+    mEnDefinitionContainer = ((RelativeLayout)mRootView.findViewById(R.id.en_definitions_container));
     return mRootView;
   }
 
@@ -219,11 +226,11 @@ public class ExpExploreFragment extends ExpReviewFragment
     renderExamples(localReviewData.getExamples().getExampleList());
     if ((localVocabularyData.hasAudio()) && (!mIsStateSaved))
       playSound(mSoundImgBtn);
-    this.mSoundImgBtn.setOnClickListener(new View.OnClickListener()
+    mSoundImgBtn.setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramAnonymousView)
       {
-        ExpExploreFragment.this.playSound(ExpExploreFragment.this.mSoundImgBtn);
+        playSound(mSoundImgBtn);
       }
     });
     showNextButton();

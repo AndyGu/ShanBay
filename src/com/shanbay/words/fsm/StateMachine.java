@@ -27,14 +27,14 @@ public class StateMachine
     return this.currentState;
   }
 
-  public void handleSignal(Signal paramSignal)
+  public void handleSignal(Signal signal)
   {
-    if (this.currentState != null)
+    if (currentState != null)
     {
-      this.currentState = this.currentState.handleSignal(paramSignal);
+      currentState = currentState.handleSignal(signal);
       return;
     }
-    this.currentState = new StartState();
+    currentState = new StartState();
   }
 
   public static enum Signal{

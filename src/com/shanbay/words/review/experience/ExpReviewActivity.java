@@ -61,7 +61,6 @@ private void fetchExpData()
   {
 	  showProgressDialog("正在加载数据...");
       this.mIsFetchingData = true;
-//      mExpMode.root?1:0
       ((WordsClient)this.mClient).experienceData(this, mExpMode.root?1:0, mExpMode.collins?1:0, mExpMode.categoryId, new ModelResponseHandler(ExpReview.class)
       {
         public void onFailure(ModelResponseException modelResponseException, JsonElement jsonElement)
@@ -85,15 +84,15 @@ private void fetchExpData()
       });
   }
 
-  private int[] getBound(View paramView)
+  private int[] getBound(View view)
   {
     int[] arrayOfInt1 = { 0, 0, 0, 0 };
     int[] arrayOfInt2 = { 0, 0 };
-    paramView.getLocationInWindow(arrayOfInt2);
+    view.getLocationInWindow(arrayOfInt2);
     int i = arrayOfInt2[0];
     int j = arrayOfInt2[1];
-    int k = i + paramView.getWidth();
-    int m = j + paramView.getHeight();
+    int k = i + view.getWidth();
+    int m = j + view.getHeight();
     arrayOfInt1[0] = i;
     arrayOfInt1[1] = j;
     arrayOfInt1[2] = k;
@@ -106,19 +105,20 @@ private void fetchExpData()
     return (!ExpStudyQueueController.TAG_TEST_RECOGNITION.equals(tag)) && (!ExpStudyQueueController.TAG_EXPLORE.equals(tag)) && (!ExpStudyQueueController.TAG_SUMMARY.equals(tag)) && (!ExpStudyQueueController.TAG_TEST_SPELL.equals(tag));
   }
 
-//  private boolean isViewPressed(float paramFloat1, float paramFloat2, View paramView)
-//  {
-//    boolean bool = true;
-//    if (paramView == null)
-//      return false;
-//    int[] arrayOfInt = getBound(paramView);
-//    if ((paramFloat1 > arrayOfInt[0]) && (paramFloat1 < arrayOfInt[2]) && (paramFloat2 > arrayOfInt[bool]) && (paramFloat2 < arrayOfInt[3]));
-//    while (true)
-//    {
-//      return bool;
-//      bool = false;
-//    }
-//  }
+  private boolean isViewPressed(float motionX, float motionY, View view)
+  {
+		boolean bool = true;
+		if (view == null)
+			return false;
+		int[] arrayOfInt = getBound(view);
+		if ((motionX > arrayOfInt[0]) && (motionX < arrayOfInt[2])
+				&& (motionY > arrayOfInt[1]) && (motionY < arrayOfInt[3])) {
+			bool = true;
+		} else {
+			bool = false;
+		}
+		return bool;
+  }
 
   private void renderPanel(String tag)
   {
@@ -132,37 +132,37 @@ private void fetchExpData()
     expReviewFragment.render();
   }
 
-//  public boolean dispatchTouchEvent(MotionEvent paramMotionEvent)
-//  {
-//    float f1 = paramMotionEvent.getX();
-//    float f2 = paramMotionEvent.getY();
-//    switch (paramMotionEvent.getAction())
-//    {
-//    default:
-//    case 0:
-//    case 1:
-//    }
-//    while (true)
-//    {
-//      return super.dispatchTouchEvent(paramMotionEvent);
-//      this.downX = f1;
-//      this.downY = f2;
-//      continue;
-//      if ((Math.abs(f1 - this.downX) < 5.0F) && (Math.abs(f2 - this.downY) < 5.0F))
-//      {
-//        View localView1 = findViewById(2131034161);
-//        View localView2 = findViewById(2131034202);
-//        View localView3 = findViewById(2131034256);
-//        View localView4 = findViewById(2131034770);
-//        if ((!isViewPressed(f1, f2, localView2)) && (!isViewPressed(f1, f2, localView3)) && (!isViewPressed(f1, f2, localView4)))
-//          Misc.forceHideSoftKeyboard(this, localView1);
-//      }
-//    }
-//  }
+  public boolean dispatchTouchEvent(MotionEvent event)
+  {
+    float f1 = event.getX();
+    float f2 = event.getY();
+    
+    switch (event.getAction())
+    {
+    case MotionEvent.ACTION_DOWN:
+    	downX = f1;
+        downY = f2;
+    	break;
+    case MotionEvent.ACTION_UP:
+    	if ((Math.abs(f1 - downX) < 5.0F) && (Math.abs(f2 - downY) < 5.0F))
+        {
+          View root = findViewById(R.id.root);
+          View searchPlate = findViewById(R.id.search_plate);
+          View spellContainer = findViewById(R.id.spell_container);
+          View btnHintContainer = findViewById(R.id.btn_hint_container);
+          if ((!isViewPressed(f1, f2, searchPlate)) && (!isViewPressed(f1, f2, spellContainer)) && (!isViewPressed(f1, f2, btnHintContainer)))
+            Misc.forceHideSoftKeyboard(this, root);
+        }
+    	break;
+    default:
+    	break;
+    }
+      return super.dispatchTouchEvent(event);
+  }
 
   public ExpStudyQueueController getStudyQueueController()
   {
-    return this.mExpStudyQueueController;
+    return mExpStudyQueueController;
   }
 
   public int getTestRecognitionMode()
@@ -177,12 +177,12 @@ private void fetchExpData()
 
   public Typeface getTypeface()
   {
-    return this.mTypeface;
+    return mTypeface;
   }
 
   public Typeface getTypefaceBlod()
   {
-    return this.mTypefaceBlod;
+    return mTypefaceBlod;
   }
 
   public void goToExplore(int paramInt)

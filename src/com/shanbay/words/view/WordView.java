@@ -17,6 +17,8 @@ import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+
+import com.shanbay.words.R;
 import com.shanbay.words.WordsSoundPlayer;
 import com.shanbay.words.activity.WordsActivity;
 import com.shanbay.words.helper.AppletHelper;
@@ -51,22 +53,22 @@ public class WordView
 
   public WordView(WordsActivity paramWordsActivity, ViewGroup paramViewGroup)
   {
-    this.mActivity = paramWordsActivity;
-    this.mRoot = paramViewGroup;
-    this.mTypeface = Typeface.createFromAsset(this.mActivity.getAssets(), "fonts/NotoSans-Regular.ttf");
-    this.mTypefacePhonet = Typeface.createFromAsset(this.mActivity.getAssets(), this.mActivity.getString(2131362132));
+    mActivity = paramWordsActivity;
+    mRoot = paramViewGroup;
+    mTypeface = Typeface.createFromAsset(mActivity.getAssets(), "fonts/NotoSans-Regular.ttf");
+    mTypefacePhonet = Typeface.createFromAsset(mActivity.getAssets(), mActivity.getString(R.string.fonts_phonet));
   }
 
   public void clearAllViews()
   {
-    this.mRoot.setVisibility(8);
-    this.mPronText.setVisibility(8);
-    this.mContentText.setVisibility(8);
-    this.mDefinitionText.setVisibility(8);
-    this.mEnDefinitionsContainer.setVisibility(8);
-    this.mEndefToggleButton.setVisibility(8);
-    this.mAudioButton.setVisibility(8);
-    this.mHint.setVisibility(8);
+    mRoot.setVisibility(View.GONE);
+    mPronText.setVisibility(View.GONE);
+    mContentText.setVisibility(View.GONE);
+    mDefinitionText.setVisibility(View.GONE);
+    mEnDefinitionsContainer.setVisibility(View.GONE);
+    mEndefToggleButton.setVisibility(View.GONE);
+    mAudioButton.setVisibility(View.GONE);
+    mHint.setVisibility(View.GONE);
   }
 
   public String getEnDefinition(VocabularyData paramVocabularyData)
@@ -102,90 +104,85 @@ public class WordView
     return getEnDefinition(paramVocabularyData);
   }
 
-//  public String getNormalEnDefinitionString(Vocabulary paramVocabulary)
-//  {
-//    StringBuilder localStringBuilder = new StringBuilder();
-//    if ((paramVocabulary.enDefinition.pos != null) && (paramVocabulary.enDefinition.defn != null))
-//    {
-//      localStringBuilder.append(paramVocabulary.enDefinition.pos).append("<br />");
-//      String[] arrayOfString = paramVocabulary.enDefinition.defn.toString().split(";");
-//      int i = 0;
-//      if (i < arrayOfString.length)
-//      {
-//        localStringBuilder.append(i + 1 + "." + arrayOfString[i]);
-//        if (!arrayOfString[i].endsWith("."))
-//          localStringBuilder.append(";<br />");
-//        while (true)
-//        {
-//          i++;
-//          break;
-//          localStringBuilder.append("<br />");
-//        }
-//      }
-//    }
-//    return localStringBuilder.toString();
-//  }
+  public String getNormalEnDefinitionString(Vocabulary paramVocabulary)
+  {
+    StringBuilder localStringBuilder = new StringBuilder();
+    if ((paramVocabulary.enDefinition.pos != null) && (paramVocabulary.enDefinition.defn != null))
+    {
+      localStringBuilder.append(paramVocabulary.enDefinition.pos).append("<br />");
+      String[] arrayOfString = paramVocabulary.enDefinition.defn.toString().split(";");
+      int i = 0;
+      if (i < arrayOfString.length)
+      {
+        localStringBuilder.append(i + 1 + "." + arrayOfString[i]);
+        if (!arrayOfString[i].endsWith(".")){
+            localStringBuilder.append(";<br />");
+        }else{
+            localStringBuilder.append("<br />");
+        }
+          i++;
+      }
+    }
+    return localStringBuilder.toString();
+  }
 
   public View getRootView()
   {
-    return this.mRoot;
+    return mRoot;
   }
 
   public void init()
   {
-//    this.mContentText = ((TextView)this.mRoot.findViewById(2131034154));
-//    this.mPronText = ((TextView)this.mRoot.findViewById(2131034356));
-//    this.mNormalPronTextLP = ((RelativeLayout.LayoutParams)this.mPronText.getLayoutParams());
-//    this.mDefinitionContainer = ((RelativeLayout)this.mRoot.findViewById(2131034892));
-//    this.mWordContentContainer = ((RelativeLayout)this.mRoot.findViewById(2131034887));
-//    RelativeLayout.LayoutParams localLayoutParams = new RelativeLayout.LayoutParams(-2, -2);
-//    localLayoutParams.addRule(3, this.mContentText.getId());
-//    localLayoutParams.addRule(5, this.mContentText.getId());
-//    this.mNewLinePronTextLP = localLayoutParams;
-//    final ViewGroup localViewGroup = (ViewGroup)this.mPronText.getParent();
-//    localViewGroup.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()
-//    {
-//      public void onGlobalLayout()
-//      {
-//        localViewGroup.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-//        WordView.this.layoutPronText();
-//      }
-//    });
-//    this.mDefinitionText = ((TextView)this.mRoot.findViewById(2131034357));
-//    this.mEnDefinitions = ((TextView)this.mRoot.findViewById(2131034895));
-//    this.mEnDefinitionsContainer = ((RelativeLayout)this.mRoot.findViewById(2131034894));
-//    this.mEndefToggleButton = ((ToggleButton)this.mRoot.findViewById(2131034893));
-//    this.mAudioButton = ((ImageButton)this.mRoot.findViewById(2131034891));
-//    this.mArrowImgView = ((ImageView)this.mRoot.findViewById(2131034443));
-//    this.mEndefToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
-//    {
-//      public void onCheckedChanged(CompoundButton paramAnonymousCompoundButton, boolean paramAnonymousBoolean)
-//      {
-//        if (paramAnonymousBoolean)
-//        {
-//          WordView.this.mEnDefinitionsContainer.setVisibility(0);
-//          return;
-//        }
-//        WordView.this.mEnDefinitionsContainer.setVisibility(8);
-//      }
-//    });
-//    this.mEndefToggleButton.setChecked(false);
-//    if (isShowCollins())
-//    {
-//      this.mArrowImgView.setVisibility(0);
-//      this.mEndefToggleButton.setVisibility(8);
-//      this.mEnDefinitionsContainer.setVisibility(0);
-//    }
-//    while (true)
-//    {
-//      this.mHint = ((TextView)this.mRoot.findViewById(2131034890));
-//      this.mContentText.setTypeface(this.mTypeface);
-//      this.mPronText.setTypeface(this.mTypefacePhonet);
-//      this.mEnDefinitions.setTypeface(this.mTypeface);
-//      return;
-//      this.mArrowImgView.setVisibility(8);
-//      this.mEnDefinitionsContainer.setBackgroundResource(2130837674);
-//    }
+    mContentText = ((TextView)mRoot.findViewById(R.id.content));
+    mPronText = ((TextView)mRoot.findViewById(R.id.pron));
+    mNormalPronTextLP = ((RelativeLayout.LayoutParams)mPronText.getLayoutParams());
+    mDefinitionContainer = ((RelativeLayout)mRoot.findViewById(R.id.definition_container));
+    mWordContentContainer = ((RelativeLayout)mRoot.findViewById(R.id.word_content_container));
+    RelativeLayout.LayoutParams localLayoutParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+    localLayoutParams.addRule(RelativeLayout.BELOW, mContentText.getId());
+    localLayoutParams.addRule(RelativeLayout.ALIGN_LEFT, mContentText.getId());
+    mNewLinePronTextLP = localLayoutParams;
+    final ViewGroup localViewGroup = (ViewGroup)mPronText.getParent();
+    localViewGroup.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()
+    {
+      public void onGlobalLayout()
+      {
+        localViewGroup.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+        WordView.this.layoutPronText();
+      }
+    });
+    mDefinitionText = ((TextView)mRoot.findViewById(R.id.definition));
+    mEnDefinitions = ((TextView)mRoot.findViewById(R.id.en_definitions));
+    mEnDefinitionsContainer = ((RelativeLayout)mRoot.findViewById(R.id.en_definitions_container));
+    mEndefToggleButton = ((ToggleButton)mRoot.findViewById(R.id.toggle_en));
+    mAudioButton = ((ImageButton)mRoot.findViewById(R.id.btn_sound_in_word));
+    mArrowImgView = ((ImageView)mRoot.findViewById(R.id.arrow));
+    mEndefToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+    {
+      public void onCheckedChanged(CompoundButton compoundButton, boolean mboolean)
+      {
+        if (mboolean)
+        {
+          mEnDefinitionsContainer.setVisibility(View.VISIBLE);
+          return;
+        }
+        mEnDefinitionsContainer.setVisibility(View.GONE);
+      }
+    });
+    mEndefToggleButton.setChecked(false);
+    if (isShowCollins())
+    {
+      mArrowImgView.setVisibility(View.VISIBLE);
+      mEndefToggleButton.setVisibility(View.GONE);
+      mEnDefinitionsContainer.setVisibility(View.VISIBLE);
+    }else{
+    	 mArrowImgView.setVisibility(View.GONE);
+         mEnDefinitionsContainer.setBackgroundResource(R.drawable.btn_item_normal);
+    }
+      mHint = ((TextView)mRoot.findViewById(R.id.hint));
+      mContentText.setTypeface(mTypeface);
+      mPronText.setTypeface(mTypefacePhonet);
+      mEnDefinitions.setTypeface(mTypeface);
   }
 
   public boolean isShowCollins()
@@ -196,30 +193,27 @@ public class WordView
 
   public void layoutPronText()
   {
-//    String str = this.mPronText.getText().toString() + "W";
-//    Rect localRect = new Rect();
-//    this.mPronText.getPaint().getTextBounds(str, 0, str.length(), localRect);
-//    int i = localRect.width() + this.mNormalPronTextLP.leftMargin;
-//    ViewGroup localViewGroup = (ViewGroup)this.mPronText.getParent();
-//    RelativeLayout.LayoutParams localLayoutParams;
-//    if (i + this.mContentText.getWidth() >= localViewGroup.getWidth() - localViewGroup.getPaddingLeft())
-//    {
-//      localLayoutParams = this.mNewLinePronTextLP;
-//      localRect.set(0, 0, 0, 0);
-//    }
-//    while (true)
-//    {
-//      if (localLayoutParams != this.mPronText.getLayoutParams())
-//      {
-//        localViewGroup.removeView(this.mPronText);
-//        this.mPronText.setLayoutParams(localLayoutParams);
-//        localViewGroup.addView(this.mPronText);
-//        localViewGroup.setPadding(localRect.left, localRect.top, localRect.right, localRect.bottom);
-//      }
-//      return;
-//      localLayoutParams = this.mNormalPronTextLP;
-//      localRect.set(0, 0, 0, 0);
-//    }
+    String str = mPronText.getText().toString() + "W";
+    Rect localRect = new Rect();
+    this.mPronText.getPaint().getTextBounds(str, 0, str.length(), localRect);
+    int i = localRect.width() + mNormalPronTextLP.leftMargin;
+    ViewGroup localViewGroup = (ViewGroup)mPronText.getParent();
+    RelativeLayout.LayoutParams localLayoutParams;
+    if (i + mContentText.getWidth() >= localViewGroup.getWidth() - localViewGroup.getPaddingLeft())
+    {
+      localLayoutParams = mNewLinePronTextLP;
+      localRect.set(0, 0, 0, 0);
+    }else{
+    	localLayoutParams = mNormalPronTextLP;
+        localRect.set(0, 0, 0, 0);
+    }
+      if (localLayoutParams != mPronText.getLayoutParams())
+      {
+        localViewGroup.removeView(mPronText);
+        mPronText.setLayoutParams(localLayoutParams);
+        localViewGroup.addView(mPronText);
+        localViewGroup.setPadding(localRect.left, localRect.top, localRect.right, localRect.bottom);
+      }
   }
 
   public void release()
@@ -228,92 +222,96 @@ public class WordView
 
   public void render(final Search paramSearch)
   {
-//    this.mAudioButton.setVisibility(0);
-//    this.mWordContentContainer.setOnClickListener(new View.OnClickListener()
+//    mAudioButton.setVisibility(View.VISIBLE);
+//    mWordContentContainer.setOnClickListener(new View.OnClickListener()
 //    {
 //      public void onClick(View paramAnonymousView)
 //      {
-//        WordView.this.mActivity.getSoundPlayer().playSoundByUrl(paramSearch.usAudio, WordView.this.mAudioButton);
+//        mActivity.getSoundPlayer().playSoundByUrl(paramSearch.usAudio, mAudioButton);
 //      }
 //    });
+//    
 //    if ((paramSearch.pronunciation != null) && (paramSearch.pronunciation.length() > 0))
 //    {
-//      this.mPronText.setText(Html.fromHtml('[' + paramSearch.pronunciation + ']'));
-//      this.mPronText.setLayoutParams(this.mNewLinePronTextLP);
-//      this.mContentText.setText(paramSearch.content);
+//      mPronText.setText(Html.fromHtml('[' + paramSearch.pronunciation + ']'));
+//      mPronText.setLayoutParams(mNewLinePronTextLP);
+//      mContentText.setText(paramSearch.content);
 //      if (paramSearch.definition != null)
-//        this.mDefinitionText.setText(paramSearch.definition.trim());
+//        mDefinitionText.setText(paramSearch.definition.trim());
 //      if ((paramSearch.definition != null) && ((paramSearch.enDefinition.defn != null) || (paramSearch.enDefinition.pos != null)))
-//        break label234;
-//      this.mEndefToggleButton.setVisibility(8);
+//        mEndefToggleButton.setVisibility(View.GONE);
+//    }else{
+//    	
 //    }
 //    while (true)
 //    {
 //      if (!isShowCollins())
-//        break label279;
-//      this.mEndefToggleButton.setVisibility(8);
-//      this.mEnDefinitionsContainer.setVisibility(0);
-//      this.mDefinitionContainer.setVisibility(8);
+//        break;
+//      this.mEndefToggleButton.setVisibility(View.GONE);
+//      this.mEnDefinitionsContainer.setVisibility(View.VISIBLE);
+//      this.mDefinitionContainer.setVisibility(View.GONE);
 //      if (StringUtil.isBlank(paramSearch.enDefinition.defn))
 //      {
-//        this.mDefinitionContainer.setVisibility(0);
-//        this.mEnDefinitionsContainer.setVisibility(8);
+//        this.mDefinitionContainer.setVisibility(View.VISIBLE);
+//        this.mEnDefinitionsContainer.setVisibility(View.GONE);
 //      }
 //      return;
 //      this.mPronText.setText("");
 //      break;
-//      label234: this.mEndefToggleButton.setVisibility(0);
+//      label234: this.mEndefToggleButton.setVisibility(View.VISIBLE);
 //      String str = wordsHighLight(getEnDefinition(paramSearch.enDefinition.pos, paramSearch.enDefinition.defn));
 //      this.mEnDefinitions.setText(Html.fromHtml(str));
 //    }
 //    label279: this.mEnDefinitionsContainer.setClickable(false);
-//    this.mDefinitionContainer.setVisibility(0);
+//    this.mDefinitionContainer.setVisibility(View.VISIBLE);
   }
 
-  public void render(final VocabularyData paramVocabularyData)
+  public void render(final VocabularyData vocabularyData)
   {
-//    if (paramVocabularyData.hasAudio())
-//    {
-//      this.mAudioButton.setVisibility(0);
-//      this.mWordContentContainer.setOnClickListener(new View.OnClickListener()
-//      {
-//        public void onClick(View paramAnonymousView)
-//        {
-//          WordView.this.mActivity.getSoundPlayer().playSound(paramVocabularyData.getAudioName(), WordView.this.mAudioButton);
-//        }
-//      });
-//    }
-//    if ((paramVocabularyData.getPron() != null) && (paramVocabularyData.getPron().length() > 0))
-//    {
-//      this.mPronText.setText(Html.fromHtml('[' + paramVocabularyData.getPron() + ']'));
-//      this.mContentText.setText(paramVocabularyData.getContent());
-//      if (paramVocabularyData.getCnDefinition() != null)
-//        this.mDefinitionText.setText(paramVocabularyData.getCnDefinition().trim());
-//      if ((paramVocabularyData.getCnDefinition() != null) && ((paramVocabularyData.getEnDefn() != null) || (paramVocabularyData.getEnPos() != null)))
-//        break label221;
-//      this.mEndefToggleButton.setVisibility(8);
-//    }
-//    while (true)
-//    {
-//      if (!isShowCollins())
-//        break label253;
-//      this.mEndefToggleButton.setVisibility(8);
-//      this.mEnDefinitionsContainer.setVisibility(0);
-//      this.mDefinitionContainer.setVisibility(8);
-//      if (StringUtils.isBlank(paramVocabularyData.getEnDefn()))
-//      {
-//        this.mDefinitionContainer.setVisibility(0);
-//        this.mEnDefinitionsContainer.setVisibility(8);
-//      }
-//      return;
-//      this.mPronText.setText("");
-//      break;
-//      label221: this.mEndefToggleButton.setVisibility(0);
-//      String str = wordsHighLight(getEnDefinitionString(paramVocabularyData));
-//      this.mEnDefinitions.setText(Html.fromHtml(str));
-//    }
-//    label253: this.mEnDefinitionsContainer.setClickable(false);
-//    this.mDefinitionContainer.setVisibility(0);
+	  if (vocabularyData.hasAudio())
+	    {
+	      mAudioButton.setVisibility(View.VISIBLE);
+	      mWordContentContainer.setOnClickListener(new View.OnClickListener()
+	      {
+	        public void onClick(View paramAnonymousView)
+	        {
+	          WordView.this.mActivity.getSoundPlayer().playSound(vocabularyData.getAudioName(), WordView.this.mAudioButton);
+	        }
+	      });
+	    }
+	  
+	    if ((vocabularyData.getPron() != null) && (vocabularyData.getPron().length() > 0))
+	    {
+	      mPronText.setText(Html.fromHtml('[' + vocabularyData.getPron() + ']'));
+	      mContentText.setText(vocabularyData.getContent());
+	      if (vocabularyData.getCnDefinition() != null){
+	    	  mDefinitionText.setText(vocabularyData.getCnDefinition().trim());
+	      }
+	      if (!(vocabularyData.getCnDefinition() != null) && ((vocabularyData.getEnDefn() != null) || (vocabularyData.getEnPos() != null)))
+	    	  mEndefToggleButton.setVisibility(View.GONE);
+	    }else{
+	    	 mPronText.setText("");
+	    }
+	    
+	    if (isShowCollins()){
+	    	  mEndefToggleButton.setVisibility(View.GONE);
+		      mEnDefinitionsContainer.setVisibility(View.VISIBLE);
+		      mDefinitionContainer.setVisibility(View.GONE);
+		      
+		      String str = wordsHighLight(getEnDefinitionString(vocabularyData));
+		      mEnDefinitions.setText(Html.fromHtml(str));
+	      }else{
+	    	mEndefToggleButton.setVisibility(View.VISIBLE);
+	  	    
+	    	mEnDefinitionsContainer.setClickable(false);
+	  	    mDefinitionContainer.setVisibility(View.VISIBLE);
+	      }
+	      
+	      if (StringUtils.isBlank(vocabularyData.getEnDefn()))
+	      {
+	        this.mDefinitionContainer.setVisibility(View.VISIBLE);
+	        this.mEnDefinitionsContainer.setVisibility(View.GONE);
+	      }
   }
 
   public String wordsHighLight(String paramString)

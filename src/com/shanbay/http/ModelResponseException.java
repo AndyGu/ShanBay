@@ -30,63 +30,63 @@ public class ModelResponseException extends Exception
     if ((paramThrowable instanceof HttpResponseException))
     {
       HttpResponseException localHttpResponseException = (HttpResponseException)paramThrowable;
-      if (localHttpResponseException.getStatusCode() == 404);
-      for (this.statusCode = 268369921; ; this.statusCode = localHttpResponseException.getStatusCode())
-      {
-        this.msg = localHttpResponseException.getMessage();
-        return;
+      if (localHttpResponseException.getStatusCode() == 404){
+    	  statusCode = STATUS_CODE_NETWORK_404;
+      }else{
+    	  statusCode = localHttpResponseException.getStatusCode();
       }
+      msg = localHttpResponseException.getMessage();
     }
     if ((paramThrowable instanceof ConnectException))
     {
-      this.statusCode = 983040;
-      this.msg = paramThrowable.getMessage();
+      statusCode = 983040;
+      msg = paramThrowable.getMessage();
       return;
     }
     if ((paramThrowable instanceof UnknownHostException))
     {
-      this.statusCode = 16711680;
-      this.msg = paramThrowable.getMessage();
+      statusCode = 16711680;
+      msg = paramThrowable.getMessage();
       return;
     }
     if ((paramThrowable instanceof UnknownHostException))
     {
-      this.statusCode = 16711680;
-      this.msg = paramThrowable.getMessage();
+      statusCode = 16711680;
+      msg = paramThrowable.getMessage();
       return;
     }
     if (((paramThrowable instanceof SocketTimeoutException)) || ((paramThrowable instanceof ConnectTimeoutException)))
     {
-      this.statusCode = 268369922;
-      this.msg = paramThrowable.getMessage();
+      statusCode = 268369922;
+      msg = paramThrowable.getMessage();
       return;
     }
-    this.statusCode = -15;
-    this.msg = ("unknown exception:" + paramThrowable.getClass().getName() + " | Message:" + paramThrowable.getMessage());
+    statusCode = -15;
+    msg = ("unknown exception:" + paramThrowable.getClass().getName() + " | Message:" + paramThrowable.getMessage());
   }
 
   public String getMessage()
   {
-    return this.msg;
+    return msg;
   }
 
   public int getStatusCode()
   {
-    return this.statusCode;
+    return statusCode;
   }
 
   public boolean isDefinedStatus()
   {
-    return (0x8030000 & this.statusCode) == 134414336;
+    return (0x8030000 & statusCode) == 134414336;
   }
 
   public void setMsg(String paramString)
   {
-    this.msg = paramString;
+    msg = paramString;
   }
 
   public void setStatusCode(int paramInt)
   {
-    this.statusCode = paramInt;
+    statusCode = paramInt;
   }
 }

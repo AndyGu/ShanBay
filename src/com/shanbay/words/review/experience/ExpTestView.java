@@ -8,19 +8,19 @@ import com.shanbay.words.view.TestView;
 
 public class ExpTestView extends TestView
 {
-  public ExpTestView(WordsActivity paramWordsActivity, ViewGroup paramViewGroup1, ViewGroup paramViewGroup2, ViewGroup paramViewGroup3, boolean paramBoolean, String paramString)
+  public ExpTestView(WordsActivity mWordsActivity, ViewGroup viewGroup1, ViewGroup viewGroup2, ViewGroup viewGroup3, boolean mBoolean, String str)
   {
-    super(paramWordsActivity, paramViewGroup1, paramViewGroup2, paramViewGroup3);
-    this.mSpellView = new ExpSpellView(paramWordsActivity, paramViewGroup3, paramBoolean, paramString);
+    super(mWordsActivity, viewGroup1, viewGroup2, viewGroup3);
+    mSpellView = new ExpSpellView(mWordsActivity, viewGroup3, mBoolean, str);
   }
 
   public SpellView getSpellView()
   {
-    return this.mSpellView;
+    return mSpellView;
   }
 
-  public void renderSpell(ReviewData paramReviewData)
+  public void renderSpell(ReviewData reviewData)
   {
-    this.mSpellView.renderSpell(paramReviewData);
+    mSpellView.renderSpell(reviewData);
   }
 }
