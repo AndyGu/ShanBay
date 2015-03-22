@@ -223,32 +223,32 @@ public class ExpStudyQueueController
 
   public int getTestRecognitionMode()
   {
-    switch (this.mStudyData.reviewStatus)
-    {
-    case 1:
-    default:
-      return -1;
-    case 0:
-    case 2:
-      return 33;
-    case 3:
-    }
-    return 34;
+	  switch (mStudyData.reviewStatus)
+	    {
+	    case 1:
+	    case 0:
+	    case 2:
+	    	return ExpTestRecognitionFragment.MODE_SHOW_NOTHING;
+	    case 3:
+		    return ExpTestRecognitionFragment.MODE_SHOW_EXAMPLE;
+	    default:
+	      return -1;
+	    }
   }
 
   public int getTestSpellMode()
   {
-    switch (this.mStudyData.reviewStatus)
+    switch (mStudyData.reviewStatus)
     {
     case 1:
     default:
       return -1;
     case 0:
     case 2:
-      return 33;
+      return ExpTestSpellFragment.MODE_SHOW_NOTHING;
     case 3:
     }
-    return 34;
+    return ExpTestSpellFragment.MODE_SHOW_EXAMPLE;
   }
 
   public String getWordAudio()
@@ -263,10 +263,12 @@ public class ExpStudyQueueController
   public String nextFragment()
   {
 	  Log.e("nextFragment", "mNextFragmentStr="+mNextFragmentStr);
-    if (StringUtils.isBlank(mNextFragmentStr))
+    if (StringUtils.isBlank(mNextFragmentStr)){
         mNextFragmentStr = nextFragmentFromInital();
-	  Log.e("nextFragment", "nextFragmentFromInital="+mNextFragmentStr);
-    
+        Log.e("nextFragment", "nextFragmentFromInital="+mNextFragmentStr);
+        return mNextFragmentStr;
+    }
+	  
     if (TAG_EXPLORE.equals(mNextFragmentStr)){
         mNextFragmentStr = nextFragmentFromExpl();
         Log.e("nextFragment", "nextFragmentFromExpl="+mNextFragmentStr);

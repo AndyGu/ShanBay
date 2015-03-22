@@ -10,35 +10,35 @@ public class ProgressBarData
 
   public ProgressBarData(ReviewStat paramReviewStat)
   {
-    this.sum = paramReviewStat.getTotal();
-    this.init = paramReviewStat.getInit();
-    this.success = paramReviewStat.getSuccess();
-    this.failure = paramReviewStat.getFailure();
-    this.recognition = paramReviewStat.getRecognition();
+    sum = paramReviewStat.getTotal();
+    init = paramReviewStat.getInit();
+    success = paramReviewStat.getSuccess();
+    failure = paramReviewStat.getFailure();
+    recognition = paramReviewStat.getRecognition();
   }
 
   public int getFailure()
   {
-    return this.failure;
+    return failure;
   }
 
   public int getInit()
   {
-    return this.init;
+    return init;
   }
 
   public int getRecognition()
   {
-    return this.recognition;
+    return recognition;
   }
 
   public int getSuccess()
   {
-    return this.success;
+    return success;
   }
 
   public int getSum()
   {
-    return this.sum;
+    return sum;
   }
 }

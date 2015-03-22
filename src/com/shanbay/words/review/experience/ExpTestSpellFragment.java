@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import com.shanbay.util.Misc;
+import com.shanbay.words.R;
 import com.shanbay.words.WordsSoundPlayer;
 import com.shanbay.words.model.ExampleData;
 import com.shanbay.words.model.ProgressBarData;
@@ -259,36 +260,36 @@ public class ExpTestSpellFragment extends ExpReviewFragment
 
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    this.rootView = paramLayoutInflater.inflate(2130903193, paramViewGroup, false);
-    this.mProgressBar = ((ProgressBar)this.rootView.findViewById(2131034437));
-    this.mTestContent = ((LinearLayout)this.rootView.findViewById(2131034548));
-    this.mSoundImgBtn = ((ImageButton)this.rootView.findViewById(2131034891));
-    this.mWordsContainer = ((LinearLayout)this.rootView.findViewById(2131034459));
-    this.mDefinitionContainer = ((RelativeLayout)this.rootView.findViewById(2131034892));
-    this.mEnDefinitionsContainer = ((RelativeLayout)this.rootView.findViewById(2131034894));
-    this.mDefinitionContainer.setVisibility(8);
-    this.mEnDefinitionsContainer.setVisibility(8);
-    this.mSpellContainer = ((RelativeLayout)this.rootView.findViewById(2131034552));
-    this.mKnownButton = ((Button)this.rootView.findViewById(2131034549));
-    this.mUnknownButton = ((Button)this.rootView.findViewById(2131034550));
-    this.mDetailButton = ((Button)this.rootView.findViewById(2131034551));
-    this.mRootsViewStub = ((ViewStub)this.rootView.findViewById(2131034252));
-    this.mViewStubRoots = this.mRootsViewStub.inflate();
-    this.mRootsContainer = ((RelativeLayout)this.mViewStubRoots.findViewById(2131034679));
-    this.mEnDefintionViewStub = ((ViewStub)this.rootView.findViewById(2131034763));
-    this.mEnDefintionTextView = ((TextView)this.mEnDefintionViewStub.inflate().findViewById(2131034702));
-    this.mCnDefintionViewStub = ((ViewStub)this.rootView.findViewById(2131034764));
-    this.mCnDefintionTextView = ((TextView)this.mCnDefintionViewStub.inflate().findViewById(2131034702));
-    this.mExampleLinearLayout = ((LinearLayout)this.rootView.findViewById(2131034461));
-    this.mCollinsViewStub = ((ViewStub)this.rootView.findViewById(2131034762));
-    this.mCollinsViewStub.inflate();
-    this.mScrollView = ((ScrollView)this.rootView.findViewById(2131034264));
-    this.mCollinsTextView = ((TextView)this.rootView.findViewById(2131034615));
-    this.mDetailButton.setOnClickListener(this);
-    this.mKnownButton.setOnClickListener(this);
-    this.mUnknownButton.setOnClickListener(this);
-    this.mCollinsTextView.setOnClickListener(this);
-    return this.rootView;
+    rootView = paramLayoutInflater.inflate(R.layout.fragment_review_test_spell, paramViewGroup, false);
+    mProgressBar = ((ProgressBar)rootView.findViewById(R.id.progress_bar));
+    mTestContent = ((LinearLayout)rootView.findViewById(R.id.recognition));
+    mSoundImgBtn = ((ImageButton)rootView.findViewById(R.id.btn_sound_in_word));
+    mWordsContainer = ((LinearLayout)rootView.findViewById(R.id.word));
+    mDefinitionContainer = ((RelativeLayout)rootView.findViewById(R.id.definition_container));
+    mEnDefinitionsContainer = ((RelativeLayout)rootView.findViewById(R.id.en_definitions_container));
+    mDefinitionContainer.setVisibility(View.GONE);
+    mEnDefinitionsContainer.setVisibility(View.GONE);
+    mSpellContainer = ((RelativeLayout)rootView.findViewById(R.id.spell));
+    mKnownButton = ((Button)rootView.findViewById(R.id.known));
+    mUnknownButton = ((Button)rootView.findViewById(R.id.unknown));
+    mDetailButton = ((Button)rootView.findViewById(R.id.detail_button));
+    mRootsViewStub = ((ViewStub)rootView.findViewById(R.id.roots_container));
+    mViewStubRoots = mRootsViewStub.inflate();
+    mRootsContainer = ((RelativeLayout)mViewStubRoots.findViewById(R.id.roots_item_container));
+    mEnDefintionViewStub = ((ViewStub)rootView.findViewById(R.id.word_en_definition_viewstub));
+    mEnDefintionTextView = ((TextView)mEnDefintionViewStub.inflate().findViewById(R.id.word_definition));
+    mCnDefintionViewStub = ((ViewStub)rootView.findViewById(R.id.word_cn_definition_viewstub));
+    mCnDefintionTextView = ((TextView)mCnDefintionViewStub.inflate().findViewById(R.id.word_definition));
+    mExampleLinearLayout = ((LinearLayout)rootView.findViewById(R.id.example_container));
+    mCollinsViewStub = ((ViewStub)rootView.findViewById(R.id.word_collins_viewstub));
+    mCollinsViewStub.inflate();
+    mScrollView = ((ScrollView)rootView.findViewById(R.id.scroll));
+    mCollinsTextView = ((TextView)rootView.findViewById(R.id.review_collins));
+    mDetailButton.setOnClickListener(this);
+    mKnownButton.setOnClickListener(this);
+    mUnknownButton.setOnClickListener(this);
+    mCollinsTextView.setOnClickListener(this);
+    return rootView;
   }
 
   public void renderInternal()

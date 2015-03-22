@@ -34,7 +34,7 @@ public abstract class GsonResponseHandler extends AsyncHttpResponseHandler {
 				onAuthenticationFailure();
 				return;
 			}
-			if (new String(bytes) != null) {
+			if (bytes!=null && new String(bytes) != null) {
 				JsonElement jsonElement = parseResponse(new String(bytes));
 				onFailure(new ModelResponseException(throwable), jsonElement);
 				return;

@@ -3,14 +3,18 @@ package com.shanbay.words.view;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.View.MeasureSpec;
+
+import com.shanbay.words.R;
 import com.shanbay.words.model.ProgressBarData;
 import java.util.ArrayList;
 
@@ -48,95 +52,99 @@ public class ProgressBar extends View
 
   private void calc()
   {
-    this.numReviewed.prepare(this.whitePaint);
-    this.numPassed.prepare(this.whitePaint);
-    this.numFailed.prepare(this.whitePaint);
-    this.numFresh.prepare(this.blackPaint);
-    this.bubbleList.clear();
-    insert(this.numReviewed);
-    insert(this.numPassed);
-    insert(this.numFailed);
-    insert(this.numFresh);
-    float f1 = getRight() - getLeft();
-    float f2 = 0.0F;
-    int i = this.bubbleList.size();
+    numReviewed.prepare(whitePaint);
+    numPassed.prepare(whitePaint);
+    numFailed.prepare(whitePaint);
+    numFresh.prepare(blackPaint);
+    bubbleList.clear();
+    insert(numReviewed);
+    insert(numPassed);
+    insert(numFailed);
+    insert(numFresh);
+    float width = getRight() - getLeft();
+    float pbWidth = 0.0F;
+    int i = bubbleList.size();
     int j = 0;
     if (j < i)
     {
-      Bubble localBubble = (Bubble)this.bubbleList.get(j);
-      float f3 = f2 / (i - j);
-      localBubble.width -= f3;
-      f2 -= f3;
-      if (localBubble.width < localBubble.minWidth)
-        f2 += localBubble.minWidth - localBubble.width;
-      for (localBubble.realWidth = localBubble.minWidth; ; localBubble.realWidth = localBubble.width)
+      Bubble mBubble = (Bubble)bubbleList.get(j);
+      float itemWidth = pbWidth / (i - j);
+      mBubble.width -= itemWidth;
+      pbWidth -= itemWidth;
+      if (mBubble.width < mBubble.minWidth){
+          pbWidth += mBubble.minWidth - mBubble.width;
+      }else{
+    	  mBubble.realWidth = mBubble.minWidth;
+      }
+        
+      for (mBubble.realWidth = mBubble.minWidth; ; mBubble.realWidth = mBubble.width)
       {
-        if (localBubble.realWidth > f1)
-          localBubble.realWidth = f1;
-        f1 -= localBubble.realWidth;
-        j++;
-        break;
+    	  if (mBubble.realWidth > width)
+    		  mBubble.realWidth = width;
+    	  width -= mBubble.realWidth;
+          j++;
+    	  break;
       }
     }
-    this.numReviewed.setup(this.whitePaint);
-    this.numPassed.setup(this.whitePaint);
-    this.numFailed.setup(this.whitePaint);
-    this.numFresh.setup(this.blackPaint);
-    this.numReviewed.rect.left = getLeft();
-    this.numReviewed.rect.right = (this.numPassed.realWidth + this.numReviewed.realWidth);
-    Rect localRect1 = this.numReviewed.tRect;
-    localRect1.left = ((int)(localRect1.left + this.numPassed.realWidth));
-    this.numFresh.rect.left = getLeft();
-    this.numFresh.rect.right = getRight();
-    Rect localRect2 = this.numFresh.tRect;
-    localRect2.left = ((int)(localRect2.left + (this.numReviewed.realWidth + this.numPassed.realWidth)));
-    this.numFailed.rect.right = getRight();
-    this.numFailed.rect.left = (getRight() - this.numFailed.realWidth);
-    Rect localRect3 = this.numFailed.tRect;
-    localRect3.left = ((int)(localRect3.left + (getRight() - this.numFailed.realWidth)));
+    numReviewed.setup(whitePaint);
+    numPassed.setup(whitePaint);
+    numFailed.setup(whitePaint);
+    numFresh.setup(blackPaint);
+    numReviewed.rect.left = getLeft();
+    numReviewed.rect.right = (numPassed.realWidth + numReviewed.realWidth);
+    Rect localRect1 = numReviewed.tRect;
+    localRect1.left = ((int)(localRect1.left + numPassed.realWidth));
+    numFresh.rect.left = getLeft();
+    numFresh.rect.right = getRight();
+    Rect localRect2 = numFresh.tRect;
+    localRect2.left = ((int)(localRect2.left + (numReviewed.realWidth + numPassed.realWidth)));
+    numFailed.rect.right = getRight();
+    numFailed.rect.left = (getRight() - numFailed.realWidth);
+    Rect localRect3 = numFailed.tRect;
+    localRect3.left = ((int)(localRect3.left + (getRight() - numFailed.realWidth)));
   }
 
   private void init()
   {
-    this.numPassed = new Bubble(getResources().getDrawable(2130837598));
-    this.numReviewed = new Bubble(getResources().getDrawable(2130837599));
-    this.numFresh = new Bubble(getResources().getDrawable(2130837597));
-    this.numFailed = new Bubble(getResources().getDrawable(2130837600));
-    this.whitePaint = new Paint(1);
-    this.blackPaint = new Paint(1);
-    this.whitePaint.setColor(-1);
-    this.blackPaint.setColor(-16777216);
-    barHeight = getResources().getDimension(2131231482);
+    numPassed = new Bubble(getResources().getDrawable(R.drawable.bar_green));
+    numReviewed = new Bubble(getResources().getDrawable(R.drawable.bar_light_green));
+    numFresh = new Bubble(getResources().getDrawable(R.drawable.bar_gray));
+    numFailed = new Bubble(getResources().getDrawable(R.drawable.bar_orange));
+    whitePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    blackPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    whitePaint.setColor(Color.WHITE);
+    blackPaint.setColor(Color.BLACK);
+    barHeight = getResources().getDimension(R.dimen.progress_bar_height);
   }
 
-  private void insert(Bubble paramBubble)
+  private void insert(Bubble bubble)
   {
-//    if (paramBubble.value == 0)
-//      return;
-//    for (int i = 0; i < this.bubbleList.size(); i++)
-//    {
-//      Bubble localBubble = (Bubble)this.bubbleList.get(i);
-//      if (paramBubble.width <= localBubble.width)
-//      {
-//        this.bubbleList.add(i, paramBubble);
-//        return;
-//      }
-//    }
-//    this.bubbleList.add(i, paramBubble);
+    if (bubble.value == 0)
+      return;
+    for (int i = 0; i < bubbleList.size(); i++)
+    {
+      Bubble mBubble = (Bubble)bubbleList.get(i);
+      if (bubble.width <= mBubble.width)
+      {
+        bubbleList.add(i, bubble);
+        return;
+      }
+    }
+//    bubbleList.add(i, bubble);
   }
 
   private void refresh()
   {
-    if (this.mData == null)
+    if (mData == null)
       return;
-    this.numToday = this.mData.getSum();
-    this.numReviewed.value = this.mData.getRecognition();
-    this.numPassed.value = this.mData.getSuccess();
-    this.numFailed.value = this.mData.getFailure();
-    this.numFresh.value = this.mData.getInit();
-    if (this.numToday != 0)
+    numToday = mData.getSum();
+    numReviewed.value = mData.getRecognition();
+    numPassed.value = mData.getSuccess();
+    numFailed.value = mData.getFailure();
+    numFresh.value = mData.getInit();
+    if (numToday != 0)
     {
-      this.unit = (1.0F * (getRight() - getLeft()) / this.numToday);
+      unit = (1.0F * (getRight() - getLeft()) / numToday);
       calc();
     }
     invalidate();
@@ -145,37 +153,35 @@ public class ProgressBar extends View
   protected void onDraw(Canvas paramCanvas)
   {
     super.onDraw(paramCanvas);
-    this.numFresh.forceDraw(paramCanvas, this.blackPaint);
-    this.numReviewed.draw(paramCanvas, this.whitePaint);
-    this.numFailed.draw(paramCanvas, this.whitePaint);
-    this.numPassed.draw(paramCanvas, this.whitePaint);
+    numFresh.forceDraw(paramCanvas, blackPaint);
+    numReviewed.draw(paramCanvas, whitePaint);
+    numFailed.draw(paramCanvas, whitePaint);
+    numPassed.draw(paramCanvas, whitePaint);
   }
 
-  protected void onMeasure(int paramInt1, int paramInt2)
+  protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
   {
-//    int i = View.MeasureSpec.getMode(paramInt1);
-//    int j = View.MeasureSpec.getMode(paramInt2);
-//    int k = View.MeasureSpec.getSize(paramInt1);
-//    int m = View.MeasureSpec.getSize(paramInt2);
-//    int n;
-//    int i1;
-//    if (i == 1073741824)
-//    {
-//      n = k;
-//      if (j != 1073741824)
-//        break label61;
-//      i1 = m;
-//    }
-//    while (true)
-//    {
-//      setMeasuredDimension(n, i1);
-//      return;
-//      n = 320;
-//      break;
-//      label61: i1 = (int)(0.5F + barHeight);
-//      this.whitePaint.setTextSize(i1 * 2 / 3);
-//      this.blackPaint.setTextSize(i1 * 2 / 3);
-//    }
+    int widthMode = View.MeasureSpec.getMode(widthMeasureSpec);
+    int heightMode = View.MeasureSpec.getMode(heightMeasureSpec);
+    int widthSize = View.MeasureSpec.getSize(widthMeasureSpec);
+    int heightSize = View.MeasureSpec.getSize(heightMeasureSpec);
+    int width;
+    int height;
+    if (widthMode == MeasureSpec.EXACTLY){
+    	width = widthSize;
+    }else{
+    	width = 320;
+    }
+    
+    if (heightMode == MeasureSpec.EXACTLY){
+        height = heightSize;
+    }else{
+  	  	height = (int)(0.5F + barHeight);
+    }
+    whitePaint.setTextSize(height * 2 / 3);
+    blackPaint.setTextSize(height * 2 / 3);
+    
+    setMeasuredDimension(width, height);
   }
 
   protected void onSizeChanged(int paramInt1, int paramInt2, int paramInt3, int paramInt4)
@@ -184,9 +190,14 @@ public class ProgressBar extends View
       refresh();
   }
 
-  public void setProgressData(ProgressBarData paramProgressBarData)
+  public void setProgressData(ProgressBarData pbd)
   {
-    this.mData = paramProgressBarData;
+	  Log.e("setProgressData", "pbd init="+pbd.getInit()+
+			  " Recognition="+pbd.getRecognition()+
+			  " Success="+pbd.getSuccess()+
+			  " sum="+pbd.getSum()+
+			  " failure="+pbd.getFailure());
+    mData = pbd;
     refresh();
   }
 
@@ -203,63 +214,59 @@ public class ProgressBar extends View
 
     public Bubble(Drawable arg2)
     {
-//      Object localObject;
-//      this.nine = localObject;
-//      this.value = 0;
-//      this.rect = new RectF();
-//      this.tRect = new Rect();
+      nine = arg2;
+      value = 0;
+      rect = new RectF();
+      tRect = new Rect();
     }
 
-    private void mesureText(Paint paramPaint)
+    private void mesureText(Paint paint)
     {
-      int i = this.tRect.right - this.tRect.left;
-      int j = this.tRect.bottom - this.tRect.top;
-      float f = this.rect.bottom - this.rect.top;
-      this.tRect.left = ((int)(this.rect.right - i - ProgressBar.this.base() / 2));
-      this.tRect.bottom = ((int)(this.rect.bottom - (f - j) / 2.0F));
+      int i = tRect.right - tRect.left;
+      int j = tRect.bottom - tRect.top;
+      float f = rect.bottom - rect.top;
+      tRect.left = ((int)(rect.right - i - base() / 2));
+      tRect.bottom = ((int)(rect.bottom - (f - j) / 2.0F));
     }
 
-    void draw(Canvas paramCanvas, Paint paramPaint)
+    void draw(Canvas canvas, Paint paint)
     {
       if (this.value > 0)
       {
-        this.nine.setBounds((int)this.rect.left, (int)this.rect.top, (int)this.rect.right, (int)this.rect.bottom);
-        this.nine.draw(paramCanvas);
-        paramCanvas.drawText(this.s, this.tRect.left, this.tRect.bottom, paramPaint);
+        nine.setBounds((int)rect.left, (int)rect.top, (int)rect.right, (int)rect.bottom);
+        nine.draw(canvas);
+        canvas.drawText(s, tRect.left, tRect.bottom, paint);
       }
     }
 
-    void forceDraw(Canvas paramCanvas, Paint paramPaint)
+    void forceDraw(Canvas canvas, Paint paint)
     {
-      this.nine.setBounds((int)this.rect.left, (int)this.rect.top, (int)this.rect.right, (int)this.rect.bottom);
-      this.nine.draw(paramCanvas);
-      if (this.value > 0)
-        paramCanvas.drawText(this.s, this.tRect.left, this.tRect.bottom, paramPaint);
+      nine.setBounds((int)rect.left, (int)rect.top, (int)rect.right, (int)rect.bottom);
+      nine.draw(canvas);
+      if (value > 0)
+        canvas.drawText(s, tRect.left, tRect.bottom, paint);
     }
 
     void prepare(Paint paramPaint)
     {
-//      this.s = Integer.toString(this.value);
-//      this.rect.top = ProgressBar.this.getTop();
-//      this.rect.bottom = ProgressBar.this.getBottom();
-//      paramPaint.getTextBounds(this.s, 0, this.s.length(), this.tRect);
-//      int i = this.tRect.right - this.tRect.left;
-//      int j = 2 * ProgressBar.this.base();
-//      if (i > j);
-//      while (true)
-//      {
-//        this.minWidth = i;
-//        this.width = (ProgressBar.this.unit * this.value);
-//        this.realWidth = 0.0F;
-//        return;
-//        i = j;
-//      }
+      s = Integer.toString(value);
+      rect.top = getTop();
+      rect.bottom = getBottom();
+      paramPaint.getTextBounds(s, 0, s.length(), tRect);
+      int i = tRect.right - tRect.left;
+      int j = 2 * base();
+      if (i < j){
+          i = j; 
+      };
+        minWidth = i;
+        width = (unit * value);
+        realWidth = 0.0F;
     }
 
     void setup(Paint paramPaint)
     {
-      this.rect.left = ProgressBar.this.getLeft();
-      this.rect.right = (this.rect.left + this.realWidth);
+      rect.left = getLeft();
+      rect.right = (rect.left + realWidth);
       mesureText(paramPaint);
     }
   }

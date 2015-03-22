@@ -3,6 +3,7 @@ package com.shanbay.words.view;
 import android.app.Activity;
 import android.text.Html;
 import android.text.Spanned;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -32,15 +33,19 @@ public class ExampleView
     if (mRoot.getParent() != null){
     	localViewGroup = (ViewGroup)mRoot.getParent();
     	if(isVisible){
+    		Log.e("setRootVisibility", "VISIBLE");
     		localViewGroup.setVisibility(View.VISIBLE);
     	}else{
+    		Log.e("setRootVisibility", "GONE");
     		localViewGroup.setVisibility(View.GONE);
     	}
     }else{
     	localViewGroup = mRoot;
     	if(isVisible){
+    		Log.e("setRootVisibility", "mRoot VISIBLE");
     		localViewGroup.setVisibility(View.VISIBLE);
     	}else{
+    		Log.e("setRootVisibility", "mRoot GONE");
     		localViewGroup.setVisibility(View.GONE);
     	}
     }
@@ -73,6 +78,7 @@ public class ExampleView
 
   public void render(ExampleContent exampleContent, boolean mBoolean1, boolean mBoolean2)
   {
+	  Log.e("render", "render");
     setRootVisibility(true);
     mExample = exampleContent;
     mExampleEn.setText(wrapExample(mBoolean1));
@@ -87,6 +93,7 @@ public class ExampleView
 
   public void setVisibility(boolean isENVisible, boolean isCNVisible)
   {
+	  Log.e("exampleview setVisibility", "isENVisible="+isENVisible+" isCNVisible="+isCNVisible);
     if (isENVisible){
     	mExampleEn.setVisibility(View.VISIBLE);
     }else{

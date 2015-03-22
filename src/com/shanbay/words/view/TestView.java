@@ -1,5 +1,6 @@
 package com.shanbay.words.view;
 
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -27,13 +28,17 @@ public class TestView extends WordView
   public TestView(WordsActivity wordsActivity, ViewGroup vg1, ViewGroup vg2, ViewGroup vg3)
   {
     super(wordsActivity, (ViewGroup)vg1.findViewById(R.id.word));
-    if (vg2 != null)
-      mExampleView = new ExampleView(mActivity, (ViewGroup)vg2.findViewById(R.id.example_view));
-    if (vg3 != null)
-      mSpellView = new SpellView(this.mActivity, vg3);
+    if (vg2 != null){
+        mExampleView = new ExampleView(mActivity, (ViewGroup)vg2.findViewById(R.id.example_view));
+    	Log.e("TestView", "new ExampleView");
+    }
+    if (vg3 != null){
+        mSpellView = new SpellView(this.mActivity, vg3);
+    	Log.e("TestView", "new SpellView");
+    }
   }
 
-  private void handleMode(ReviewData paramReviewData)
+  private void handleMode(ReviewData reviewData)
   {
     clearAllViews();
     if (isMode(VIEW_WORD))
@@ -47,10 +52,10 @@ public class TestView extends WordView
     if (isMode(VIEW_DEFINITION))
     {
       System.out.println("VIEW_DEFINITION");
-      mRoot.setVisibility(0);
+      mRoot.setVisibility(View.VISIBLE);
       ((View)mDefinitionText.getParent()).setVisibility(View.VISIBLE);
       mDefinitionText.setVisibility(View.VISIBLE);
-      mDefinitionText.setText(paramReviewData.getVocabulary().getCnDefinition());
+      mDefinitionText.setText(reviewData.getVocabulary().getCnDefinition());
     }
     if (isMode(VIEW_SOUND))
     {
@@ -64,34 +69,39 @@ public class TestView extends WordView
     if (isMode(VIEW_EXAMPLE))
     {
       System.out.println("VIEW_EXAMPLE");
-      this.mExampleView.setVisibility(true, false);
-      List localList = paramReviewData.getExamples().getExampleList();
+      Log.e("handleMode", "VIEW_EXAMPLE");
+      mExampleView.setVisibility(true, false);
+      List localList = reviewData.getExamples().getExampleList();
       ExampleContent localExampleContent = null;
       if (localList != null)
       {
-        int i = paramReviewData.getExamples().getExampleList().size();
+        int i = reviewData.getExamples().getExampleList().size();
         localExampleContent = null;
         if (i > 0)
         {
-          int j = paramReviewData.getExamples().getExampleList().size();
+          int j = reviewData.getExamples().getExampleList().size();
           int k = (int)(Math.random() * j);
-          localExampleContent = (ExampleContent)paramReviewData.getExamples().getExampleList().get(k);
+          localExampleContent = (ExampleContent)reviewData.getExamples().getExampleList().get(k);
           System.out.println("Math.random()--->" + k);
         }
       }
-      if (localExampleContent != null)
-        mExampleView.render(localExampleContent, true, false);
-    }
-    else
-    {
-      return;
+      
+      if (localExampleContent != null){
+          mExampleView.render(localExampleContent, true, false);
+    	  Log.e("handleMode", "localExampleContent != null");
+      }
+    }else{
+    	return;
     }
     mExampleView.setVisibility(false, false);
+    Log.e("handleMode", "setVisibility false false");
   }
 
   public void clearAllViews()
   {
     super.clearAllViews();
+
+	  Log.e("clearAllViews", "clearAllViews");
     mExampleView.setVisibility(false, false);
     ((View)mAudioButton.getParent()).setVisibility(8);
     ((View)mDefinitionText.getParent()).setVisibility(8);
@@ -109,13 +119,15 @@ public class TestView extends WordView
 
   public boolean isMode(int paramInt)
   {
-    return (paramInt & mViewMode) != 0;
+	  boolean b = ((paramInt & mViewMode) != 0);
+	  Log.e("isMode", "para="+paramInt+" mViewMode="+mViewMode+ " b="+b);
+    return b;
   }
 
-  public void render(ReviewData paramReviewData)
+  public void render(ReviewData reviewData)
   {
-    super.render(paramReviewData.getVocabulary());
-    handleMode(paramReviewData);
+    super.render(reviewData.getVocabulary());
+    handleMode(reviewData);
   }
 
   public void renderSpell(ReviewData paramReviewData)
@@ -123,9 +135,10 @@ public class TestView extends WordView
     mSpellView.renderSpell(paramReviewData);
   }
 
-  public void setExampleVisibility(boolean paramBoolean1, boolean paramBoolean2)
+  public void setExampleVisibility(boolean isENVisible, boolean isCNVisible)
   {
-    mExampleView.setVisibility(paramBoolean1, paramBoolean2);
+	  Log.e("setExampleVisibility", "setExampleVisibility");
+    mExampleView.setVisibility(isENVisible, isCNVisible);
   }
 
   public void setViewMode(int paramInt)

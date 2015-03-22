@@ -1,16 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ScrollView android:scrollbarStyle="outsideOverlay" android:id="@id/scroll" android:paddingLeft="@dimen/main_margin" android:paddingTop="@dimen/main_margin" android:paddingRight="@dimen/main_margin" android:fadingEdge="none" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="#00000000" android:cacheColorHint="@android:color/transparent" android:divider="@null" android:layout_above="@id/next_button" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" android:layout_alignWithParentIfMissing="true" android:footerDividersEnabled="false" android:overScrollMode="never">
-        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <include android:id="@id/word" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="true" layout="@layout/word" />
-            <LinearLayout android:orientation="vertical" android:id="@id/roots_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin2">
-                <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/qin_nickname" android:id="@id/roots_label" android:paddingLeft="@dimen/padding4" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin2" android:text="@string/label_roots" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@id/scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/next_button"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_centerHorizontal="true"
+        android:cacheColorHint="@android:color/transparent"
+        android:clipToPadding="false"
+        android:divider="@null"
+        android:fadingEdge="none"
+        android:footerDividersEnabled="false"
+        android:listSelector="#00000000"
+        android:overScrollMode="never"
+        android:paddingLeft="@dimen/main_margin"
+        android:paddingRight="@dimen/main_margin"
+        android:paddingTop="@dimen/main_margin"
+        android:scrollbarStyle="outsideOverlay" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <include
+                android:id="@id/word"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/word"
+                android:onClick="true" />
+
+            <LinearLayout
+                android:id="@id/roots_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin2"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@id/roots_label"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin2"
+                    android:paddingLeft="@dimen/padding4"
+                    android:text="@string/label_roots"
+                    android:textColor="@color/qin_nickname"
+                    android:textSize="@dimen/small_text_size"
+                    android:visibility="gone" />
             </LinearLayout>
-            <LinearLayout android:orientation="vertical" android:id="@id/example_container" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin2">
-                <TextView android:textSize="@dimen/small_text_size" android:textColor="@color/qin_nickname" android:id="@id/example_label" android:paddingLeft="@dimen/padding4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin2" android:text="@string/label_explore_example" />
+
+            <LinearLayout
+                android:id="@id/example_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin2"
+                android:orientation="vertical"
+                android:visibility="visible" >
+
+                <TextView
+                    android:id="@id/example_label"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin2"
+                    android:paddingLeft="@dimen/padding4"
+                    android:text="@string/label_explore_example"
+                    android:textColor="@color/qin_nickname"
+                    android:textSize="@dimen/small_text_size" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-    <Button android:id="@id/next_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin5" android:layout_marginBottom="@dimen/margin5" android:text="@string/label_next_review" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" style="@style/SBBaseButton.Normal" />
+
+    <Button
+        android:id="@id/next_button"
+        style="@style/SBBaseButton.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin5"
+        android:layout_marginTop="@dimen/margin5"
+        android:text="@string/label_next_review" />
+
 </RelativeLayout>

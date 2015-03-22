@@ -97,7 +97,7 @@
             android:layout_toLeftOf="@id/toggle_en"
             android:lineSpacingExtra="@dimen/height1"
             android:lineSpacingMultiplier="1.2"
-            android:text="TextView"
+            android:text="definition"
             android:textColor="@color/sw_common_text"
             android:textSize="@dimen/small_text_size" />
 
@@ -136,7 +136,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/test_padding"
             android:paddingRight="@dimen/padding9"
-            android:text="TextView"
+            android:text="en_definitions"
             android:textColor="@color/sw_common_text"
             android:textSize="@dimen/small_text_size" />
 

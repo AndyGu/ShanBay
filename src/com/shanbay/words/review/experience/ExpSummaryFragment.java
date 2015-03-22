@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.shanbay.words.R;
 import com.shanbay.words.activity.WelcomeActivity;
 import com.shanbay.words.model.ExpReview;
 import com.shanbay.words.model.VocabularyData;
@@ -31,11 +33,11 @@ public class ExpSummaryFragment extends ExpReviewFragment
     for (int i = 0; i < this.mSummaryItems.length; i++)
     {
       this.mSummaryItems[i] = new ViewHolder();
-      View localView = this.mActivity.getLayoutInflater().inflate(2130903295, null);
+      View localView = this.mActivity.getLayoutInflater().inflate(R.layout.summary_item, null);
       localView.setOnClickListener(this);
       this.mSummaryItems[i].view = localView;
-      this.mSummaryItems[i].content = ((TextView)localView.findViewById(2131034154));
-      this.mSummaryItems[i].definition = ((TextView)localView.findViewById(2131034357));
+      this.mSummaryItems[i].content = ((TextView)localView.findViewById(R.id.content));
+      this.mSummaryItems[i].definition = ((TextView)localView.findViewById(R.id.definition));
     }
   }
 

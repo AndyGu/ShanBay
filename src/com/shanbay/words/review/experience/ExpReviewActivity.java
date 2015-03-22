@@ -123,8 +123,11 @@ private void fetchExpData()
   private void renderPanel(String tag)
   {
     ExpReviewFragment expReviewFragment = (ExpReviewFragment)getSupportFragmentManager().findFragmentByTag(tag);
-    if (expReviewFragment == null)
-      expReviewFragment = (ExpReviewFragment)Fragment.instantiate(this, tag);
+    if (expReviewFragment == null){
+    	Log.e("renderPanel", "expReviewFragment == null");
+    	expReviewFragment = (ExpReviewFragment)Fragment.instantiate(this, tag);
+    }
+      
     if(!expReviewFragment.isVisible())
     {
       switchContent(curFragment, expReviewFragment, tag);
@@ -215,6 +218,7 @@ private void fetchExpData()
     String str = mExpStudyQueueController.nextFragment();
     if (!isFragmentEnd(str))
     {
+    	Log.e("nextFragment", "str="+str);
       renderPanel(str);
       return;
     }
@@ -251,8 +255,8 @@ private void fetchExpData()
     {
       public void onClick(View paramAnonymousView)
       {
-        if (!ExpReviewActivity.this.mIsFetchingData)
-          ExpReviewActivity.this.fetchExpData();
+        if (!mIsFetchingData)
+          fetchExpData();
       }
     });
     
@@ -279,12 +283,18 @@ private void fetchExpData()
     if (curFragment != newFragment)
     {
       curFragment = newFragment;
-      if (newFragment.isAdded())
-        return;
-      if (currentFragment != null)
-        return;
+      if (newFragment.isAdded()){
+    	  Log.e("switchContent", "newFragment.isAdded()");
+          return;
+      }
+      if (currentFragment != null){
+    	  Log.e("switchContent", "currentFragment != null");
+          return;
+      }
+      Log.e("switchContent", "add newFragment");
       ft.add(R.id.root, newFragment, tag).commitAllowingStateLoss();
     }else{
+    	Log.e("switchContent", "hide currentFragment add newFragment");
     	ft.hide(currentFragment).add(R.id.root, newFragment, tag).commitAllowingStateLoss();
     	
     	if (currentFragment == null)

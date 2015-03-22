@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,6 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import com.shanbay.words.R;
 import com.shanbay.words.WordsSoundPlayer;
 import com.shanbay.words.model.ExampleData;
 import com.shanbay.words.model.ProgressBarData;
@@ -68,19 +71,19 @@ public class ExpTestRecognitionFragment extends ExpReviewFragment
 
   private void setHintBackground()
   {
-    this.mRootsContainer.setBackgroundColor(this.mActivity.getResources().getColor(2131165317));
-    this.mExampleLinearLayout.setBackgroundColor(this.mActivity.getResources().getColor(2131165317));
-    this.mEnDefintionTextView.setBackgroundColor(this.mActivity.getResources().getColor(2131165317));
-    this.mCnDefintionTextView.setBackgroundColor(this.mActivity.getResources().getColor(2131165317));
+    mRootsContainer.setBackgroundColor(mActivity.getResources().getColor(R.color.sw_hite_text_bg));
+    mExampleLinearLayout.setBackgroundColor(mActivity.getResources().getColor(R.color.sw_hite_text_bg));
+    mEnDefintionTextView.setBackgroundColor(mActivity.getResources().getColor(R.color.sw_hite_text_bg));
+    mCnDefintionTextView.setBackgroundColor(mActivity.getResources().getColor(R.color.sw_hite_text_bg));
   }
 
   private void setKnowContainerPosition()
   {
-    this.mScrollView.post(new Runnable()
+    mScrollView.post(new Runnable()
     {
       public void run()
       {
-        ExpTestRecognitionFragment.this.mScrollView.fullScroll(130);
+        mScrollView.fullScroll(130);
       }
     });
   }
@@ -89,48 +92,49 @@ public class ExpTestRecognitionFragment extends ExpReviewFragment
   {
     switch (paramInt)
     {
-    default:
-      return;
     case 0:
-      this.mKnownButton.setText(2131362112);
-      this.mUnknownButton.setText(2131362113);
+      mKnownButton.setText(R.string.label_known);
+      mUnknownButton.setText(R.string.label_unknown);
       return;
     case 1:
+    	mKnownButton.setText(R.string.label_remember_word);
+        mUnknownButton.setText(R.string.label_forget_word);
+        return;
+    default:
+        return;
     }
-    this.mKnownButton.setText(2131362114);
-    this.mUnknownButton.setText(2131362115);
   }
 
   private boolean showRoots()
   {
-    if (this.mSbRoots.length() >= 1)
-      this.mSbRoots.delete(0, this.mSbRoots.length());
-    List localList1 = this.mActivity.getStudyQueueController().getRootsRepresentative(0);
+    if (mSbRoots.length() >= 1)
+      mSbRoots.delete(0, mSbRoots.length());
+    List localList1 = mActivity.getStudyQueueController().getRootsRepresentative(0);
     if (localList1 != null)
     {
-      List localList2 = this.mActivity.getStudyQueueController().getReviewData().getRoots().getRootsList();
+      List localList2 = mActivity.getStudyQueueController().getReviewData().getRoots().getRootsList();
       if (localList2.size() > 0)
       {
         RootsContent localRootsContent = (RootsContent)localList2.get(0);
-        TextView localTextView1 = (TextView)this.mViewStubRoots.findViewById(2131034363);
-        TextView localTextView2 = (TextView)this.mViewStubRoots.findViewById(2131034362);
-        localTextView1.setTypeface(this.mActivity.getTypeface());
-        localTextView2.setTypeface(this.mActivity.getTypeface());
+        TextView localTextView1 = (TextView)mViewStubRoots.findViewById(R.id.meaning_cn);
+        TextView localTextView2 = (TextView)mViewStubRoots.findViewById(R.id.roots_content);
+        localTextView1.setTypeface(mActivity.getTypeface());
+        localTextView2.setTypeface(mActivity.getTypeface());
         localTextView2.setText(localRootsContent.getContent());
-        this.mSbRoots.append(localRootsContent.getMeaningCn());
+        mSbRoots.append(localRootsContent.getMeaningCn());
         int i = Math.min(5, localList1.size());
         if (i >= 1)
-          this.mSbRoots.append("<br>");
+          mSbRoots.append("<br>");
         for (int j = 0; j < i; j++)
         {
-          this.mSbRoots.append(" <font color=\"#" + Integer.toHexString(0) + "\">" + ((Roots.Representative)(localList1.get(j))).word + "</font> ");
+          mSbRoots.append(" <font color=\"#" + Integer.toHexString(0) + "\">" + ((Roots.Representative)(localList1.get(j))).word + "</font> ");
           if (j != i - 1)
-            this.mSbRoots.append("|");
+            mSbRoots.append("|");
         }
-        ((ImageView)this.mViewStubRoots.findViewById(2131034680)).setVisibility(8);
-        localTextView1.setText(Html.fromHtml(this.mSbRoots.toString()));
-        this.mRootsViewStub.setVisibility(0);
-        this.mRootsContainer.setBackgroundColor(this.mActivity.getResources().getColor(2131165317));
+        ((ImageView)mViewStubRoots.findViewById(R.id.more_roots)).setVisibility(View.GONE);
+        localTextView1.setText(Html.fromHtml(mSbRoots.toString()));
+        mRootsViewStub.setVisibility(View.VISIBLE);
+        mRootsContainer.setBackgroundColor(mActivity.getResources().getColor(R.color.sw_hite_text_bg));
         return true;
       }
     }
@@ -144,21 +148,24 @@ public class ExpTestRecognitionFragment extends ExpReviewFragment
 
   void known()
   {
-    if (!this.isPressUnKnowBtn)
-      this.mActivity.getStudyQueueController().testSuccess();
-    this.mActivity.nextFragment();
+    if (!isPressUnKnowBtn){
+        mActivity.getStudyQueueController().testSuccess();
+    }
+    mActivity.nextFragment();
   }
 
   public void onActivityCreated(Bundle paramBundle)
   {
     super.onActivityCreated(paramBundle);
-    if (!isRenderable())
-      return;
-    this.mCollinsTextView.setTypeface(this.mActivity.getTypeface());
-    this.mEnDefintionTextView.setTypeface(this.mActivity.getTypeface());
-    this.mTestView = new TestView(this.mActivity, this.mWordsContainer, this.mTestContent, null);
-    this.mTestView.init();
-    render(this.rootView);
+    if (!isRenderable()){
+    	Log.e("ExpTestRecognitionFragment.onActivityCreated", "!isRenderable()");
+        return;
+    }
+    mCollinsTextView.setTypeface(mActivity.getTypeface());
+    mEnDefintionTextView.setTypeface(mActivity.getTypeface());
+    mTestView = new TestView(mActivity, mWordsContainer, mTestContent, null);
+    mTestView.init();
+    render(rootView);
   }
 
   public void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
@@ -168,208 +175,217 @@ public class ExpTestRecognitionFragment extends ExpReviewFragment
       setDisableCollinsVisibility(false);
   }
 
-  public void onClick(View paramView)
+  public void onClick(View view)
   {
-//    if (paramView == this.mDetailButton)
-//      this.mActivity.nextFragment();
-//    do
-//    {
-//      return;
-//      if (paramView == this.mKnownButton)
-//      {
-//        paramView.setSelected(true);
-//        known();
-//        return;
-//      }
-//      if (paramView == this.mUnknownButton)
-//      {
-//        setKnownContainerLable(1);
-//        unknown();
-//        return;
-//      }
-//    }
-//    while (paramView != this.mCollinsTextView);
-//    startActivityForResult(PurchaseActivity.createIntent(this.mActivity, "applet_collins"), 0);
+    if (view == mDetailButton)
+      mActivity.nextFragment();
+    
+    if (view == mKnownButton)
+    {
+      view.setSelected(true);
+      known();
+      return;
+    }
+    if (view == mUnknownButton)
+    {
+      setKnownContainerLable(1);
+      unknown();
+      return;
+    }
+    
+    if(view == mCollinsTextView){
+//        startActivityForResult(PurchaseActivity.createIntent(mActivity, "applet_collins"), 0);
+    }
   }
 
-  public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
+  public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle)
   {
-    if (paramBundle != null);
-    for (boolean bool = true; ; bool = false)
-    {
-      this.mIsStateSaved = bool;
-      this.rootView = paramLayoutInflater.inflate(2130903192, paramViewGroup, false);
-      this.mProgressBar = ((ProgressBar)this.rootView.findViewById(2131034437));
-      this.mTestContent = ((LinearLayout)this.rootView.findViewById(2131034548));
-      this.mSoundImgBtn = ((ImageButton)this.rootView.findViewById(2131034891));
-      this.mWordsContainer = ((LinearLayout)this.rootView.findViewById(2131034459));
-      this.mDefinitionContainer = ((RelativeLayout)this.rootView.findViewById(2131034892));
-      this.mEnDefinitionsContainer = ((RelativeLayout)this.rootView.findViewById(2131034894));
-      this.mDefinitionContainer.setVisibility(8);
-      this.mEnDefinitionsContainer.setVisibility(8);
-      this.mKnownButton = ((Button)this.rootView.findViewById(2131034549));
-      this.mUnknownButton = ((Button)this.rootView.findViewById(2131034550));
-      this.mDetailButton = ((Button)this.rootView.findViewById(2131034551));
-      this.mRootsViewStub = ((ViewStub)this.rootView.findViewById(2131034252));
-      this.mViewStubRoots = this.mRootsViewStub.inflate();
-      this.mRootsContainer = ((RelativeLayout)this.mViewStubRoots.findViewById(2131034679));
-      this.mEnDefintionViewStub = ((ViewStub)this.rootView.findViewById(2131034763));
-      this.mEnDefintionTextView = ((TextView)this.mEnDefintionViewStub.inflate().findViewById(2131034702));
-      this.mCnDefintionViewStub = ((ViewStub)this.rootView.findViewById(2131034764));
-      this.mCnDefintionTextView = ((TextView)this.mCnDefintionViewStub.inflate().findViewById(2131034702));
-      this.mExampleLinearLayout = ((LinearLayout)this.rootView.findViewById(2131034461));
-      this.mCollinsViewStub = ((ViewStub)this.rootView.findViewById(2131034762));
-      this.mCollinsViewStub.inflate();
-      this.mScrollView = ((ScrollView)this.rootView.findViewById(2131034264));
-      this.mCollinsTextView = ((TextView)this.rootView.findViewById(2131034615));
-      this.mDetailButton.setOnClickListener(this);
-      this.mKnownButton.setOnClickListener(this);
-      this.mUnknownButton.setOnClickListener(this);
-      this.mCollinsTextView.setOnClickListener(this);
-      return this.rootView;
+    if (bundle != null){
+    	mIsStateSaved = true;
+    }else{
+    	mIsStateSaved = false;
     }
+    rootView = layoutInflater.inflate(R.layout.fragment_review_test_recognition, viewGroup, false);
+    mProgressBar = ((ProgressBar)rootView.findViewById(R.id.progress_bar));
+    mTestContent = ((LinearLayout)rootView.findViewById(R.id.recognition));
+    mSoundImgBtn = ((ImageButton)rootView.findViewById(R.id.btn_sound_in_word));
+    mWordsContainer = ((LinearLayout)rootView.findViewById(R.id.word));
+    mDefinitionContainer = ((RelativeLayout)rootView.findViewById(R.id.definition_container));
+    mEnDefinitionsContainer = ((RelativeLayout)rootView.findViewById(R.id.en_definitions_container));
+    mDefinitionContainer.setVisibility(View.GONE);
+    mEnDefinitionsContainer.setVisibility(View.GONE);
+    mKnownButton = ((Button)rootView.findViewById(R.id.known));
+    mUnknownButton = ((Button)rootView.findViewById(R.id.unknown));
+    mDetailButton = ((Button)rootView.findViewById(R.id.detail_button));
+    mRootsViewStub = ((ViewStub)rootView.findViewById(R.id.roots_container));
+    mViewStubRoots = mRootsViewStub.inflate();
+    mRootsContainer = ((RelativeLayout)mViewStubRoots.findViewById(R.id.roots_item_container));
+    mEnDefintionViewStub = ((ViewStub)rootView.findViewById(R.id.word_en_definition_viewstub));
+    mEnDefintionTextView = ((TextView)mEnDefintionViewStub.inflate().findViewById(R.id.word_definition));
+    mCnDefintionViewStub = ((ViewStub)rootView.findViewById(R.id.word_cn_definition_viewstub));
+    mCnDefintionTextView = ((TextView)mCnDefintionViewStub.inflate().findViewById(R.id.word_definition));
+    mExampleLinearLayout = ((LinearLayout)rootView.findViewById(R.id.example_container));
+    mCollinsViewStub = ((ViewStub)rootView.findViewById(R.id.word_collins_viewstub));
+    mCollinsViewStub.inflate();
+    mScrollView = ((ScrollView)rootView.findViewById(R.id.scroll));
+    mCollinsTextView = ((TextView)rootView.findViewById(R.id.review_collins));
+    mDetailButton.setOnClickListener(this);
+    mKnownButton.setOnClickListener(this);
+    mUnknownButton.setOnClickListener(this);
+    mCollinsTextView.setOnClickListener(this);
+    return rootView;
   }
 
   public void renderInternal()
   {
-    ReviewData localReviewData = this.mActivity.getStudyQueueController().getReviewData();
-    this.mProgressBar.setProgressData(new ProgressBarData(this.mActivity.getStudyQueueController().getReviewStat()));
+    ReviewData mReviewData = mActivity.getStudyQueueController().getReviewData();
+    mProgressBar.setProgressData(new ProgressBarData(mActivity.getStudyQueueController().getReviewStat()));
     setHintBackground();
-    TestView localTestView = this.mTestView;
     int i;
     int j;
-    if (localReviewData.getVocabulary().hasAudio())
+    if (mReviewData.getVocabulary().hasAudio())
     {
       i = 2;
-      if (localReviewData.getExamples() == null)
-//        break label280;
       j = 8;
-//      label67: localTestView.setViewMode(0x1 | (i | j));
-      this.mRootsViewStub.setVisibility(8);
-      this.mEnDefintionViewStub.setVisibility(8);
-      this.mCnDefintionViewStub.setVisibility(8);
-      this.mCollinsViewStub.setVisibility(8);
-      this.mKnownButton.setVisibility(0);
-      this.mUnknownButton.setVisibility(0);
-      this.mDetailButton.setVisibility(8);
-      this.mKnownButton.setSelected(false);
-      this.mUnknownButton.setSelected(false);
-      this.wrongTimes = 0;
-      this.isPressUnKnowBtn = false;
-      setKnownContainerLable(0);
-      this.mTestView.render(localReviewData);
-      switch (this.mActivity.getTestRecognitionMode())
+      if (mReviewData.getExamples() != null){
+    	  mRootsViewStub.setVisibility(View.GONE);
+          mEnDefintionViewStub.setVisibility(View.GONE);
+          mCnDefintionViewStub.setVisibility(View.GONE);
+          mCollinsViewStub.setVisibility(View.GONE);
+          mKnownButton.setVisibility(View.VISIBLE);
+          mUnknownButton.setVisibility(View.VISIBLE);
+          mDetailButton.setVisibility(View.GONE);
+          mKnownButton.setSelected(false);
+          mUnknownButton.setSelected(false);
+          wrongTimes = 0;
+          isPressUnKnowBtn = false;
+          setKnownContainerLable(View.VISIBLE);
+          Log.e("mReviewData.getExamples() != null", (0x1 | (i | j))+"");
+          mTestView.setViewMode((0x1 | (i | j)));
+          mTestView.render(mReviewData);
+      }
+     
+      switch (mActivity.getTestRecognitionMode())
       {
+      
+      case MODE_SHOW_NOTHING:
+    	  Log.e("renderInternal", "getTestRecognitionMode()=MODE_SHOW_NOTHING "+MODE_SHOW_NOTHING);
+    	  mTestView.setExampleVisibility(false, false);
+    	  break;
+      case MODE_SHOW_EXAMPLE:
+    	  Log.e("renderInternal", "getTestRecognitionMode()=MODE_SHOW_EXAMPLE "+MODE_SHOW_EXAMPLE);
+          mTestContent.removeView(mExampleLinearLayout);
+          mTestContent.addView(mExampleLinearLayout, 0);
+          if (mReviewData.getExamples().getExampleList().size() >= 1)
+            mTestView.setExampleVisibility(true, false);
+          else
+            mTestView.setExampleVisibility(false, false);
+    	  break;
       default:
-        this.mActivity.showToast("学习数据状态错误!");
-      case 33:
-      case 34:
+          mActivity.showToast("学习数据状态错误!");
       }
     }
-//    while (true)
-//    {
-//      if ((localReviewData.getVocabulary().hasAudio()) && (!this.mIsStateSaved))
-//        this.mActivity.getSoundPlayer().playSoundByUrl(this.mActivity.getStudyQueueController().getWordAudio(), this.mSoundImgBtn);
-//      this.mSoundImgBtn.setOnClickListener(new View.OnClickListener()
-//      {
-//        public void onClick(View paramAnonymousView)
-//        {
-//          ExpTestRecognitionFragment.this.mActivity.getSoundPlayer().playSoundByUrl(ExpTestRecognitionFragment.this.mActivity.getStudyQueueController().getWordAudio(), ExpTestRecognitionFragment.this.mSoundImgBtn);
-//        }
-//      });
-//      return;
-//      i = 0;
-//      break;
-//      label280: j = 0;
-//      break label67;
-//      this.mTestView.setExampleVisibility(false, false);
-//      continue;
-//      this.mTestContent.removeView(this.mExampleLinearLayout);
-//      this.mTestContent.addView(this.mExampleLinearLayout, 0);
-//      if (localReviewData.getExamples().getExampleList().size() >= 1)
-//        this.mTestView.setExampleVisibility(true, false);
-//      else
-//        this.mTestView.setExampleVisibility(false, false);
-//    }
+         
+      if ((mReviewData.getVocabulary().hasAudio()) && (!mIsStateSaved))
+    	  mActivity.getSoundPlayer().playSoundByUrl(mActivity.getStudyQueueController().getWordAudio(), mSoundImgBtn);
+      mSoundImgBtn.setOnClickListener(new View.OnClickListener()
+      {
+        public void onClick(View paramAnonymousView)
+        {
+          mActivity.getSoundPlayer().playSoundByUrl(mActivity.getStudyQueueController().getWordAudio(), mSoundImgBtn);
+        }
+      });
   }
 
   public void setDisableCollinsVisibility(boolean paramBoolean)
   {
     if (paramBoolean)
     {
-      this.mCollinsViewStub.setVisibility(0);
+      mCollinsViewStub.setVisibility(View.VISIBLE);
       return;
     }
-    this.mCollinsViewStub.setVisibility(8);
+    mCollinsViewStub.setVisibility(View.GONE);
   }
 
   void unknown()
   {
-    this.isPressUnKnowBtn = true;
-    switch (this.wrongTimes)
+    isPressUnKnowBtn = true;
+    switch (wrongTimes)
     {
-    default:
     case 0:
+    	mActivity.getStudyQueueController().testFail();
+        if (mExampleLinearLayout.getVisibility() != View.GONE)
+          mExampleLinearLayout.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
+        if (showRoots())
+        {
+          wrongTimes = (1 + wrongTimes);
+        }
+        else
+        {
+          wrongTimes = (1 + wrongTimes);
+          mRootsContainer.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
+          
+          if ((mActivity.getStudyQueueController().getReviewData().getExamples().getExampleList().size() >= 1) && 
+        		  (mExampleLinearLayout.getVisibility() == View.GONE)){
+            mTestView.setExampleVisibility(true, false);
+//            wrongTimes = (1 + wrongTimes);
+          }else{
+            if (mActivity.getStudyQueueController().getReviewData().getExamples().getExampleList().size() < 1)
+            {
+              mTestView.setExampleVisibility(false, false);
+              mExampleLinearLayout.setVisibility(View.GONE);
+            }
+//            wrongTimes = (1 + wrongTimes);
+          }
+          
+        }
+        break;
     case 1:
+    	mExampleLinearLayout.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
+    	if ((mActivity.getStudyQueueController().getReviewData().getExamples().getExampleList().size() >= 1) && 
+      		  (mExampleLinearLayout.getVisibility() == View.GONE)){
+          mTestView.setExampleVisibility(true, false);
+          wrongTimes = (1 + wrongTimes);
+        }else{
+          if (mActivity.getStudyQueueController().getReviewData().getExamples().getExampleList().size() < 1)
+          {
+        	  mTestView.setExampleVisibility(true, false);
+        	  mExampleLinearLayout.setVisibility(View.GONE);
+          }else{
+        	  if (mActivity.getStudyQueueController().getReviewData().getVocabulary().getEnDefn() != null)
+              {
+        		  mEnDefintionTextView.setText(mActivity.getStudyQueueController().getReviewData().getVocabulary().getEnDefn().trim());
+        		  mEnDefintionTextView.setVisibility(View.VISIBLE);
+              }
+          }
+          wrongTimes = (1 + wrongTimes);
+        }
+        break;
+        
     case 2:
+    	mEnDefintionTextView.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
+        if (mActivity.getStudyQueueController().getReviewData().getVocabulary().getCnDefinition() != null)
+        {
+          mCnDefintionTextView.setText(mActivity.getStudyQueueController().getReviewData().getVocabulary().getCnDefinition().trim());
+          mCnDefintionViewStub.setVisibility(View.VISIBLE);
+        }
+    	wrongTimes = (1 + wrongTimes);
+    	break;
+        
     case 3:
+    	mRootsContainer.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
+        mExampleLinearLayout.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
+        mEnDefintionTextView.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
+        mDetailButton.setVisibility(View.VISIBLE);
+        mKnownButton.setVisibility(View.GONE);
+        mUnknownButton.setVisibility(View.GONE);
+        wrongTimes = 0;
+    	break;
+    	
+    default:
+    	
     }
-    while (true)
-    {
-      this.mRootsContainer.setBackgroundColor(this.mActivity.getResources().getColor(2131165199));
-      this.mExampleLinearLayout.setBackgroundColor(this.mActivity.getResources().getColor(2131165199));
-      this.mEnDefintionTextView.setBackgroundColor(this.mActivity.getResources().getColor(2131165199));
-      this.mDetailButton.setVisibility(0);
-      this.mKnownButton.setVisibility(8);
-      this.mUnknownButton.setVisibility(8);
-      this.wrongTimes = 0;
-//      while (true)
-//      {
-//        setKnowContainerPosition();
-//        return;
-//        this.mActivity.getStudyQueueController().testFail();
-//        if (this.mExampleLinearLayout.getVisibility() != 8)
-//          this.mExampleLinearLayout.setBackgroundColor(this.mActivity.getResources().getColor(2131165199));
-//        if (showRoots())
-//        {
-//          this.wrongTimes = (1 + this.wrongTimes);
-//        }
-//        else
-//        {
-//          this.wrongTimes = (1 + this.wrongTimes);
-//          this.mRootsContainer.setBackgroundColor(this.mActivity.getResources().getColor(2131165199));
-//          if ((this.mActivity.getStudyQueueController().getReviewData().getExamples().getExampleList().size() >= 1) && (this.mExampleLinearLayout.getVisibility() == 8))
-//          {
-//            this.mTestView.setExampleVisibility(true, false);
-//            this.wrongTimes = (1 + this.wrongTimes);
-//          }
-//          else
-//          {
-//            if (this.mActivity.getStudyQueueController().getReviewData().getExamples().getExampleList().size() < 1)
-//            {
-//              this.mTestView.setExampleVisibility(false, false);
-//              this.mExampleLinearLayout.setVisibility(8);
-//            }
-//            this.wrongTimes = (1 + this.wrongTimes);
-//            this.mExampleLinearLayout.setBackgroundColor(this.mActivity.getResources().getColor(2131165199));
-//            VocabularyData localVocabularyData = this.mActivity.getStudyQueueController().getReviewData().getVocabulary();
-//            if (localVocabularyData.getEnDefn() == null)
-//              break;
-//            String str = wordsHighLight(this.mTestView.getEnDefinitionString(localVocabularyData));
-//            this.mEnDefintionTextView.setText(Html.fromHtml(str));
-//            this.mEnDefintionViewStub.setVisibility(0);
-//            this.wrongTimes = (1 + this.wrongTimes);
-//          }
-//        }
-//      }
-      this.wrongTimes = (1 + this.wrongTimes);
-      this.mEnDefintionTextView.setBackgroundColor(this.mActivity.getResources().getColor(2131165199));
-      if (this.mActivity.getStudyQueueController().getReviewData().getVocabulary().getCnDefinition() != null)
-      {
-        this.mCnDefintionTextView.setText(this.mActivity.getStudyQueueController().getReviewData().getVocabulary().getCnDefinition().trim());
-        this.mCnDefintionViewStub.setVisibility(0);
-      }
-      this.wrongTimes = (1 + this.wrongTimes);
-    }
+    
+    setKnowContainerPosition();
   }
 }
