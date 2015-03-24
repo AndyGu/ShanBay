@@ -1,17 +1,17 @@
-com.alipay.android.app        Ö§¸¶±¦Ö§¸¶
-com.github.rjeschke.txtmark   Java ÊµÏÖµÄ Markdown ½âÎöÆ÷£¬ÓÃÀ´Éú³É HTML ÎÄµµ
-org.markdown4j				  ½âÎöHTML
-com.google.analytics          ¹È¸è·ÖÎö
+com.alipay.android.app        æ”¯ä»˜å®æ”¯ä»˜
+com.github.rjeschke.txtmark   Java å®ç°çš„ Markdown è§£æå™¨ï¼Œç”¨æ¥ç”Ÿæˆ HTML æ–‡æ¡£
+org.markdown4j				  è§£æHTML
+com.google.analytics          è°·æ­Œåˆ†æ
 com.google.android.gms        google play service
-com.google.renamedgson        json¶ÔÏó½âÎö
+com.google.renamedgson        jsonå¯¹è±¡è§£æï¼ˆhttps://code.google.com/p/google-gson ä¸­æ²¡æœ‰æ‰¾åˆ°æ­¤åŒ…ï¼Œæ˜¯ä¸ºäº†è§£ææ—¶å€™æ–¹ä¾¿å¯¹è±¡åçš„æ”¹åä¹ˆï¼Ÿï¼‰
 com.google.tagmanager
 com.joshdholtz.protocol.lib   https://github.com/AndyGu/Protocol-Android
-com.loopj.android             https://github.com/AndyGu/android-async-http
-com.tencent.mm                Î¢ĞÅ
-com.umeng.analytics           ÓÑÃËÍ³¼Æ
-com.umeng.common              ÓÑÃË¼¯³É
-com.umeng.update              ÓÑÃË×Ô¶¯Éı¼¶
-net.lingala.zip4j			  ½âÑ¹Ëõ°ü
+com.loopj.android             https://github.com/AndyGu/android-async-http ï¼ˆä¹Ÿæ²¡æœ‰æ‰¾åˆ°é¡¹ç›®ä¸­ç”¨åˆ°çš„jaråŒ…ï¼Œæ˜¯è‡ªå·±æœ‰é‡æ–°ç¼–è¯‘ä¹ˆï¼Ÿï¼‰
+com.tencent.mm                å¾®ä¿¡
+com.umeng.analytics           å‹ç›Ÿç»Ÿè®¡
+com.umeng.common              å‹ç›Ÿé›†æˆ
+com.umeng.update              å‹ç›Ÿè‡ªåŠ¨å‡çº§
+net.lingala.zip4j			  è§£å‹ç¼©åŒ…
 org.apache					  commons-lang-2.6.jar
-org.jsoup					  html½âÎö
-org.yaml.snakeyaml			  YAML 1.1½âÎöÆ÷
+org.jsoup					  htmlè§£æ
+org.yaml.snakeyaml			  YAML 1.1è§£æå™¨
