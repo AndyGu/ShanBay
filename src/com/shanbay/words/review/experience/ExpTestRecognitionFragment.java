@@ -314,75 +314,81 @@ public class ExpTestRecognitionFragment extends ExpReviewFragment
     {
     case 0:
     	mActivity.getStudyQueueController().testFail();
-        if (mExampleLinearLayout.getVisibility() != View.GONE)
-          mExampleLinearLayout.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
-        if (showRoots())
-        {
-          wrongTimes = (1 + wrongTimes);
-        }
-        else
-        {
-          wrongTimes = (1 + wrongTimes);
-          mRootsContainer.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
+        wrongTimes = (1 + wrongTimes);
+        
+        if (!showRoots()){
+          if(mRootsContainer.getVisibility()==View.VISIBLE){
+              mRootsContainer.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
+          }
           
           if ((mActivity.getStudyQueueController().getReviewData().getExamples().getExampleList().size() >= 1) && 
         		  (mExampleLinearLayout.getVisibility() == View.GONE)){
+        	  
+        	mExampleLinearLayout.setVisibility(View.VISIBLE);
             mTestView.setExampleVisibility(true, false);
-//            wrongTimes = (1 + wrongTimes);
           }else{
             if (mActivity.getStudyQueueController().getReviewData().getExamples().getExampleList().size() < 1)
             {
               mTestView.setExampleVisibility(false, false);
               mExampleLinearLayout.setVisibility(View.GONE);
             }
-//            wrongTimes = (1 + wrongTimes);
           }
-          
         }
         break;
     case 1:
-    	mExampleLinearLayout.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
-    	if ((mActivity.getStudyQueueController().getReviewData().getExamples().getExampleList().size() >= 1) && 
-      		  (mExampleLinearLayout.getVisibility() == View.GONE)){
-          mTestView.setExampleVisibility(true, false);
-          wrongTimes = (1 + wrongTimes);
+    	mRootsContainer.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
+    	
+    	if(mExampleLinearLayout.getVisibility() == View.VISIBLE){
+    		
+    		wrongTimes = (1 + wrongTimes);
+        	
+        	mExampleLinearLayout.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
+        	if (mActivity.getStudyQueueController().getReviewData().getVocabulary().getEnDefn() != null)
+            {
+              mEnDefintionTextView.setText(mActivity.getStudyQueueController().getReviewData().getVocabulary().getEnDefn().trim());
+              mEnDefintionTextView.setVisibility(View.VISIBLE);
+            }
+            
         }else{
-          if (mActivity.getStudyQueueController().getReviewData().getExamples().getExampleList().size() < 1)
-          {
-        	  mTestView.setExampleVisibility(true, false);
-        	  mExampleLinearLayout.setVisibility(View.GONE);
-          }else{
-        	  if (mActivity.getStudyQueueController().getReviewData().getVocabulary().getEnDefn() != null)
-              {
-        		  mEnDefintionTextView.setText(mActivity.getStudyQueueController().getReviewData().getVocabulary().getEnDefn().trim());
-        		  mEnDefintionTextView.setVisibility(View.VISIBLE);
-              }
-          }
-          wrongTimes = (1 + wrongTimes);
+             
+             if ((mActivity.getStudyQueueController().getReviewData().getExamples().getExampleList().size() >= 1) && 
+             		  (mExampleLinearLayout.getVisibility() == View.GONE)){
+             	  
+             		mExampleLinearLayout.setVisibility(View.VISIBLE);
+             		mTestView.setExampleVisibility(true, false);
+               }else{
+                 if (mActivity.getStudyQueueController().getReviewData().getExamples().getExampleList().size() < 1)
+                 {
+                 	mExampleLinearLayout.setVisibility(View.GONE);
+                 	mTestView.setExampleVisibility(false, false);
+                 }
+               }
+        	
         }
         break;
         
     case 2:
+    	wrongTimes = (1 + wrongTimes);
     	mEnDefintionTextView.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
         if (mActivity.getStudyQueueController().getReviewData().getVocabulary().getCnDefinition() != null)
         {
           mCnDefintionTextView.setText(mActivity.getStudyQueueController().getReviewData().getVocabulary().getCnDefinition().trim());
           mCnDefintionViewStub.setVisibility(View.VISIBLE);
         }
-    	wrongTimes = (1 + wrongTimes);
-    	break;
+        
         
     case 3:
-    	mRootsContainer.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
-        mExampleLinearLayout.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
-        mEnDefintionTextView.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
-        mDetailButton.setVisibility(View.VISIBLE);
-        mKnownButton.setVisibility(View.GONE);
-        mUnknownButton.setVisibility(View.GONE);
-        wrongTimes = 0;
+    		mRootsContainer.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
+            mExampleLinearLayout.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
+            mEnDefintionTextView.setBackgroundColor(mActivity.getResources().getColor(R.color.common_item_bg));
+            mDetailButton.setVisibility(View.VISIBLE);
+            mKnownButton.setVisibility(View.GONE);
+            mUnknownButton.setVisibility(View.GONE);
+            wrongTimes = 0;
+    		
     	break;
-    	
     default:
+    	break;
     	
     }
     

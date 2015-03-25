@@ -279,10 +279,10 @@ public abstract class BaseActivity<T extends APIClient> extends ActionBarActivit
 		  mProgressDialog = new ShanbayProgressDialog(this);
 		  mProgressDialog.setCanceledOnTouchOutside(false);
 		  mProgressDialog.setCancelable(true);
+		  if (paramString != null)
+			  mProgressDialog.setContentMessage(paramString);
 		  mProgressDialog.show();
 	  }else{
-		  if (paramString != null)
-	          mProgressDialog.setContentMessage(paramString);
 		  if(!mProgressDialog.isShowing()){
 			  mProgressDialog.setCanceledOnTouchOutside(false);
 			  mProgressDialog.setCancelable(true);
